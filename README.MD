@@ -1,4 +1,4 @@
-# Basline Sales Modelling Website Report
+# Basline Sales Modelling Report
 
 The report is built using [Zensical](https://zensical.org/), a Python-based documentation generator.
 
