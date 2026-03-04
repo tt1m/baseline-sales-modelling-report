@@ -4,7 +4,7 @@ The report is built using [Zensical](https://zensical.org/), a Python-based docu
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 To view this documentation locally, ensure you have Python installed and Zensical set up in your environment.
 
