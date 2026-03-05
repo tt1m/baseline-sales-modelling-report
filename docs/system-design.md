@@ -70,5 +70,3 @@ The system currently uses a structured CSV-based data warehouse approach, repres
 *   **Forecasting/ML:** `statsmodels` (SARIMAX), `lightgbm` (Cannibalisation), `scikit-learn` (Preprocessing)
 *   **Interface:** `streamlit` (Dashboard Framework)
 *   **Version Control:** The project is modularized into packages (e.g., `src/models/`, `src/visualization/`, `src/data/`) for transparency and GitHub-based collaboration.
-
-[Back to top](#system-design)
