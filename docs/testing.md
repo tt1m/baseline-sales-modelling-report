@@ -12,6 +12,7 @@ hide:
 
 ## Testing Strategy
 Our testing strategy follows a "Pyramid" approach, prioritizing foundational stability before validating complex business outcomes:
+
 *   **Base (Unit & Integration Testing):** Ensuring individual functions (data loaders, model trainers) work correctly.
 *   **Middle (Model Accuracy Testing):** Quantifying the precision of our SARIMAX and LightGBM models.
 *   **Top (User Acceptance Testing):** Ensuring the Streamlit dashboard meets the specific decision-making needs of our business stakeholders.

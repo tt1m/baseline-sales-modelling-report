@@ -12,6 +12,7 @@ hide:
 
 ## Design Goals
 The primary objective of the UI design was to resolve the "information gap" between cross-functional teams. Specifically, we aimed to:
+
 *   **Bridge the Complexity Divide:** Present advanced time-series statistics (SARIMAX results) in a way that is immediately actionable for non-technical stakeholders (Marketing and Commercial teams).
 *   **Reduce Cognitive Load:** Eliminate "spreadsheet fatigue" by using visual summaries, metric cards, and interactive toggles.
 *   **Enable Self-Service:** Allow users to answer their own "what-if" questions regarding product performance without waiting for custom data pulls from the analytics department.

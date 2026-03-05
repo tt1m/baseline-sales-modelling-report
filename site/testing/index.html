@@ -950,10 +950,12 @@
 <p><em>This section details the testing framework implemented to ensure the reliability, accuracy, and usability of the Coca-Cola Demand Intelligence tool. Our approach ensures that the statistical models are robust, the code pipeline is stable, and the final dashboard meets the strategic needs of business stakeholders.</em></p>
 <hr />
 <h2 id="testing-strategy">Testing Strategy<a class="headerlink" href="#testing-strategy" title="Permanent link">&para;</a></h2>
-<p>Our testing strategy follows a "Pyramid" approach, prioritizing foundational stability before validating complex business outcomes:
-*   <strong>Base (Unit &amp; Integration Testing):</strong> Ensuring individual functions (data loaders, model trainers) work correctly.
-*   <strong>Middle (Model Accuracy Testing):</strong> Quantifying the precision of our SARIMAX and LightGBM models.
-*   <strong>Top (User Acceptance Testing):</strong> Ensuring the Streamlit dashboard meets the specific decision-making needs of our business stakeholders.</p>
+<p>Our testing strategy follows a "Pyramid" approach, prioritizing foundational stability before validating complex business outcomes:</p>
+<ul>
+<li><strong>Base (Unit &amp; Integration Testing):</strong> Ensuring individual functions (data loaders, model trainers) work correctly.</li>
+<li><strong>Middle (Model Accuracy Testing):</strong> Quantifying the precision of our SARIMAX and LightGBM models.</li>
+<li><strong>Top (User Acceptance Testing):</strong> Ensuring the Streamlit dashboard meets the specific decision-making needs of our business stakeholders.</li>
+</ul>
 <hr />
 <h2 id="model-accuracy-testing">Model Accuracy Testing<a class="headerlink" href="#model-accuracy-testing" title="Permanent link">&para;</a></h2>
 <p><strong>Why:</strong> In FMCG forecasting, the primary risk is "overfitting"—where a model treats a temporary promotional spike as the "new normal." We must verify that our model correctly separates baseline demand from promotional noise.</p>
