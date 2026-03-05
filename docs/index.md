@@ -24,8 +24,8 @@ hide:
 
 ---
 
+## Abstract
 <div style="margin-bottom: 2rem;">
-    <h2>Abstract</h2>
     <p>
     In the Fast-Moving Consumer Goods (FMCG) sector, retail sales data is fundamentally noisy. Because historical sales are consistently skewed by promotions, pricing, and seasonality, it is highly difficult to establish a "normal" sales baseline. Consequently, businesses struggle to measure true underlying demand or accurately gauge promotional uplift. This issue is compounded by the conflicting needs of different business units, as static spreadsheets cannot simultaneously provide granular data for analysts and high-level summaries for marketing teams.
     </p>
@@ -42,7 +42,7 @@ hide:
 
 ---
 
-<h2>Video</h2>
+## Video
 <div style="display:flex; justify-content: center; align-items: center; margin-bottom: 2rem;">
     <video width="100%" controls>
         <source src="movie.mp4" type="video/mp4">
@@ -53,7 +53,7 @@ hide:
 
 ---
 
-<h2>Meet the Team</h2>
+## Meet the Team
 <div class="team-wrapper">
     <div class="team">
     
@@ -98,7 +98,7 @@ hide:
 
 ---
 
-<h2>Project Timeline</h2>
+## Project Timeline
 <div style="display:flex; justify-content: center; align-items: center; margin-bottom: 2rem;">
     <img width="100%" src="assets/images/gantt_chart.png" alt="Gantt Chart"></img>
 </div>
