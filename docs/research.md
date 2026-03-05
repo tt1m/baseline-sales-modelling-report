@@ -1,6 +1,5 @@
 ---
 title: Research
-icon: lucide/rocket
 hide:
     - navigation
 ---

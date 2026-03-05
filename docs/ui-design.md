@@ -1,6 +1,5 @@
 ---
 title: UI Design
-icon: lucide/rocket
 hide:
   - navigation
 ---

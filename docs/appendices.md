@@ -1,6 +1,5 @@
 ---
 title: Appendices
-icon: lucide/rocket
 hide:
   - navigation
 ---

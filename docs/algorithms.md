@@ -1,6 +1,5 @@
 ---
 title: Algorithms
-icon: lucide/rocket
 hide:
   - navigation
 ---

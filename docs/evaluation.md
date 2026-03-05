@@ -1,6 +1,5 @@
 ---
 title: Evaluation
-icon: lucide/rocket
 hide:
   - navigation
 ---

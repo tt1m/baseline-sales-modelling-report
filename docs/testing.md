@@ -1,6 +1,5 @@
 ---
 title: Testing
-icon: lucide/rocket
 hide:
   - navigation
 ---

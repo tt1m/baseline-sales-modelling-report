@@ -1,6 +1,5 @@
 ---
 title: Implementation
-icon: lucide/rocket
 hide:
   - navigation
 ---

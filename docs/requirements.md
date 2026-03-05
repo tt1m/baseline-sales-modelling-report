@@ -1,6 +1,5 @@
 ---
 title: Requirements
-icon: lucide/rocket
 hide:
   - navigation
 ---

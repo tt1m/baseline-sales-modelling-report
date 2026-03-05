@@ -1,6 +1,5 @@
 ---
 title: System Design
-icon: lucide/rocket
 hide:
   - navigation
 ---

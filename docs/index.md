@@ -1,6 +1,6 @@
 ---
 title: Home
-icon: lucide/rocket
+icon: lucide/house
 hide:
   - path
   - navigation
