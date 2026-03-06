@@ -913,10 +913,12 @@
 </ul>
 <hr />
 <h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
-<p>We conducted three primary experiments to validate our approach:
-1.  <strong>Backtesting the Baseline:</strong> We trained our SARIMAX model on data up to the final 8 weeks and compared the forecast (with promotions removed) against actual non-promotional weeks. The model achieved a Mean Absolute Percentage Error (MAPE) of &lt;12%.
-2.  <strong>Sensitivity Analysis:</strong> We varied the promotional intensity within the model to ensure the "uplift" correlated logically with actual market performance. We confirmed that the model appropriately assigns higher uplift to deeper discounts.
-3.  <strong>Cross-Product Impact:</strong> We tested the LightGBM model on two substitute SKUs (e.g., 500ml Pacific Punch Monster vs. alternative flavors). The experiment demonstrated that when the price of SKU A dropped, the model correctly predicted a decline in the volume of SKU B, validating our cannibalisation logic.</p>
+<p>We conducted three primary experiments to validate our approach:</p>
+<ol>
+<li><strong>Backtesting the Baseline:</strong> We trained our SARIMAX model on data up to the final 8 weeks and compared the forecast (with promotions removed) against actual non-promotional weeks. The model achieved a Mean Absolute Percentage Error (MAPE) of &lt;12%.</li>
+<li><strong>Sensitivity Analysis:</strong> We varied the promotional intensity within the model to ensure the "uplift" correlated logically with actual market performance. We confirmed that the model appropriately assigns higher uplift to deeper discounts.</li>
+<li><strong>Cross-Product Impact:</strong> We tested the LightGBM model on two substitute SKUs (e.g., 500ml Pacific Punch Monster vs. alternative flavors). The experiment demonstrated that when the price of SKU A dropped, the model correctly predicted a decline in the volume of SKU B, validating our cannibalisation logic.</li>
+</ol>
 <hr />
 <h2 id="discussions">Discussions<a class="headerlink" href="#discussions" title="Permanent link">&para;</a></h2>
 <p>The experimental results confirm that separating signal from noise is not only possible but essential for accurate commercial planning. The SARIMAX-LightGBM hybrid approach bridges the gap between high-level trend forecasting and granular behavioral modeling. A key realization from our discussion was that stakeholders value "accuracy-with-transparency"; therefore, providing the seasonal decomposition components alongside the final forecast was critical to building user trust. While the model is highly effective for core portfolio items, we identified a limitation in forecasting "limited-time offers" or brand-new SKUs where insufficient historical data exists to establish a stable seasonal baseline.</p>

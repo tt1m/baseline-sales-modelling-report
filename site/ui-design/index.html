@@ -888,18 +888,24 @@
 </ul>
 <hr />
 <h2 id="hand-drawn-sketches">Hand-Drawn Sketches<a class="headerlink" href="#hand-drawn-sketches" title="Permanent link">&para;</a></h2>
-<p>During the early design phase, we conducted "paper prototyping" to map the dashboard layout.
-*   <strong>Sketch 1:</strong> Focused on a single-column layout, which we rejected for being too restrictive for complex time-series data.
-*   <strong>Sketch 2:</strong> Proposed a side-bar filter + main dashboard grid. This became the foundation of our final design, as it provided enough space to show both the seasonal decomposition and the baseline forecast simultaneously.</p>
+<p>During the early design phase, we conducted "paper prototyping" to map the dashboard layout.</p>
+<ul>
+<li><strong>Sketch 1:</strong> Focused on a single-column layout, which we rejected for being too restrictive for complex time-series data.</li>
+<li><strong>Sketch 2:</strong> Proposed a side-bar filter + main dashboard grid. This became the foundation of our final design, as it provided enough space to show both the seasonal decomposition and the baseline forecast simultaneously.</li>
+</ul>
 <hr />
 <h2 id="final-wireframe">Final Wireframe<a class="headerlink" href="#final-wireframe" title="Permanent link">&para;</a></h2>
-<p>The final layout organizes the screen into three logical zones:
-1.  <strong>Sidebar (Control):</strong> Product selection, date range filtering, and model parameter toggles.
-2.  <strong>Top Section (Key Indicators):</strong> Large "metric cards" showing <code>Total Volume</code>, <code>Promotional Uplift %</code>, and <code>Baseline vs. Actual Variance</code>.
-3.  <strong>Main Content Area (Visualization):</strong>
-    *   <strong>Primary Chart:</strong> A layered Plotly chart showing historical sales vs. the recovered baseline.
-    *   <strong>Secondary Chart:</strong> A seasonal decomposition plot showing the underlying seasonal, trend, and residual components.
-    *   <strong>Tabular View:</strong> A detailed breakdown of the model outputs for analyst-level auditing.</p>
+<p>The final layout organizes the screen into three logical zones:</p>
+<ol>
+<li><strong>Sidebar (Control):</strong> Product selection, date range filtering, and model parameter toggles.</li>
+<li><strong>Top Section (Key Indicators):</strong> Large "metric cards" showing <code>Total Volume</code>, <code>Promotional Uplift %</code>, and <code>Baseline vs. Actual Variance</code>.</li>
+<li><strong>Main Content Area (Visualization):</strong><ul>
+<li><strong>Primary Chart:</strong> A layered Plotly chart showing historical sales vs. the recovered baseline.</li>
+<li><strong>Secondary Chart:</strong> A seasonal decomposition plot showing the underlying seasonal, trend, and residual components.</li>
+<li><strong>Tabular View:</strong> A detailed breakdown of the model outputs for analyst-level auditing.</li>
+</ul>
+</li>
+</ol>
 <p><em>[Placeholder: Insert image of the Final Wireframe here]</em></p>
 <hr />
 <h2 id="interactive-demo">Interactive Demo<a class="headerlink" href="#interactive-demo" title="Permanent link">&para;</a></h2>

@@ -29,6 +29,7 @@ The primary objective of the UI design was to resolve the "information gap" betw
 
 ## Hand-Drawn Sketches
 During the early design phase, we conducted "paper prototyping" to map the dashboard layout.
+
 *   **Sketch 1:** Focused on a single-column layout, which we rejected for being too restrictive for complex time-series data.
 *   **Sketch 2:** Proposed a side-bar filter + main dashboard grid. This became the foundation of our final design, as it provided enough space to show both the seasonal decomposition and the baseline forecast simultaneously.
 
@@ -36,6 +37,7 @@ During the early design phase, we conducted "paper prototyping" to map the dashb
 
 ## Final Wireframe
 The final layout organizes the screen into three logical zones:
+
 1.  **Sidebar (Control):** Product selection, date range filtering, and model parameter toggles.
 2.  **Top Section (Key Indicators):** Large "metric cards" showing `Total Volume`, `Promotional Uplift %`, and `Baseline vs. Actual Variance`.
 3.  **Main Content Area (Visualization):**

@@ -29,6 +29,7 @@ Our predictive engine is built on a two-tier approach to isolate baseline demand
 
 ## Experiments
 We conducted three primary experiments to validate our approach:
+
 1.  **Backtesting the Baseline:** We trained our SARIMAX model on data up to the final 8 weeks and compared the forecast (with promotions removed) against actual non-promotional weeks. The model achieved a Mean Absolute Percentage Error (MAPE) of <12%.
 2.  **Sensitivity Analysis:** We varied the promotional intensity within the model to ensure the "uplift" correlated logically with actual market performance. We confirmed that the model appropriately assigns higher uplift to deeper discounts.
 3.  **Cross-Product Impact:** We tested the LightGBM model on two substitute SKUs (e.g., 500ml Pacific Punch Monster vs. alternative flavors). The experiment demonstrated that when the price of SKU A dropped, the model correctly predicted a decline in the volume of SKU B, validating our cannibalisation logic.

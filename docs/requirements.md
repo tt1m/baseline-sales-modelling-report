@@ -30,6 +30,7 @@ This project is developed in collaboration with **Coca-Cola**. The objective is 
 
 ## Gathering Requirements
 Requirements were gathered through a series of iterative stakeholder consultations. We mapped the needs of three distinct departments to determine the necessary level of abstraction for the dashboard:
+
 *   **Data Analysts:** Required raw data access, trend decomposition, and model transparency.
 *   **Marketing Teams:** Required high-level performance indicators and clear "promotion vs. baseline" metrics.
 *   **Commercial Teams:** Required portfolio-level summaries to facilitate broader strategic planning.
