@@ -22,7 +22,7 @@ To view this documentation locally, ensure you have Python installed and Zensica
 2. (Recommended) Create and activate a virtual environment:
    ```bash
    python -m venv .venv
-   source .venv/bin/activate  # Windows: venv\Scripts\activate
+   source .venv/bin/activate  # Windows: .venv\Scripts\activate
    ```
 
 3. Install Zensical:
