@@ -60,6 +60,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
@@ -951,6 +953,42 @@
 <li><strong>UC3: Cross-Product Impact:</strong> User investigates a price drop on a key product (e.g., Coke Zero) to see if it causes a decline in a sister product (e.g., Diet Coke), quantifying cannibalisation.</li>
 <li><strong>UC4: Dynamic Portfolio Analysis:</strong> User toggles between SKUs to compare performance metrics across different product lines.</li>
 </ul>
+<div class="diagram">
+
+<pre class="mermaid"><code>%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '18px', 'nodePadding': 20, 'spacing': 50}}}%%
+
+flowchart LR
+    Analyst[Marketing Analyst]
+    Scientist[Data Scientist]
+    Manager[Category Manager]
+
+    subgraph System["Baseline Sales Dashboard"]
+        direction TB
+        UC1[Upload Dataset]
+        UC2[Run Baseline Model]
+        UC3[View Baseline Sales]
+        UC4[Analyse Promotion Impact]
+        UC5[Detect Cannibalisation]
+        UC6[Generate Strategic Report]
+    end
+
+    Analyst --&gt; UC3
+    Analyst --&gt; UC4
+    Analyst --&gt; UC5
+
+    Scientist --&gt; UC1
+    Scientist --&gt; UC2
+
+    Manager --&gt; UC6
+
+    %% Styling nodes inside Mermaid
+    classDef clean fill:#f5f5f5,stroke:#444,stroke-width:2px,rx:10,ry:10;
+    class UC1,UC2,UC3,UC4,UC5,UC6 clean;
+
+    classDef dataScientist fill:#ffecb3,stroke:#ff9800,stroke-width:2px,rx:12,ry:12,shadow:true;
+    class Scientist,Analyst,Manager dataScientist;</code></pre>
+
+</div>
 <hr />
 <h2 id="moscow-requirements-list">MoSCoW Requirements List<a class="headerlink" href="#moscow-requirements-list" title="Permanent link">&para;</a></h2>
 <table>

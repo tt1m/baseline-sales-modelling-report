@@ -1,0 +1,112 @@
+/* Center the diagram container */
+
+.diagram {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+
+/* Mermaid diagram card style */
+
+.diagram .mermaid {
+    width: 100%;
+    max-width: 1800px;
+    padding: 30px;
+    background: #fafafa;
+    /* soft vibecoded background */
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    font-size: 1rem;
+}
+
+
+/* Scale SVG nicely inside card */
+
+.mermaid svg {
+    width: 100%;
+    height: auto;
+}
+
+
+/* General node styling */
+
+.mermaid rect {
+    rx: 12px;
+    ry: 12px;
+    fill: #e0f7fa !important;
+    /* soft two-tone vibe instead of gradient */
+    stroke: #00796b !important;
+    stroke-width: 1.5px !important;
+    filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.12)) !important;
+}
+
+
+/* Highlight Data Scientist node */
+
+.mermaid .data-scientist rect {
+    fill: #ffecb3 !important;
+    stroke: #ff9800 !important;
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.2)) !important;
+}
+
+
+/* Text inside nodes */
+
+.mermaid text {
+    font-size: 1rem;
+    fill: #222;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Optional: hover effect on nodes */
+
+.mermaid rect:hover {
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25)) !important;
+    cursor: pointer;
+}
+
+
+/* Extra.css */
+
+.markdown table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.markdown table th,
+.markdown table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.markdown table th {
+    background: rgba(255, 152, 0, 0.15);
+    font-weight: 600;
+    color: #ff6f00;
+}
+
+
+/* Slide-in animation */
+
+.markdown table {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

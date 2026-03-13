@@ -63,9 +63,9 @@ hide:
                 <h4><b>Gwen Tan</b></h4>
                 <div class="social-icons">
                     <a href="https://github.com/gw3nnipi3"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://linkedin.com/in/gwendolyntan343/"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <p>Client Liaison, Programmer, Tester</p>
+                <p>Client Liaison, Programmer, Report Editor, Tester</p>
             </div>
         </div>
 
