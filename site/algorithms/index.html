@@ -55,8 +55,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"Jetbrains Mono"}</style>
       
     
     
@@ -99,7 +99,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="./.." title="Baseline Sales Modelling" class="md-header__button md-logo" aria-label="Baseline Sales Modelling" data-md-component="logo">
       
@@ -177,14 +179,8 @@
     </div>
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -354,7 +350,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -537,10 +539,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#models" class="md-nav__link">
+  <a href="#prophet-time-series-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Models
+        Prophet Time Series Model
       
     </span>
   </a>
@@ -548,10 +550,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data" class="md-nav__link">
+  <a href="#dataset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data
+        Dataset
       
     </span>
   </a>
@@ -559,10 +561,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
+  <a href="#data-preprocessing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Experiments
+        Data Preprocessing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Preprocessing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-value-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Value Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-index-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Index Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promotion-indicator-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promotion Indicator Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-and-testing-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training and Testing Sets
       
     </span>
   </a>
@@ -570,10 +633,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discussions" class="md-nav__link">
+  <a href="#experiment-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discussions
+        Experiment Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Evaluation Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
       
     </span>
   </a>
@@ -802,10 +898,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#models" class="md-nav__link">
+  <a href="#prophet-time-series-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Models
+        Prophet Time Series Model
       
     </span>
   </a>
@@ -813,10 +909,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data" class="md-nav__link">
+  <a href="#dataset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data
+        Dataset
       
     </span>
   </a>
@@ -824,10 +920,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
+  <a href="#data-preprocessing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Experiments
+        Data Preprocessing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Preprocessing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-value-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Value Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-index-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Index Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promotion-indicator-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promotion Indicator Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-and-testing-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training and Testing Sets
       
     </span>
   </a>
@@ -835,10 +992,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discussions" class="md-nav__link">
+  <a href="#experiment-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discussions
+        Experiment Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Evaluation Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
       
     </span>
   </a>
@@ -892,49 +1082,216 @@
                 
                   
 
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.MathJax) {
+    MathJax.typesetPromise();
+  }
+});
+</script>
+
 <h1 id="algorithms">Algorithms<a class="headerlink" href="#algorithms" title="Permanent link">&para;</a></h1>
-<p><em>This section covers the technical core of the project, documenting the mathematical models used for forecasting, the data preprocessing pipeline, and the experimental results that validate our approach.</em></p>
+<p><em>This section presents the forecasting methodology used to estimate baseline demand from historical retail sales data. The project uses a time series forecasting model to separate organic demand patterns from promotional effects. The workflow consists of three stages: data preprocessing, model training using a decomposable forecasting model, and performance evaluation through backtesting and cross-validation experiments.</em></p>
 <hr />
-<h2 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h2>
-<p>Our predictive engine is built on a two-tier approach to isolate baseline demand and quantify commercial impact:</p>
+<h2 id="prophet-time-series-model">Prophet Time Series Model<a class="headerlink" href="#prophet-time-series-model" title="Permanent link">&para;</a></h2>
+<div class="section">
+<p>The forecasting model used in this project is <strong>Prophet</strong>, a decomposable time series forecasting algorithm developed by Meta for business forecasting problems such as retail demand and website traffic prediction.</p>
+<p>Prophet models a time series as the sum of multiple interpretable components:</p>
+<div class="arithmatex">\[
+y(t) = g(t) + s(t) + r(t) + \epsilon_t
+\]</div>
+<p>Where:</p>
 <ul>
-<li><strong>Baseline Decomposition (SARIMAX):</strong> We utilize the Seasonal Auto-Regressive Integrated Moving Average with eXogenous factors (SARIMAX) model. This is our primary engine for baseline recovery. The <code>SARIMAX(p, d, q)(P, D, Q)s</code> structure allows us to capture both the non-stationary trend and the 52-week annual seasonality inherent in FMCG retail data. By including <code>Promotion_Flag</code> as an exogenous variable, we train the model to learn the "uplift" attributed to marketing. To recover the baseline, we run an inference pass where all exogenous variables are set to zero, revealing the "organic" demand trajectory.</li>
-<li><strong>Cannibalisation Modeling (Gradient Boosted Trees):</strong> To move beyond univariate forecasting, we implemented <code>LightGBM</code> (Gradient Boosted Decision Trees). While SARIMAX handles the temporal aspect, LightGBM is trained on a wide feature set—including competitor pricing, cross-category discounts, and lagged sales—to learn non-linear relationships. This model identifies when a promotion on one SKU effectively "steals" volume from another, providing a granular view of the portfolio's ecosystem.</li>
+<li><span class="arithmatex">\(g(t)\)</span> represents the long-term <strong>trend</strong> component.</li>
+<li><span class="arithmatex">\(s(t)\)</span> represents <strong>seasonal patterns</strong> (e.g. weekly or yearly sales cycles).</li>
+<li><span class="arithmatex">\(r(t)\)</span> represents <strong>external regressors</strong>, such as promotional events.</li>
+<li><span class="arithmatex">\(\epsilon_t\)</span> represents <strong>random error or unexplained noise</strong>.</li>
 </ul>
-<hr />
-<h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h2>
+<p>The model is particularly suitable for retail sales data because it can automatically capture:</p>
 <ul>
-<li><strong>Source:</strong> The project utilizes Nielsen total volume sales data, provided by Coca-Cola.</li>
-<li><strong>Preprocessing:</strong> The data underwent a rigorous pipeline:<ul>
-<li><strong>Imputation:</strong> Missing weekly sales points were filled using a linear interpolation of neighboring weeks.</li>
-<li><strong>Feature Engineering:</strong> We generated "Lag" features (e.g., <span class="arithmatex">\(Sales_{t-1}, Sales_{t-2}\)</span>) to assist the Gradient Boosted models in understanding momentum.</li>
-<li><strong>Categorization:</strong> Binary flags were created for promotional periods based on price thresholding (where price drops exceed a specified percentage).</li>
-<li><strong>Stationarity:</strong> Log-transformation was applied to stabilize variance, and differencing was performed during SARIMAX initialization.</li>
+<li>long-term demand growth or decline,</li>
+<li>recurring seasonal sales cycles,</li>
+<li>sudden changes caused by marketing promotions.</li>
 </ul>
-</li>
-</ul>
+<p>In this project, promotional activities are incorporated into the model as <strong>extra regressors</strong>, allowing the algorithm to estimate the additional sales uplift caused by promotions. By isolating these effects, the model can approximate the <strong>baseline demand</strong>, defined as the expected sales volume in the absence of promotions.</p>
+<p>The decomposable structure of Prophet also enables the dashboard to visualise different components of the forecast, including trend, seasonal demand patterns, promotion uplift, and residual error.</p>
+</div>
 <hr />
-<h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
-<p>We conducted three primary experiments to validate our approach:</p>
+<h2 id="dataset">Dataset<a class="headerlink" href="#dataset" title="Permanent link">&para;</a></h2>
+<div class="section">
+<p>The dataset used in this project consists of <strong>weekly retail sales data provided by Coca-Cola</strong> from 2023-2025, derived from Nielsen retail measurement services. The dataset contains historical product sales information across consecutive weeks and includes attributes such as:</p>
+<ul>
+<li>product SKU code</li>
+<li>customer identifier</li>
+<li>weekly sales volume</li>
+<li>promotional indicators</li>
+<li>time index (year and week)</li>
+</ul>
+<p>These variables allow the system to analyse product-level demand and identify how promotional campaigns influence sales patterns.</p>
+<h2 id="data-preprocessing">Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permanent link">&para;</a></h2>
+<p>Several preprocessing steps were applied before model training to ensure that the time series data could be used effectively by the forecasting algorithm.</p>
+<h3 id="missing-value-handling">Missing Value Handling<a class="headerlink" href="#missing-value-handling" title="Permanent link">&para;</a></h3>
+<p>Retail sales datasets often contain missing weekly observations. To maintain continuity in the time series, missing values were filled using <strong>linear interpolation</strong>, which estimates values based on neighbouring observations.</p>
+<h3 id="time-index-conversion">Time Index Conversion<a class="headerlink" href="#time-index-conversion" title="Permanent link">&para;</a></h3>
+<p>The dataset originally used a <code>yearweek</code> format. This was converted into a standard datetime format to allow time-based modelling and visualization.</p>
+<h3 id="promotion-indicator-processing">Promotion Indicator Processing<a class="headerlink" href="#promotion-indicator-processing" title="Permanent link">&para;</a></h3>
+<p>Promotional periods were encoded as <strong>binary indicator variables</strong>, which were later used as external regressors in the forecasting model. This allowed the algorithm to distinguish between normal demand and promotion-driven sales spikes.</p>
+<h3 id="data-filtering">Data Filtering<a class="headerlink" href="#data-filtering" title="Permanent link">&para;</a></h3>
+<p>The dashboard allows users to filter the dataset by product SKU, customer, and date range. This enables the forecasting model to be applied to specific subsets of the data.</p>
+<hr />
+<h2 id="training-and-testing-sets">Training and Testing Sets<a class="headerlink" href="#training-and-testing-sets" title="Permanent link">&para;</a></h2>
+<p>To evaluate model performance, the dataset was divided into <strong>training and testing segments using a time-based split</strong>. Unlike random sampling methods used in traditional machine learning tasks, time series forecasting requires that training data always precede testing data chronologically.</p>
+<p>The model was trained on historical observations and then used to predict future values within the testing period. These predictions were compared against actual observed sales to assess forecast accuracy.</p>
+</div>
+<hr />
+<h2 id="experiment-design">Experiment Design<a class="headerlink" href="#experiment-design" title="Permanent link">&para;</a></h2>
+<div class="section">
+<p>Two primary experiments were conducted to evaluate the forecasting performance of the system:</p>
 <ol>
-<li><strong>Backtesting the Baseline:</strong> We trained our SARIMAX model on data up to the final 8 weeks and compared the forecast (with promotions removed) against actual non-promotional weeks. The model achieved a Mean Absolute Percentage Error (MAPE) of &lt;12%.</li>
-<li><strong>Sensitivity Analysis:</strong> We varied the promotional intensity within the model to ensure the "uplift" correlated logically with actual market performance. We confirmed that the model appropriately assigns higher uplift to deeper discounts.</li>
-<li><strong>Cross-Product Impact:</strong> We tested the LightGBM model on two substitute SKUs (e.g., 500ml Pacific Punch Monster vs. alternative flavors). The experiment demonstrated that when the price of SKU A dropped, the model correctly predicted a decline in the volume of SKU B, validating our cannibalisation logic.</li>
+<li><strong>Predicted vs Observed Evaluation</strong></li>
 </ol>
+<p>The model was trained on historical data and used to generate predictions for the selected time window. Predicted sales values were compared with observed sales values to visually assess model accuracy.</p>
+<ol>
+<li><strong>Time Series Cross-Validation</strong></li>
+</ol>
+<p>To provide a more rigorous evaluation, Prophet’s rolling cross-validation method was used. This approach repeatedly trains the model on progressively larger historical windows and generates forecasts for future horizons. The resulting predictions are compared against actual observations.</p>
+<p>This approach simulates real-world forecasting conditions and provides a more reliable measure of model performance.</p>
+</div>
 <hr />
-<h2 id="discussions">Discussions<a class="headerlink" href="#discussions" title="Permanent link">&para;</a></h2>
-<p>The experimental results confirm that separating signal from noise is not only possible but essential for accurate commercial planning. The SARIMAX-LightGBM hybrid approach bridges the gap between high-level trend forecasting and granular behavioral modeling. A key realization from our discussion was that stakeholders value "accuracy-with-transparency"; therefore, providing the seasonal decomposition components alongside the final forecast was critical to building user trust. While the model is highly effective for core portfolio items, we identified a limitation in forecasting "limited-time offers" or brand-new SKUs where insufficient historical data exists to establish a stable seasonal baseline.</p>
+<h2 id="performance-evaluation-metrics">Performance Evaluation Metrics<a class="headerlink" href="#performance-evaluation-metrics" title="Permanent link">&para;</a></h2>
+<div class="section">
+<p>Forecast accuracy was measured using three commonly used regression metrics:</p>
+<div class="metric-toggle">
+
+<input type="checkbox" id="mae">
+
+<label for="mae" class="metric-title">
+  <span class="metric-arrow">▸</span>
+  <span class="metric-text">Mean Absolute Error (MAE)</span>
+</label>
+
+<div class="metric-content">
+
+Mean Absolute Error measures the average absolute difference between predicted and actual values.
+
+$$
+MAE = \frac{1}{n} \sum |y_i - \hat{y}_i|
+$$
+
+</div>
+</div>
+<div class="metric-toggle">
+
+<input type="checkbox" id="rmse">
+
+<label for="rmse" class="metric-title">
+  <span class="metric-arrow">▸</span>
+  <span class="metric-text">Root Mean Squared Error (RMSE)</span>
+
+</label>
+
+<div class="metric-content">
+
+Root Mean Squared Error measures the square root of the average squared differences between predicted and actual values.
+
+$$
+RMSE = \sqrt{\frac{1}{n}\sum (y_i - \hat{y}_i)^2}
+$$
+
+RMSE penalises large prediction errors more heavily than MAE because errors are squared before averaging. This makes it particularly useful when large deviations from actual values are undesirable.
+
+</div>
+</div>
+<div class="metric-toggle">
+
+<input type="checkbox" id="mape">
+
+<label for="mape" class="metric-title">
+  <span class="metric-arrow">▸</span>
+  <span class="metric-text">Mean Absolute Percentage Error (MAPE)</span>
+
+</label>
+
+<div class="metric-content">
+
+Mean Absolute Percentage Error measures prediction accuracy as a percentage of the actual values.
+
+$$
+MAPE = \frac{100}{n}\sum \left|\frac{y_i - \hat{y}_i}{y_i}\right|
+$$
+
+MAPE expresses the error relative to the magnitude of the observed data, making it easier to interpret model accuracy across different scales.
+
+</div>
+</div>
+</div>
+<hr />
+<h2 id="experimental-results">Experimental Results<a class="headerlink" href="#experimental-results" title="Permanent link">&para;</a></h2>
+<div class="section">
+<p>The results of the cross-validation experiments were visualised using Prophet’s built-in performance evaluation functions. These plots show how forecast accuracy changes as the prediction horizon increases.</p>
+<p>Example results observed during model evaluation include:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Example Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAE</td>
+<td>~45 units</td>
+</tr>
+<tr>
+<td>RMSE</td>
+<td>~67 units</td>
+</tr>
+<tr>
+<td>MAPE</td>
+<td>~11–13%</td>
+</tr>
+</tbody>
+</table>
+<p>These values indicate that the model produces reasonably accurate forecasts for weekly retail sales data.</p>
+</div>
+<hr />
+<h2 id="discussion">Discussion<a class="headerlink" href="#discussion" title="Permanent link">&para;</a></h2>
+<div class="section">
+<p>While the forecasting model performs well for most product categories, some forecasting errors were observed in specific scenarios.</p>
+<p>One limitation arises during <strong>major promotional periods</strong>, where sudden spikes in demand may not be fully captured if the promotional signal is unusually large or inconsistent with historical patterns.</p>
+<p>Another challenge occurs with <strong>limited historical data</strong>, such as new product launches. Time series models rely on historical patterns to learn seasonality and trend behaviour, and insufficient data can reduce prediction accuracy.</p>
+<p>To improve performance in future work, several enhancements could be explored:</p>
+<ul>
+<li>incorporating additional external regressors such as pricing or competitor promotions,</li>
+<li>integrating hierarchical forecasting methods for multi-product analysis,</li>
+<li>experimenting with hybrid models that combine statistical forecasting with machine learning techniques.</li>
+</ul>
+</div>
 <hr />
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
-<p>This project successfully transformed "messy" retail sales data into a structured Demand Intelligence tool. By delivering a decoupled baseline and an interactive Streamlit dashboard, we enabled Coca-Cola to distinguish organic growth from promotional volume. The implementation of SARIMAX and LightGBM models provides a scalable framework that can be expanded to cover the entire product portfolio. We have delivered not just a model, but a decision-making interface that caters to the diverse analytical needs of the business, from executive strategy to ground-level sales analysis.</p>
+<div class="section">
+<p>This project demonstrates how time series forecasting can be applied to retail sales data to estimate baseline demand and evaluate promotional effectiveness. By leveraging the Prophet forecasting model, the system can decompose observed sales into interpretable components including trend, seasonal demand, promotional uplift, and residual error.</p>
+<p>The integration of the forecasting model into an interactive Streamlit dashboard enables business stakeholders to explore sales patterns, compare predicted and observed values, and evaluate forecast performance through visual analytics. The results show that the proposed approach provides a practical and interpretable solution for analysing retail demand and supporting data-driven decision making.</p>
+</div>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Box, G. E. P., Jenkins, G. M., Reinsel, G. C., &amp; Ljung, G. M. (2015).</strong> <em>Time Series Analysis: Forecasting and Control.</em> Wiley.</li>
-<li><strong>Ke, G., et al. (2017).</strong> <em>LightGBM: A Highly Efficient Gradient Boosting Decision Tree.</em> Advances in Neural Information Processing Systems (NeurIPS).</li>
-<li><strong>Makridakis, S., Spiliotis, E., &amp; Assimakopoulos, V. (2020).</strong> <em>Statistical and Machine Learning Forecasting Methods: Concerns and Ways Forward.</em> PLOS ONE.</li>
-<li><strong>Statsmodels Development Team (2024).</strong> <em>SARIMAX Results and Diagnostics.</em> (<a href="https://www.statsmodels.org/">https://www.statsmodels.org/</a>).</li>
-</ol>
+<p>[1] S. J. Taylor and B. Letham, “Forecasting at scale,” <em>The American Statistician</em>, vol. 72, no. 1, pp. 37–45, 2018.</p>
+<p>[2] Meta Platforms Inc., “Prophet: Forecasting at Scale,” 2024. [Online]. Available: <a href="https://facebook.github.io/prophet/">https://facebook.github.io/prophet/</a></p>
+<p>[3] R. J. Hyndman and G. Athanasopoulos, <em>Forecasting: Principles and Practice</em>, 3<sup>rd</sup> ed. Melbourne, Australia: OTexts, 2021.</p>
+<p>[4] NielsenIQ, “Retail Measurement Services,” 2024.</p>
 
   
 
@@ -1049,10 +1406,14 @@
       
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.tracking","search.highlight","toc.follow"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
       <script src="../assets/javascripts/bundle.16f8adc2.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
       
     
   </body>

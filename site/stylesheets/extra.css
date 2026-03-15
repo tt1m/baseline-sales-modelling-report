@@ -11,8 +11,8 @@
 /* Mermaid diagram card style */
 
 .diagram .mermaid {
-    width: 100%;
-    max-width: 1800px;
+    width: 500px;
+    max-width: 1200px;
     padding: 30px;
     background: #fafafa;
     /* soft vibecoded background */
@@ -109,4 +109,187 @@
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+
+/* Make the page layout wider */
+
+.md-main__inner {
+    max-width: 1600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* Make the content area wider */
+
+.md-content {
+    max-width: 1200px !important;
+}
+
+
+/* Optional: widen whole site container */
+
+.md-container {
+    max-width: 100% !important;
+}
+
+
+/* Increase global page width */
+
+.md-grid {
+    max-width: 1800px !important;
+}
+
+
+/* Expand main content area */
+
+.md-content__inner {
+    max-width: 1400px !important;
+}
+
+
+/* Slight padding for readability */
+
+.md-content__inner {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+/* Better reading width */
+
+.md-typeset {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* Slightly bigger headings */
+
+.md-typeset h1 {
+    font-size: 2.4em;
+}
+
+.md-typeset h2 {
+    font-size: 1.7em;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+/* section container */
+
+.section {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+
+/* zebra backgrounds */
+
+.section {
+    background: #f7f7f7;
+}
+
+.metric {
+    background: #0ca6ff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+}
+
+.metric summary {
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+/* card container */
+
+.metric-toggle {
+    background: #f7f9fb;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 1rem auto;
+    overflow: hidden;
+}
+
+
+/* hide checkbox */
+
+.metric-toggle input {
+    display: none;
+}
+
+
+/* clickable title */
+
+.metric-title {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    line-height: 1.2;
+    padding: 0.6rem 0.9rem;
+}
+
+
+/* arrow column */
+
+.metric-arrow {
+    width: 2rem;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    font-size: 1.6rem;
+    transform-origin: 50% 50%;
+    transition: transform 0.3s ease;
+}
+
+
+/* arrow rotation */
+
+.metric-toggle input:checked+.metric-title .metric-arrow {
+    transform: rotate(90deg);
+}
+
+
+/* content wrapper */
+
+.metric-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0.9rem;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height 0.6s ease, opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease;
+}
+
+
+/* when open */
+
+.metric-toggle input:checked+.metric-title+.metric-content {
+    max-height: 700px;
+    /* must be larger than content height */
+    padding: 0.6rem 0.9rem;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.metric-toggle {
+    transition: all 0.25s ease;
+}
+
+.metric-toggle:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
 }

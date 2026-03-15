@@ -75,8 +75,11 @@ extra_css = ["stylesheets/extra.css"]
 # The path provided should be relative to the "docs_dir".
 #
 # Read more: https://zensical.org/docs/customization/#additional-javascript
-#extra_javascript = ["javascripts/extra.js"]
 
+extra_javascript = [
+  "js/extra.js",
+  "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+]
 # ----------------------------------------------------------------------------
 # Section for configuring theme options
 # ----------------------------------------------------------------------------
@@ -230,7 +233,7 @@ features = [
     # When sticky tabs are enabled, navigation tabs will lock below the header
     # and always remain visible when scrolling down.
     # https://zensical.org/docs/setup/navigation/#sticky-navigation-tabs
-    #"navigation.tabs.sticky",
+    "navigation.tabs.sticky",
 
     # A back-to-top button can be shown when the user, after scrolling down,
     # starts to scroll up again.
@@ -251,7 +254,7 @@ features = [
     # When anchor following for the table of contents is enabled, the sidebar
     # is automatically scrolled so that the active anchor is always visible.
     # https://zensical.org/docs/setup/navigation/#anchor-following
-    # "toc.follow",
+    "toc.follow",
 
     # When navigation integration for the table of contents is enabled, it is
     # always rendered as part of the navigation sidebar on the left.
@@ -272,6 +275,7 @@ features = [
 scheme = "default"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
+palette.primary = "deep"
 
 [[project.theme.palette]]
 scheme = "slate"
@@ -284,9 +288,9 @@ toggle.name = "Switch to light mode"
 # of suitably licensed fonts. There are options for a normal text font and for
 # a monospaced font used in code blocks.
 # ----------------------------------------------------------------------------
-#[project.theme.font]
-#text = "Inter"
-#code = "Jetbrains Mono"
+[project.theme.font]
+text = "IBM Plex Sans"
+code = "Jetbrains Mono"
 
 # ----------------------------------------------------------------------------
 # You can configure your own logo to be shown in the header using the "logo"
@@ -315,3 +319,14 @@ logo = "fontawesome/solid/chart-line"
 #link = "https://github.com/user/repo"
 
 
+[project.plugins]
+
+# Enables LaTeX-style math rendering
+katex = true
+plugins = ["katex"]
+
+[markdown]
+extensions = [
+  "md_in_html",
+  "pymdownx.arithmatex"
+]

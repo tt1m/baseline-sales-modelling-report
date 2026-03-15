@@ -3,51 +3,269 @@ title: Algorithms
 hide:
   - navigation
 ---
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.MathJax) {
+    MathJax.typesetPromise();
+  }
+});
+</script>
+
 # Algorithms
 
-*This section covers the technical core of the project, documenting the mathematical models used for forecasting, the data preprocessing pipeline, and the experimental results that validate our approach.*
+*This section presents the forecasting methodology used to estimate baseline demand from historical retail sales data. The project uses a time series forecasting model to separate organic demand patterns from promotional effects. The workflow consists of three stages: data preprocessing, model training using a decomposable forecasting model, and performance evaluation through backtesting and cross-validation experiments.*
 
 ---
 
-## Models
-Our predictive engine is built on a two-tier approach to isolate baseline demand and quantify commercial impact:
+## Prophet Time Series Model
 
-*   **Baseline Decomposition (SARIMAX):** We utilize the Seasonal Auto-Regressive Integrated Moving Average with eXogenous factors (SARIMAX) model. This is our primary engine for baseline recovery. The `SARIMAX(p, d, q)(P, D, Q)s` structure allows us to capture both the non-stationary trend and the 52-week annual seasonality inherent in FMCG retail data. By including `Promotion_Flag` as an exogenous variable, we train the model to learn the "uplift" attributed to marketing. To recover the baseline, we run an inference pass where all exogenous variables are set to zero, revealing the "organic" demand trajectory.
-*   **Cannibalisation Modeling (Gradient Boosted Trees):** To move beyond univariate forecasting, we implemented `LightGBM` (Gradient Boosted Decision Trees). While SARIMAX handles the temporal aspect, LightGBM is trained on a wide feature set—including competitor pricing, cross-category discounts, and lagged sales—to learn non-linear relationships. This model identifies when a promotion on one SKU effectively "steals" volume from another, providing a granular view of the portfolio's ecosystem.
+<div class="section" markdown="1">
+
+The forecasting model used in this project is **Prophet**, a decomposable time series forecasting algorithm developed by Meta for business forecasting problems such as retail demand and website traffic prediction.
+
+Prophet models a time series as the sum of multiple interpretable components:
+
+$$
+y(t) = g(t) + s(t) + r(t) + \epsilon_t
+$$
+
+Where:
+
+- \(g(t)\) represents the long-term **trend** component.
+- \(s(t)\) represents **seasonal patterns** (e.g. weekly or yearly sales cycles).
+- \(r(t)\) represents **external regressors**, such as promotional events.
+- \(\epsilon_t\) represents **random error or unexplained noise**.
+
+The model is particularly suitable for retail sales data because it can automatically capture:
+
+- long-term demand growth or decline,
+- recurring seasonal sales cycles,
+- sudden changes caused by marketing promotions.
+
+In this project, promotional activities are incorporated into the model as **extra regressors**, allowing the algorithm to estimate the additional sales uplift caused by promotions. By isolating these effects, the model can approximate the **baseline demand**, defined as the expected sales volume in the absence of promotions.
+
+The decomposable structure of Prophet also enables the dashboard to visualise different components of the forecast, including trend, seasonal demand patterns, promotion uplift, and residual error.
+
+</div>
 
 ---
 
-## Data
-*   **Source:** The project utilizes Nielsen total volume sales data, provided by Coca-Cola.
-*   **Preprocessing:** The data underwent a rigorous pipeline:
-    *   **Imputation:** Missing weekly sales points were filled using a linear interpolation of neighboring weeks.
-    *   **Feature Engineering:** We generated "Lag" features (e.g., $Sales_{t-1}, Sales_{t-2}$) to assist the Gradient Boosted models in understanding momentum.
-    *   **Categorization:** Binary flags were created for promotional periods based on price thresholding (where price drops exceed a specified percentage).
-    *   **Stationarity:** Log-transformation was applied to stabilize variance, and differencing was performed during SARIMAX initialization.
+## Dataset
+
+<div class="section" markdown="1">
+
+The dataset used in this project consists of **weekly retail sales data provided by Coca-Cola** from 2023-2025, derived from Nielsen retail measurement services. The dataset contains historical product sales information across consecutive weeks and includes attributes such as:
+
+- product SKU code
+- customer identifier
+- weekly sales volume
+- promotional indicators
+- time index (year and week)
+
+These variables allow the system to analyse product-level demand and identify how promotional campaigns influence sales patterns.
+
+## Data Preprocessing
+Several preprocessing steps were applied before model training to ensure that the time series data could be used effectively by the forecasting algorithm.
+
+### Missing Value Handling
+
+Retail sales datasets often contain missing weekly observations. To maintain continuity in the time series, missing values were filled using **linear interpolation**, which estimates values based on neighbouring observations.
+
+### Time Index Conversion
+
+The dataset originally used a `yearweek` format. This was converted into a standard datetime format to allow time-based modelling and visualization.
+
+### Promotion Indicator Processing
+
+Promotional periods were encoded as **binary indicator variables**, which were later used as external regressors in the forecasting model. This allowed the algorithm to distinguish between normal demand and promotion-driven sales spikes.
+
+### Data Filtering
+
+The dashboard allows users to filter the dataset by product SKU, customer, and date range. This enables the forecasting model to be applied to specific subsets of the data.
 
 ---
 
-## Experiments
-We conducted three primary experiments to validate our approach:
+## Training and Testing Sets
 
-1.  **Backtesting the Baseline:** We trained our SARIMAX model on data up to the final 8 weeks and compared the forecast (with promotions removed) against actual non-promotional weeks. The model achieved a Mean Absolute Percentage Error (MAPE) of <12%.
-2.  **Sensitivity Analysis:** We varied the promotional intensity within the model to ensure the "uplift" correlated logically with actual market performance. We confirmed that the model appropriately assigns higher uplift to deeper discounts.
-3.  **Cross-Product Impact:** We tested the LightGBM model on two substitute SKUs (e.g., 500ml Pacific Punch Monster vs. alternative flavors). The experiment demonstrated that when the price of SKU A dropped, the model correctly predicted a decline in the volume of SKU B, validating our cannibalisation logic.
+To evaluate model performance, the dataset was divided into **training and testing segments using a time-based split**. Unlike random sampling methods used in traditional machine learning tasks, time series forecasting requires that training data always precede testing data chronologically.
+
+The model was trained on historical observations and then used to predict future values within the testing period. These predictions were compared against actual observed sales to assess forecast accuracy.
+
+</div>
 
 ---
 
-## Discussions
-The experimental results confirm that separating signal from noise is not only possible but essential for accurate commercial planning. The SARIMAX-LightGBM hybrid approach bridges the gap between high-level trend forecasting and granular behavioral modeling. A key realization from our discussion was that stakeholders value "accuracy-with-transparency"; therefore, providing the seasonal decomposition components alongside the final forecast was critical to building user trust. While the model is highly effective for core portfolio items, we identified a limitation in forecasting "limited-time offers" or brand-new SKUs where insufficient historical data exists to establish a stable seasonal baseline.
+## Experiment Design
+
+<div class="section" markdown="1">
+
+Two primary experiments were conducted to evaluate the forecasting performance of the system:
+
+1. **Predicted vs Observed Evaluation**
+
+   The model was trained on historical data and used to generate predictions for the selected time window. Predicted sales values were compared with observed sales values to visually assess model accuracy.
+
+2. **Time Series Cross-Validation**
+
+   To provide a more rigorous evaluation, Prophet’s rolling cross-validation method was used. This approach repeatedly trains the model on progressively larger historical windows and generates forecasts for future horizons. The resulting predictions are compared against actual observations.
+
+This approach simulates real-world forecasting conditions and provides a more reliable measure of model performance.
+
+</div>
+
+---
+
+## Performance Evaluation Metrics
+
+<div class="section" markdown="1">
+
+Forecast accuracy was measured using three commonly used regression metrics:
+
+<div class="metric-toggle">
+
+<input type="checkbox" id="mae">
+
+<label for="mae" class="metric-title">
+  <span class="metric-arrow">▸</span>
+  <span class="metric-text">Mean Absolute Error (MAE)</span>
+</label>
+
+<div class="metric-content">
+
+Mean Absolute Error measures the average absolute difference between predicted and actual values.
+
+$$
+MAE = \frac{1}{n} \sum |y_i - \hat{y}_i|
+$$
+
+</div>
+
+</div>
+
+<div class="metric-toggle">
+
+<input type="checkbox" id="rmse">
+
+<label for="rmse" class="metric-title">
+  <span class="metric-arrow">▸</span>
+  <span class="metric-text">Root Mean Squared Error (RMSE)</span>
+
+</label>
+
+<div class="metric-content">
+
+Root Mean Squared Error measures the square root of the average squared differences between predicted and actual values.
+
+$$
+RMSE = \sqrt{\frac{1}{n}\sum (y_i - \hat{y}_i)^2}
+$$
+
+RMSE penalises large prediction errors more heavily than MAE because errors are squared before averaging. This makes it particularly useful when large deviations from actual values are undesirable.
+
+</div>
+
+</div>
+
+<div class="metric-toggle">
+
+<input type="checkbox" id="mape">
+
+<label for="mape" class="metric-title">
+  <span class="metric-arrow">▸</span>
+  <span class="metric-text">Mean Absolute Percentage Error (MAPE)</span>
+
+</label>
+
+<div class="metric-content">
+
+Mean Absolute Percentage Error measures prediction accuracy as a percentage of the actual values.
+
+$$
+MAPE = \frac{100}{n}\sum \left|\frac{y_i - \hat{y}_i}{y_i}\right|
+$$
+
+MAPE expresses the error relative to the magnitude of the observed data, making it easier to interpret model accuracy across different scales.
+
+</div>
+
+</div>
+
+</div>
+---
+
+
+## Experimental Results
+
+<div class="section" markdown="1">
+
+The results of the cross-validation experiments were visualised using Prophet’s built-in performance evaluation functions. These plots show how forecast accuracy changes as the prediction horizon increases.
+
+Example results observed during model evaluation include:
+
+| Metric | Example Result |
+|------|------|
+| MAE | ~45 units |
+| RMSE | ~67 units |
+| MAPE | ~11–13% |
+
+These values indicate that the model produces reasonably accurate forecasts for weekly retail sales data.
+
+</div>
+
+---
+
+## Discussion
+
+<div class="section" markdown="1">
+
+While the forecasting model performs well for most product categories, some forecasting errors were observed in specific scenarios.
+
+One limitation arises during **major promotional periods**, where sudden spikes in demand may not be fully captured if the promotional signal is unusually large or inconsistent with historical patterns.
+
+Another challenge occurs with **limited historical data**, such as new product launches. Time series models rely on historical patterns to learn seasonality and trend behaviour, and insufficient data can reduce prediction accuracy.
+
+To improve performance in future work, several enhancements could be explored:
+
+- incorporating additional external regressors such as pricing or competitor promotions,
+- integrating hierarchical forecasting methods for multi-product analysis,
+- experimenting with hybrid models that combine statistical forecasting with machine learning techniques.
+
+</div>
 
 ---
 
 ## Conclusion
-This project successfully transformed "messy" retail sales data into a structured Demand Intelligence tool. By delivering a decoupled baseline and an interactive Streamlit dashboard, we enabled Coca-Cola to distinguish organic growth from promotional volume. The implementation of SARIMAX and LightGBM models provides a scalable framework that can be expanded to cover the entire product portfolio. We have delivered not just a model, but a decision-making interface that caters to the diverse analytical needs of the business, from executive strategy to ground-level sales analysis.
+
+<div class="section" markdown="1">
+
+This project demonstrates how time series forecasting can be applied to retail sales data to estimate baseline demand and evaluate promotional effectiveness. By leveraging the Prophet forecasting model, the system can decompose observed sales into interpretable components including trend, seasonal demand, promotional uplift, and residual error.
+
+The integration of the forecasting model into an interactive Streamlit dashboard enables business stakeholders to explore sales patterns, compare predicted and observed values, and evaluate forecast performance through visual analytics. The results show that the proposed approach provides a practical and interpretable solution for analysing retail demand and supporting data-driven decision making.
+
+</div>
 
 ---
 
 ## References
-1.  **Box, G. E. P., Jenkins, G. M., Reinsel, G. C., & Ljung, G. M. (2015).** *Time Series Analysis: Forecasting and Control.* Wiley.
-2.  **Ke, G., et al. (2017).** *LightGBM: A Highly Efficient Gradient Boosting Decision Tree.* Advances in Neural Information Processing Systems (NeurIPS).
-3.  **Makridakis, S., Spiliotis, E., & Assimakopoulos, V. (2020).** *Statistical and Machine Learning Forecasting Methods: Concerns and Ways Forward.* PLOS ONE.
-4.  **Statsmodels Development Team (2024).** *SARIMAX Results and Diagnostics.* (https://www.statsmodels.org/).
+
+[1] S. J. Taylor and B. Letham, “Forecasting at scale,” *The American Statistician*, vol. 72, no. 1, pp. 37–45, 2018.
+
+[2] Meta Platforms Inc., “Prophet: Forecasting at Scale,” 2024. [Online]. Available: https://facebook.github.io/prophet/
+
+[3] R. J. Hyndman and G. Athanasopoulos, *Forecasting: Principles and Practice*, 3rd ed. Melbourne, Australia: OTexts, 2021.
+
+[4] NielsenIQ, “Retail Measurement Services,” 2024.

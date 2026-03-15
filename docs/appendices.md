@@ -82,4 +82,4 @@ This guide allows the Coca-Cola technical team to deploy the tool to an internal
 ## Monthly Video
 This project’s progress and technical milestones have been documented in monthly video summaries. These recordings provide a visual walkthrough of our iterative development process, from initial data cleaning to the final dashboard deployment.
 
-## 🚀 [Link to Progress Videos](https://liveuclac-my.sharepoint.com/:f:/r/personal/zcabxng_ucl_ac_uk/Documents/Monthly%20Update%20Videos?csf=1&web=1&e=0ZNigy)
+🚀 [`Link to Progress Videos`](https://liveuclac-my.sharepoint.com/:f:/r/personal/zcabxng_ucl_ac_uk/Documents/Monthly%20Update%20Videos?csf=1&web=1&e=0ZNigy)
