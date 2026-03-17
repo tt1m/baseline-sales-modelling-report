@@ -202,9 +202,13 @@ within a single language.
 | **Streamlit** | Dashboard and visualisation | Renders ML outputs directly from Python, no front-end needed |
 | **matplotlib** | Exploratory plotting (notebooks only) | Quick visualisation during model experimentation |
 
+</div>
+
 ---
 
 ## Summary of Technical Decisions
+
+<div class="section" markdown="1">
 
 | Decision | Choice | Key Reason |
 |---|---|---|
