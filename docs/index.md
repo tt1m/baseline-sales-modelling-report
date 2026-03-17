@@ -10,6 +10,8 @@ hide:
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
+<div class="wrapper">
+
 <section>
     <div style="text-align: center; padding: 0rem 1rem; background-color: transparent; margin: 0;">
         <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; color: var(--md-default-fg-color);">
@@ -22,10 +24,12 @@ hide:
     </div>
 </section>
 
----
+<hr>
 
-## Abstract
+<h2>Abstract</h2>
+
 <div style="margin-bottom: 2rem;">
+
     <p>
     In the Fast-Moving Consumer Goods (FMCG) sector, retail sales data is fundamentally noisy. Because historical sales are consistently skewed by promotions, pricing, and seasonality, it is highly difficult to establish a "normal" sales baseline. Consequently, businesses struggle to measure true underlying demand or accurately gauge promotional uplift. This issue is compounded by the conflicting needs of different business units, as static spreadsheets cannot simultaneously provide granular data for analysts and high-level summaries for marketing teams.
     </p>
@@ -40,10 +44,12 @@ hide:
 </div>
 
 
----
+<hr>
 
-## Video
+<h2>Video</h2>
+
 <div style="display:flex; justify-content: center; align-items: center; margin-bottom: 2rem;">
+
     <video width="100%" controls>
         <source src="movie.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -51,10 +57,13 @@ hide:
 </div>
 
 
----
+<hr>
 
-## Meet the Team
+<h2>Meet the Team</h2>
+
 <div class="team-wrapper">
+
+
     <div class="team">
     
         <div class="card">
@@ -96,11 +105,14 @@ hide:
 </div>
 <br>
 
----
+<hr>
 
-## Project Timeline
+<h2>Project Timeline<h2>
+
 <div style="display:flex; justify-content: center; align-items: center; margin-bottom: 2rem;">
     <img width="100%" src="assets/images/gantt_chart.png" alt="Gantt Chart"></img>
+</div>
+
 </div>
 
 <style>

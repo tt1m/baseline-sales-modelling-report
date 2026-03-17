@@ -28,7 +28,7 @@ This project has two core components:
 
 #### 1. NielsenIQ Byzzer
 
-A subscription analytics platform built on Nielsen retail measurement data — the
+A subscription analytics platform built on Nielsen retail measurement data, which is the
 same underlying data source used in this project. It is widely used by CPG brands
 and FMCG manufacturers to monitor market performance and promotional effectiveness.
 
