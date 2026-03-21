@@ -196,7 +196,7 @@ within a single language.
 | Library | Purpose | Why Chosen |
 |---|---|---|
 | **Prophet** | Time series forecasting | Decomposable, interpretable, handles promotions as regressors |
-| **LightGBM** | Gradient boosted modelling | Fast and memory-efficient on tabular data |
+| **LightGBM** | Cannibalisation modelling | Fast and memory-efficient on tabular data |
 | **pandas** | Data manipulation | Industry standard for tabular data in Python |
 | **numpy** | Numerical computation | Core dependency for array operations |
 | **Streamlit** | Dashboard and visualisation | Renders ML outputs directly from Python, no front-end needed |

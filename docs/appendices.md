@@ -30,36 +30,142 @@ The application is designed to be self-explanatory, focusing on "View-First" nav
 
 ---
 
+
+<div class="section" markdown="1">
+
 ## Deployment Manual
-This guide allows the Coca-Cola technical team to deploy the tool to an internal server or cloud environment.
 
 ### Prerequisites
-*   `Python 3.9+`
-*   `pip` (Python package manager)
-*   `git`
 
-### Step-by-Step Deployment
-1.  **Clone the Repository:**
-    ```bash
-    git clone https://github.com/team29/coke-demand-intel.git
-    cd coke-demand-intel
-    ```
-2.  **Create a Virtual Environment:**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # Windows: venv\Scripts\activate
-    ```
-3.  **Install Dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-4.  **Launch the Application:**
-    ```bash
-    streamlit run app.py
-    ```
-5.  **Access:** The app will initialize a local server, typically visible at `http://localhost:8501`.
+Before you begin, ensure you have the following installed on your machine:
 
-*[Placeholder: Insert screenshot of the terminal showing a successful Streamlit launch]*
+- **Git** — [https://git-scm.com/downloads](https://git-scm.com/downloads)
+- **Python 3.8+** — [https://www.python.org/downloads](https://www.python.org/downloads)
+
+> **Note:** During Python installation on Windows, make sure to check **"Add Python to PATH"**.
+
+---
+
+### Step 1: Clone the Repository
+
+Open a terminal (macOS/Linux) or Command Prompt / PowerShell (Windows) and run:
+
+```bash
+git clone https://github.com/gw3nnipi3/baseline-sales-modelling.git
+cd baseline-sales-modelling
+```
+
+---
+
+### Step 2: Create a Virtual Environment
+
+A virtual environment keeps the project's dependencies isolated from the rest of your system.
+
+
+```bash
+python -m venv .venv
+```
+
+---
+
+### Step 3: Activate the Virtual Environment
+
+**macOS / Linux:**
+```bash
+source .venv/bin/activate
+```
+
+**Windows (Command Prompt):**
+```bash
+.venv\Scripts\activate.bat
+```
+
+**Windows (PowerShell):**
+```bash
+.venv\Scripts\Activate.ps1
+```
+
+> Once activated, your terminal prompt should show `(.venv)` at the beginning, confirming the environment is active.
+
+---
+
+### Step 4: Install Dependencies
+
+With the virtual environment active, install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+This may take a few minutes depending on your internet speed.
+
+---
+
+### Step 5: Run the Application
+
+Start the Streamlit dashboard:
+
+```bash
+streamlit run dashboard/app.py
+```
+
+Once running, Streamlit will output something like:
+
+```
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.x.x:8501
+```
+
+Open the **Local URL** in your browser to access the dashboard.
+
+---
+
+### Stopping the Application
+
+To stop the application, press `Ctrl + C` in the terminal.
+
+To deactivate the virtual environment afterwards:
+
+```bash
+deactivate
+```
+
+---
+
+### Troubleshooting
+
+**`python` not found**
+
+Ensure Python is installed and added to your system PATH. Try restarting your terminal after installation.
+
+**`pip install` fails**
+
+Try upgrading pip first, then re-run the install:
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+**PowerShell execution policy error (Windows)**
+
+If you see a permissions error when activating the virtual environment in PowerShell, run:
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+Then try activating again.
+
+**Streamlit not found**
+
+Make sure your virtual environment is active (you should see `(.venv)` in your prompt) before running the Streamlit command.
+
+**Port 8501 already in use**
+
+Run the app on a different port:
+```bash
+streamlit run dashboard/app.py --server.port 8502
+```
+
+</div>
 
 ---
 
