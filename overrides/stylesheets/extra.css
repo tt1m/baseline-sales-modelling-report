@@ -123,9 +123,9 @@
 
 /* Make the content area wider */
 
-.md-content {
+/* .md-content {
     max-width: 1200px !important;
-}
+} */
 
 
 /* Optional: widen whole site container */
@@ -142,11 +142,11 @@
 }
 
 
-/* Expand main content area */
+/* Expand main content area *This part causes main page to be off-center so I have commented it out* */
 
-.md-content__inner {
+/* .md-content__inner {
     max-width: 1400px !important;
-}
+}  */
 
 
 /* Slight padding for readability */
