@@ -81,9 +81,9 @@ The Backtest Performance widget evaluates model accuracy using Prophet's rolling
 
 ---
 
-### 5. Cannibalization Analysis *(Beta)*
+### 5. Cannibalisation Analysis *(Beta)*
 
-Each widget offers an optional Enable Cannibalization toggle. When enabled, a LightGBM model analyses the residuals from the Prophet forecast in an attempt to account for cannibalization effects and improve forecast accuracy.
+Each widget offers an optional Enable Cannibalisation toggle. When enabled, a LightGBM model analyses the residuals from the Prophet forecast in an attempt to account for cannibalisation effects and improve forecast accuracy.
 
 > ⚠️ **This feature is currently in beta.** Results may not be fully reliable and should be interpreted with caution.
 
