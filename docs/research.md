@@ -85,8 +85,8 @@ optimisation.
        alt="NielsenIQ 2" 
        style="width: 700px; max-width: 100%;">
 
-o9 is a closed black-box SaaS platform, so clients have no visibility into the
-underlying models or how outputs are generated. This project provides Coca-Cola
+o9 is a closed SaaS platform that does not expose its underlying model architecture
+or allow clients to inspect or modify the forecasting logic directly. This project provides Coca-Cola
 with full documentation of the entire methodology, including how the Prophet model
 is structured, how promotional regressors are encoded, and how performance is
 validated. This transparency allows the client to understand and challenge every
@@ -97,6 +97,11 @@ modelling decision, which an enterprise platform cannot offer.
 ### Dashboard / Visualisation
 
 #### 3. Microsoft Power BI 
+
+  <img src="/images/microsoftpowerBI.jpeg" 
+       class="fancy-image" 
+       alt="MicrosoftPowerBI" 
+       style="width: 600px; max-width: 100%;">
 
 One of the most widely adopted BI (Business Intelligence) platforms globally, commonly deployed in FMCG
 for consolidating sales, pricing, and promotional data into interactive dashboards.
@@ -110,15 +115,28 @@ for consolidating sales, pricing, and promotional data into interactive dashboar
 
 **What can be learned:**
 
-Power BI is a general-purpose BI tool not designed to render ML model outputs.
-It cannot natively display outputs such as Prophet's decomposed forecast components,
-predicted vs. observed sales overlays, or cross-validation performance metrics.
-Streamlit was chosen for this project because it renders these outputs directly
-from Python, with no intermediate data transformation layer required.
+Power BI is a general-purpose BI tool not designed to render ML model outputs directly.
+While Python script visuals and Azure ML connectors can be used to surface model outputs,
+this introduces additional architectural overhead and a separate scripting layer.
+Streamlit was chosen for this project because it renders Prophet outputs, including
+decomposed forecast components, predicted vs. observed sales overlays, and cross-validation
+performance metrics, directly from Python, with no intermediate transformation layer required.
 
 ---
 
 #### 4. Tableau 
+
+<div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
+  <img src="/images/tableau.png" 
+       class="fancy-image" 
+       alt="Tableau 1" 
+       style="width: 370px; max-width: 100%;">
+       
+  <img src="/images/tableau2.png" 
+       class="fancy-image" 
+       alt="Tableau 2" 
+       style="width: 370px; max-width: 100%;">
+</div>
 
 An industry-leading visualisation platform widely used across retail and FMCG.
 A notable deployment is Ocado Retail's supplier analytics platform, where Tableau
@@ -132,15 +150,18 @@ and customer shopping behaviour.
 - Real-time data connectivity with support for embedding dashboards into external
   supplier platforms
 - Strong time-intelligence and geographic visualisation capabilities
+- Built-in forecasting capability based on exponential smoothing (ETS), accessible directly within the UI
 
 **What can be learned:**
 
-Tableau is a standalone visualisation layer — it cannot execute or host a
-forecasting model. This project integrates the Prophet model and dashboard into
-a single Streamlit application, meaning all visualisations are directly coupled
-to live model outputs including forecast components, cross-validation metrics,
-and promotional uplift estimates, rather than relying on a separate BI tool to
-interpret pre-processed data.
+Tableau includes native forecasting, but it is limited to exponential smoothing models
+and does not support custom configurations such as promotional regressors, holiday effects,
+or cross-validation diagnostics. While Prophet could technically be integrated via TabPy,
+this adds significant architectural complexity. This project instead integrates the Prophet
+model and dashboard into a single Streamlit application, meaning all visualisations are
+directly coupled to live model outputs, including forecast components, cross-validation
+metrics, and promotional uplift estimates, without requiring a separate BI tool or
+scripting bridge to interpret pre-processed data.
 
 </div>
 ---
