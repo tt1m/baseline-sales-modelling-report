@@ -50,6 +50,44 @@ Requirements were gathered through a series of iterative stakeholder consultatio
 *   **UC3: Cross-Product Impact:** User investigates a price drop on a key product (e.g., Coke Zero) to see if it causes a decline in a sister product (e.g., Diet Coke), quantifying cannibalisation.
 *   **UC4: Dynamic Portfolio Analysis:** User toggles between SKUs to compare performance metrics across different product lines.
 
+<div class="diagram">
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '18px', 'nodePadding': 20, 'spacing': 50}}}%%
+
+flowchart LR
+    Analyst[Marketing Analyst]
+    Scientist[Data Scientist]
+    Manager[Category Manager]
+
+    subgraph System["Baseline Sales Dashboard"]
+        direction TB
+        UC1[Upload Dataset]
+        UC2[Run Baseline Model]
+        UC3[View Baseline Sales]
+        UC4[Analyse Promotion Impact]
+        UC5[Detect Cannibalisation]
+        UC6[Generate Strategic Report]
+    end
+
+    Analyst --> UC3
+    Analyst --> UC4
+    Analyst --> UC5
+
+    Scientist --> UC1
+    Scientist --> UC2
+
+    Manager --> UC6
+
+    %% Styling nodes inside Mermaid
+    classDef clean fill:#f5f5f5,stroke:#444,stroke-width:2px,rx:10,ry:10;
+    class UC1,UC2,UC3,UC4,UC5,UC6 clean;
+
+    classDef dataScientist fill:#ffecb3,stroke:#ff9800,stroke-width:2px,rx:12,ry:12,shadow:true;
+    class Scientist,Analyst,Manager dataScientist;
+```
+
+</div>
 ---
 
 ## MoSCoW Requirements List
