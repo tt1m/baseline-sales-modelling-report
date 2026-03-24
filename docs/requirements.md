@@ -11,20 +11,32 @@ hide:
 ---
 
 ## Project Background
+
+<div class="section" markdown="1">
 Retail sales data for Fast-Moving Consumer Goods (FMCG) is inherently noisy. Historical sales figures are frequently distorted by tactical commercial interventions—such as temporary price reductions, multi-buy promotions, and seasonal marketing campaigns. This noise makes it difficult for decision-makers to discern "true demand." Without a clear baseline, Coca-Cola faces challenges in measuring the genuine return on investment (ROI) of marketing activities and understanding organic portfolio growth.
+</div>
 
 ---
 
 ## Client Introduction
-This project is developed in collaboration with **Coca-Cola**. The objective is to provide their analytical and commercial teams with a more transparent, data-driven view of product performance by stripping away promotional volatility and exposing the underlying consumer demand.
+
+<div class="section" markdown="1">
+This project was conducted in collaboration with Coca-Cola, a global leader in the Fast-Moving Consumer Goods (FMCG) industry. The partner provided access to real-world retail sales data and defined the core business problem addressed in this project.
+
+In the FMCG sector, sales data is inherently complex and noisy due to the frequent use of promotions, pricing strategies, and seasonal campaigns. These factors distort observed sales, making it difficult to identify the true underlying consumer demand, commonly referred to as baseline sales. As a result, organisations face challenges in accurately evaluating the effectiveness of promotional activities and making informed strategic decisions.
+
+The objective of this project is to develop a system capable of estimating baseline demand by separating it from promotional effects, and to present these insights through an interactive and accessible dashboard for stakeholders.
+</div>
 
 ---
 
 ## Project Goals
+
 *   **Recover the Sales Baseline:** Accurately estimate consumer demand in the absence of promotional interventions.
 *   **Decouple Variables:** Isolate the impact of seasonality, pricing, and promotions.
 *   **Enable Data-Driven Decisions:** Provide a modular, interactive interface that translates complex time-series models into actionable commercial insights.
 *   **Scale for Portfolio Management:** Build a system capable of handling cross-product interactions, specifically identifying cannibalisation effects.
+
 
 ---
 
@@ -38,10 +50,33 @@ Requirements were gathered through a series of iterative stakeholder consultatio
 ---
 
 ## Personas
-*   **The Analyst (Alex):** Wants to see the "how" and "why." Focuses on seasonal decomposition charts and model residuals to ensure the SARIMAX parameters are optimal.
-*   **The Marketing Manager (Maya):** Wants to see the "what." Focuses on the uplift percentage provided by a promotion to decide which campaigns to run next quarter.
-*   **The Commercial Director (Charlie):** Wants to see the "big picture." Focuses on portfolio-level performance and cross-product cannibalisation to optimize SKU distribution.
 
+<div class="zigzag-section">
+
+  <!-- First row: image left, text right -->
+  <div class="zigzag-row">
+    <div class="zigzag-image">
+      <img src="/images/persona1.png" alt="Description Image">
+    </div>
+    <div class="zigzag-text">
+      <h3>Marketing Team Lead</h3>
+      <p>Mark Etting oversees promotional planning and strategic marketing decisions. The Baseline Modelling Dashboard enables rapid assessment of recent promotions, highlighting which initiatives achieved significant sales uplift and identifying instances of cross-product cannibalization. The dashboard allows Mark to extract actionable insights and generate summary reports to inform upcoming promotion strategies.</p>
+    </div>
+  </div>
+
+  <!-- Second row: image right, text left -->
+  <div class="zigzag-row reverse">
+    <div class="zigzag-image">
+      <img src="/images/persona2.png" alt="Description Image">
+    </div>
+    <div class="zigzag-text">
+      <h3>Data Analyst</h3>
+      <p>Anna Liszt is responsible for preparing sales and promotion performance reports. The Baseline Modelling Dashboard automates data preprocessing and baseline calculations, allowing her to focus on interpreting results. She evaluates promotion effectiveness, identifies genuine incremental sales versus cannibalization, and produces concise insights to support marketing decision-making.</p>
+    </div>
+  </div>
+
+
+</div>
 ---
 
 ## Use Cases
