@@ -78,7 +78,14 @@ The dataset used in this project consists of **weekly retail sales data provided
 
 These variables allow the system to analyse product-level demand and identify how promotional campaigns influence sales patterns.
 
+</div>
+
+---
+
 ## Data Preprocessing
+
+<div class=section markdown="1">
+
 Several preprocessing steps were applied before model training to ensure that the time series data could be used effectively by the forecasting algorithm.
 
 ### Missing Value Handling
@@ -97,9 +104,12 @@ Promotional periods were encoded as **binary indicator variables**, which were l
 
 The dashboard allows users to filter the dataset by product SKU, customer, and date range. This enables the forecasting model to be applied to specific subsets of the data.
 
+</div>
 ---
 
 ## Training and Testing Sets
+
+<div class=section markdown="1">
 
 To evaluate model performance, the dataset was divided into **training and testing segments using a time-based split**. Unlike random sampling methods used in traditional machine learning tasks, time series forecasting requires that training data always precede testing data chronologically.
 

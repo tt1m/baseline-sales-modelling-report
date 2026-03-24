@@ -123,6 +123,7 @@
 
 /* Make the content area wider */
 
+
 /* .md-content {
     max-width: 1200px !important;
 } */
@@ -143,6 +144,7 @@
 
 
 /* Expand main content area *This part causes main page to be off-center so I have commented it out* */
+
 
 /* .md-content__inner {
     max-width: 1400px !important;
@@ -190,11 +192,11 @@
 /* zebra backgrounds */
 
 .section {
-    background: #f7f7f7;
+    background: #ff676710;
 }
 
 .metric {
-    background: #0ca6ff;
+    background: #ff000020;
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     padding: 1rem 1.2rem;
@@ -211,7 +213,7 @@
 /* card container */
 
 .metric-toggle {
-    background: #f7f9fb;
+    background: #ff323220;
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     max-width: 800px;
@@ -292,4 +294,252 @@
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
+}
+
+.fancy-image {
+    max-width: 600px;
+    display: block;
+    justify-content: center;
+    margin: 1rem auto;
+    /* center */
+    border: 3px solid #ddd;
+    /* light border */
+    border-radius: 12px;
+    /* rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    /* soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* smooth hover effect */
+}
+
+.fancy-image:hover {
+    transform: scale(1.001);
+    /* slightly enlarge */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+    /* stronger shadow on hover */
+}
+
+.card {
+    transform: translateY(50px);
+    /* start slightly lower */
+    opacity: 0;
+    /* invisible at first */
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+
+/* State when the card is in view */
+
+.card.visible {
+    transform: translateY(0);
+    /* move to normal position */
+    opacity: 1;
+    /* fade in */
+}
+
+
+/* Optional: subtle 3D pop on hover */
+
+.card:hover {
+    transform: translateY(-5px) scale(1.005);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:root {
+    --coke-red: #E41E26;
+    --coke-maroon: #8B1A1A;
+}
+
+
+/* Section wrapper */
+
+.section-card {
+    background: white;
+    border-left: 6px solid var(--coke-red);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+
+/* Scroll animation */
+
+.section-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hover effect */
+
+.section-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Title */
+
+.card-title {
+    color: var(--coke-red);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Two-column layout */
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+
+/* Small cards */
+
+.mini-card {
+    background: #fff5f5;
+    border-radius: 10px;
+    padding: 1rem;
+    border-left: 4px solid var(--coke-red);
+}
+
+
+/* Q&A dropdown */
+
+details {
+    background: #fff5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid var(--coke-red);
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.md-typeset h1 {
+    color: var(--coke-red);
+}
+
+.md-typeset h2 {
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+.md-typeset h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #E41E26, #ff9696);
+    border-radius: 2px;
+}
+
+
+/* Abstract cards container */
+
+.grid-3-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Individual abstract card */
+
+.abstract-card {
+    background: #fff;
+    border-left: 5px solid var(--coke-maroon);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 3px 0 6px rgba(139, 26, 26, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Hover effect for cards */
+
+.abstract-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Card title */
+
+.abstract-card .card-title {
+    color: var(--coke-red);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.zigzag-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    /* space between rows */
+}
+
+.zigzag-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.zigzag-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.zigzag-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zigzag-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.zigzag-text {
+    flex: 1;
+}
+
+.zigzag-text h3 {
+    color: #c62e2e;
+    /* subtle maroon for headings */
+    margin-bottom: 0.5rem;
+}
+
+.zigzag-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.circle-image {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 4px solid #0A66C2;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }

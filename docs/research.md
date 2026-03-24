@@ -28,6 +28,18 @@ This project has two core components:
 
 #### 1. NielsenIQ Byzzer
 
+<div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
+  <img src="/images/nielsenbyzzer.png" 
+       class="fancy-image" 
+       alt="NielsenIQ" 
+       style="width: 370px; max-width: 100%;">
+       
+  <img src="/images/nielsenbyzzer2.png" 
+       class="fancy-image" 
+       alt="NielsenIQ 2" 
+       style="width: 370px; max-width: 100%;">
+</div>
+
 A subscription analytics platform built on Nielsen retail measurement data, which is the
 same underlying data source used in this project. It is widely used by CPG brands
 and FMCG manufacturers to monitor market performance and promotional effectiveness.
@@ -51,6 +63,11 @@ demand drivers to estimate what sales would have been without promotions.
 
 #### 2. o9 Solutions 
 
+  <img src="/images/o91.png" 
+       class="fancy-image" 
+       alt="NielsenIQ" 
+       style="width: 600px; max-width: 100%;">
+
 An enterprise AI platform used by global FMCG companies including Nestlé, Walmart,
 and Unilever for demand planning, trade promotion management, and supply chain
 optimisation.
@@ -62,6 +79,11 @@ optimisation.
 - Scenario planning tools for assessing the impact of pricing and promotional decisions
 
 **What can be learned:**
+
+  <img src="/images/o92.png" 
+       class="fancy-image" 
+       alt="NielsenIQ 2" 
+       style="width: 700px; max-width: 100%;">
 
 o9 is a closed black-box SaaS platform, so clients have no visibility into the
 underlying models or how outputs are generated. This project provides Coca-Cola

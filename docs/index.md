@@ -13,36 +13,73 @@ hide:
 <div class="wrapper">
 
 <section>
-    <div style="text-align: center; padding: 0rem 1rem; background-color: transparent; margin: 0;">
-        <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; color: var(--md-default-fg-color);">
-        Baseline Sales Modelling
+    <div style="text-align: center; padding: 2rem 1rem; background-color: transparent; margin: 0;">
+        <h1 class="static-title">
+            <img src="/images/cocacolalogo.png" alt="Coca-Cola Logo" style="height: 100px; vertical-align: middle; margin-right: 0.5rem;">
+           Baseline Sales Modelling
         </h1>
-        <img src="assets/images/dashboard.png" alt="Image of dashboard" style="border-radius: 8px; width: 90%;">
-        <p style="font-size: 1rem; color: var(--md-default-fg-color--light); margin-bottom: 4.5rem;">
+        <img src="assets/images/dashboard.png" alt="Image of dashboard" class="dashboard-image">
+        <p style="
+            font-size: 1rem; 
+            color: var(--md-default-fg-color--light); 
+            margin-bottom: 4.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        ">
         An interactive dashboard that quantifies baseline demand, promotional uplift, and cannibalisation effects.
         </p>
     </div>
 </section>
 
+<style>
+/* Title styling */
+.static-title {
+    font-size: 3.2rem !important; /* bigger for impact */
+    font-weight: 900;
+    color: #800000; /* deep maroon */
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.25);
+    margin-bottom: 0.5rem;
+}
+
+/* Dashboard image styling */
+.dashboard-image {
+    border-radius: 12px; 
+    width: 70%; 
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+</style>
+
 <hr>
 
 <h2>Abstract</h2>
 
-<div style="margin-bottom: 2rem;">
+<div class="grid-3-cards">
 
-    <p>
-    In the Fast-Moving Consumer Goods (FMCG) sector, retail sales data is fundamentally noisy. Because historical sales are consistently skewed by promotions, pricing, and seasonality, it is highly difficult to establish a "normal" sales baseline. Consequently, businesses struggle to measure true underlying demand or accurately gauge promotional uplift. This issue is compounded by the conflicting needs of different business units, as static spreadsheets cannot simultaneously provide granular data for analysts and high-level summaries for marketing teams.
-    </p>
+    <div class="abstract-card">
+        <h3 class="card-title">The Challenge</h3>
+        <p>
+        In the Fast-Moving Consumer Goods (FMCG) sector, retail sales data is inherently noisy. Historical sales are skewed by promotions, pricing, and seasonality, making it difficult to establish a “normal” sales baseline and measure true demand.
+        </p>
+    </div>
 
-    <p>
-    Working alongside Coca-Cola, we developed a comprehensive demand intelligence tool. The backend utilizes SARIMAX time-series forecasting to handle seasonal non-stationarity and isolate external promotional variables, effectively recovering the true sales baseline. This is augmented by feature-engineered gradient-boosted models (LightGBM and XGBoost) to analyze cross-product cannibalisation. To bridge the gap between complex data and business utility, we deployed a fully interactive, modular dashboard using Streamlit, allowing users to dynamically switch between SKU-level and portfolio-level analyses.
-    </p>
+    <div class="abstract-card">
+        <h3 class="card-title">Our Approach</h3>
+        <p>
+        Working with Coca-Cola, we used SARIMAX forecasting to isolate baseline demand and gradient-boosted models (LightGBM/XGBoost) to analyze cross-product cannibalisation. All outputs are visualized in an interactive Streamlit dashboard.
+        </p>
+    </div>
 
-    <p>
-    The project successfully decouples core consumer demand from commercial noise. By providing distinct layers of abstraction tailored to specific stakeholders, the dashboard unifies cross-functional decision-making. The delivered prototype and transparent codebase provide Coca-Cola with a clean reference point for measuring promotional performance and serve as a scalable foundation for future trade uplift and portfolio optimisation modelling.
-    </p>
+    <div class="abstract-card">
+        <h3 class="card-title">Impact</h3>
+        <p>
+        The project decouples core consumer demand from commercial noise, providing tailored insights for analysts, marketing, and commercial teams. The dashboard unifies cross-functional decision-making and offers a scalable foundation for future portfolio optimisation.
+        </p>
+    </div>
+
 </div>
-
 
 <hr>
 
@@ -67,7 +104,7 @@ hide:
     <div class="team">
     
         <div class="card">
-            <img src="assets/images/gwen.png" alt="Avatar">
+            <img src="/images/gwen.jpg" alt="Avatar" class="circle-image">
             <div class="container">
                 <h4><b>Gwen Tan</b></h4>
                 <div class="social-icons">
