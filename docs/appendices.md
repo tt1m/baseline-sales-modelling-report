@@ -48,9 +48,10 @@ Concise mode allows you to select a product directly by its SKU code. Once a SKU
 
 #### 3.2 Verbose Mode
 Verbose mode lets you filter down to a product step by step:
+
 - **Top Brand** — e.g. Coca-Cola, Dr Pepper
 - **Flavour**
-- **Pack Type** — e.g. PET, can
+- **Pack Type** — e.g. PET, Can
 - **Pack Size**
 - **Units per Package** — e.g. 8 or 12 units
 
@@ -75,6 +76,7 @@ This widget overlays the model's predictions against actual recorded sales on a 
 
 #### 4.5 Backtest Performance
 The Backtest Performance widget evaluates model accuracy using Prophet's rolling cross-validation method, which trains the model on progressively larger historical windows and tests its forecasts against actual observations. This simulates real-world forecasting conditions and produces three error metrics:
+
 - **RMSE** — Root Mean Square Error
 - **MAPE** — Mean Absolute Percentage Error
 - **MAE** — Mean Absolute Error
