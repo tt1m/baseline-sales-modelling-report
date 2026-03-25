@@ -18,12 +18,34 @@ hide:
 
 This dashboard is an interactive forecasting tool designed to visualise and analyse product sales data. Users can build a custom layout of widgets, each displaying a different model output for a selected product. The underlying forecasting model is built with Prophet, a decomposable time series model that accounts for trend, seasonality, and promotional effects.
 
+  <img src="/images/dashboard-overview.png" 
+       class="fancy-image" 
+       alt="Dashboard Overview" 
+       style="width: 97%; max-width: 100%;">
+
+
 ---
 
 ### 2. Getting Started
 
 #### 2.1 Upload Dataset
-Before adding any widgets, upload your dataset using the Upload Dataset button. Your file must be a CSV formatted to the Nielsen standard. Once uploaded, the dataset will be available for all widgets.
+Before adding any widgets, upload your dataset using the Upload Dataset button. Your file must be a CSV / XLSX formatted to the Nielsen standard. Once uploaded, the dataset will be available for all widgets.
+
+  <img src="/images/upload-dataset.png" 
+       class="fancy-image" 
+       alt="Upload Dataset 1" 
+       style="width: 97%; max-width: 100%;">
+
+*The Upload Dataset button is located at the top of the dashboard.*
+
+Click Browse files and select your file. Once uploaded, your dataset will appear in the panel.
+
+  <img src="/images/upload-dataset2.png" 
+       class="fancy-image" 
+       alt="Upload Dataset 2" 
+       style="width: 97%; max-width: 100%;">
+
+*Your uploaded dataset will appear listed in the panel.*
 
 #### 2.2 Add Widget
 Click Add Widget to create a new panel on the dashboard. You will be prompted to enter a widget title, select your data source (your uploaded CSV), and choose a display type: KPI, Forecast, Decomposition, Predicted vs Observed, or Backtest Performance.
