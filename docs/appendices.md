@@ -155,14 +155,31 @@ Click Confirm Config to apply the selection to the widget.
 #### 3.2 Verbose Mode
 Verbose mode lets you filter down to a product step by step:
 
-- **Top Brand** — e.g. Coca-Cola, Dr Pepper
+- **Top Brand** — e.g. Coca-Cola, Dr Pepper, Fanta
 - **Flavour**
 - **Pack Type** — e.g. PET, Can
-- **Pack Size**
-- **Units per Package** — e.g. 8 or 12 units
+- **Pack Size** — e.g. 330mL, 500mL, 1250mL
+- **Units per Package** — e.g. x8, x12
+
+  <img src="/images/select-product5.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 97%; max-width: 100%;">
+
+Click Confirm Config to apply the selection to the widget.
+
+  <img src="/images/select-product6.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 97%; max-width: 100%;">
 
 #### 3.3 Date Range
-Both modes allow you to set a start date, which controls the date range used by the widget.
+Both modes allow you to set the date range used by the widget.
+
+  <img src="/images/select-product7.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 97%; max-width: 100%;">
 
 ---
 
@@ -171,14 +188,34 @@ Both modes allow you to set a start date, which controls the date range used by 
 #### 4.1 KPI
 The KPI widget displays total sales over a selected date range, alongside a percentage change compared to the equivalent preceding period. For example, selecting a 30-day range will show total sales for that period versus the 30 days prior.
 
+  <img src="/images/kpi.png" 
+       class="fancy-image" 
+       alt="KPI" 
+       style="width:92%; max-width: 100%;">
+
 #### 4.2 Forecast
-The Forecast widget displays a chart projecting future sales from a selected start date. The model generates a forecast for the coming months based on historical patterns in the data.
+The Forecast widget displays a chart projecting future sales from a selected start date. Use Forecast Config to adjust how far into the future the forecast extends, and Promotional Config to specify promotional periods within the forecast.
+
+  <img src="/images/forecast.png" 
+       class="fancy-image" 
+       alt="Forecast" 
+       style="width:62%; max-width: 100%;">
 
 #### 4.3 Decomposition
 The Decomposition widget breaks the sales data down into four components across separate charts: trend, seasonality, promotional uplift, and residuals. You can select a date range to focus on a specific portion of the data.
 
+  <img src="/images/decomposition.png" 
+       class="fancy-image" 
+       alt="Decomposition" 
+       style="width:97%; max-width: 100%;">
+
 #### 4.4 Predicted vs Observed
 This widget overlays the model's predictions against actual recorded sales on a single chart, allowing you to visually assess how well the model fits historical data. A date range selector is available to zoom into a specific period.
+
+  <img src="/images/predicted-vs-observed.png" 
+       class="fancy-image" 
+       alt="Predicted Vs. Observed" 
+       style="width:65%; max-width: 100%;">
 
 #### 4.5 Backtest Performance
 The Backtest Performance widget evaluates model accuracy using Prophet's rolling cross-validation method, which trains the model on progressively larger historical windows and tests its forecasts against actual observations. This simulates real-world forecasting conditions and produces three error metrics:
@@ -186,6 +223,11 @@ The Backtest Performance widget evaluates model accuracy using Prophet's rolling
 - **RMSE** — Root Mean Square Error
 - **MAPE** — Mean Absolute Percentage Error
 - **MAE** — Mean Absolute Error
+  
+  <img src="/images/backtest-performance.png" 
+       class="fancy-image" 
+       alt="Backtest Performance" 
+       style="width:70%; max-width: 100%;">
 
 ---
 
@@ -193,7 +235,12 @@ The Backtest Performance widget evaluates model accuracy using Prophet's rolling
 
 Each widget offers an optional Enable Cannibalisation toggle. When enabled, a LightGBM model is used in an attempt to account for cannibalisation effects and improve forecast accuracy.
 
-> ⚠️ **This feature is currently in beta.** Results may not be fully reliable and should be interpreted with caution.
+> ⚠️ **This feature is currently in beta.** Results may be inaccurate and should be interpreted with caution.
+
+<img src="/images/enable-cannibalisation.png" 
+     class="fancy-image" 
+     alt="Enable Cannibalisation" 
+     style="width:40%; max-width: 100%;">
 
 </div>
 
