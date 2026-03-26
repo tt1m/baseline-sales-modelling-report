@@ -164,12 +164,6 @@ Verbose mode lets you filter down to a product step by step:
 #### 3.3 Date Range
 Both modes allow you to set a start date, which controls the date range used by the widget.
 
-#### 3.4 Cannibalisation Analysis *(Beta)*
-
-Each widget offers an optional Enable Cannibalisation toggle. When enabled, a LightGBM model analyses the residuals from the Prophet forecast in an attempt to account for cannibalisation effects and improve forecast accuracy.
-
-> ⚠️ **This feature is currently in beta.** Results may not be fully reliable and should be interpreted with caution.
-
 ---
 
 ### 4. Widget Types
@@ -192,6 +186,14 @@ The Backtest Performance widget evaluates model accuracy using Prophet's rolling
 - **RMSE** — Root Mean Square Error
 - **MAPE** — Mean Absolute Percentage Error
 - **MAE** — Mean Absolute Error
+
+---
+
+### 5. Cannibalisation Analysis *(Beta)*
+
+Each widget offers an optional Enable Cannibalisation toggle. When enabled, a LightGBM model is used in an attempt to account for cannibalisation effects and improve forecast accuracy.
+
+> ⚠️ **This feature is currently in beta.** Results may not be fully reliable and should be interpreted with caution.
 
 </div>
 
