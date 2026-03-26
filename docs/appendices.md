@@ -417,8 +417,6 @@ All external libraries used in the Baseline Sales Dashboard are open-source and 
 | Streamlit | Apache License 2.0 | ✅ Permitted |
 | matplotlib | PSF License | ✅ Permitted |
 | plotly | MIT License | ✅ Permitted |
-| scikit-learn | BSD 3-Clause | ✅ Permitted |
-| statsmodels | BSD 3-Clause | ✅ Permitted |
 
 #### Compliance Summary
 
