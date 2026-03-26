@@ -36,7 +36,6 @@ Before adding any widgets, upload your dataset using the Upload Dataset button. 
        alt="Upload Dataset 1" 
        style="width: 97%; max-width: 100%;">
 
-*The Upload Dataset button is located at the top of the dashboard.*
 
 Click Browse files and select your file. Once uploaded, your dataset will appear in the panel.
 
@@ -45,28 +44,113 @@ Click Browse files and select your file. Once uploaded, your dataset will appear
        alt="Upload Dataset 2" 
        style="width: 97%; max-width: 100%;">
 
-*Your uploaded dataset will appear listed in the panel.*
 
 #### 2.2 Add Widget
-Click Add Widget to create a new panel on the dashboard. You will be prompted to enter a widget title, select your data source (your uploaded CSV), and choose a display type: KPI, Forecast, Decomposition, Predicted vs Observed, or Backtest Performance.
+Click Add Widget to create a new widget on the dashboard. 
+
+  <img src="/images/add-widget.png" 
+       class="fancy-image" 
+       alt="Add Widget" 
+       style="width: 97%; max-width: 100%;">
+
+Fill in the widget title, select your data source, and choose a display type from KPI, Forecast, Decomposition, Predicted Vs. Observed, or Backtest Performance.
+
+  <img src="/images/add-widget2.png" 
+       class="fancy-image" 
+       alt="Add Widget 2" 
+       style="width: 97%; max-width: 100%;">
+
+Once configured, click Save & Add to add the widget to the dashboard.
+
+  <img src="/images/add-widget3.png" 
+       class="fancy-image" 
+       alt="Add Widget 3" 
+       style="width: 97%; max-width: 100%;">
 
 #### 2.3 Clear All
 Clicking Clear All resets the dashboard, removing all widgets and returning the layout to a blank state. This cannot be undone, so ensure you have exported your layout before clearing.
 
+  <img src="/images/clear-all.png" 
+       class="fancy-image" 
+       alt="Clear All" 
+       style="width: 97%; max-width: 100%;">
+
 #### 2.4 Export Layout
-Your current dashboard layout can be saved by clicking Export Layout. This downloads a CSV file that captures your widget configuration, allowing you to restore it in a future session.
+To save your current dashboard configuration, click Export Layout.
+
+  <img src="/images/export-layout.png" 
+       class="fancy-image" 
+       alt="Export Layout" 
+       style="width: 97%; max-width: 100%;">
+
+Click Generate CSV to sync all widgets and prepare the layout file. 
+
+  <img src="/images/export-layout2.png" 
+       class="fancy-image" 
+       alt="Export Layout 2" 
+       style="width: 97%; max-width: 100%;">
+
+Once generated, click Download CSV to save the file to your machine. This file can be used to restore your dashboard layout in a future session.
+
+  <img src="/images/export-layout3.png" 
+       class="fancy-image" 
+       alt="Export Layout 3" 
+       style="width: 97%; max-width: 100%;">
 
 #### 2.5 Import Layout
-To restore a previously saved layout, click Import Layout and select your exported CSV file. All widgets will be restored to their previous configuration.
+To restore a previously saved layout, click Import Layout.
+
+  <img src="/images/import-layout.png" 
+       class="fancy-image" 
+       alt="Import Layout" 
+       style="width: 97%; max-width: 100%;">
+
+Click Browse Files and select your layout CSV file. Once uploaded, your file will appear in the panel.
+
+  <img src="/images/import-layout2.png" 
+       class="fancy-image" 
+       alt="Import Layout 2" 
+       style="width: 97%; max-width: 100%;">
+
+Click Confirm Import to restore your dashboard layout. Your widgets will be restored to their previous configuration.
+
+  <img src="/images/import-layout3.png" 
+       class="fancy-image" 
+       alt="Import Layout 3" 
+       style="width: 97%; max-width: 100%;">
 
 ---
 
 ### 3. Selecting a Product
 
-Each widget has its own product selection, allowing you to compare different products across widgets simultaneously. There are two ways to select a product: Concise and Verbose.
+Each widget has its own product selection, allowing you to compare different products across widgets simultaneously. Click the Select Product button on any widget to open the selection panel. There are two modes: Concise and Verbose.
+
+  <img src="/images/select-product.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 97%; max-width: 100%;">
 
 #### 3.1 Concise Mode
-Concise mode allows you to select a product directly by its SKU code. Once a SKU is selected, you can then filter by the customers who have purchased that product.
+Concise mode allows you to select a product directly by its SKU code. 
+
+  <img src="/images/select-product2.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 97%; max-width: 100%;">
+
+Once a SKU is selected, you can then filter by the customers who have purchased that product.
+
+  <img src="/images/select-product3.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 97%; max-width: 100%;">
+
+Click Confirm Config to apply the selection to the widget.
+
+  <img src="/images/select-product4.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 97%; max-width: 100%;">
 
 #### 3.2 Verbose Mode
 Verbose mode lets you filter down to a product step by step:
@@ -79,6 +163,12 @@ Verbose mode lets you filter down to a product step by step:
 
 #### 3.3 Date Range
 Both modes allow you to set a start date, which controls the date range used by the widget.
+
+#### 3.4 Cannibalisation Analysis *(Beta)*
+
+Each widget offers an optional Enable Cannibalisation toggle. When enabled, a LightGBM model analyses the residuals from the Prophet forecast in an attempt to account for cannibalisation effects and improve forecast accuracy.
+
+> ⚠️ **This feature is currently in beta.** Results may not be fully reliable and should be interpreted with caution.
 
 ---
 
@@ -102,14 +192,6 @@ The Backtest Performance widget evaluates model accuracy using Prophet's rolling
 - **RMSE** — Root Mean Square Error
 - **MAPE** — Mean Absolute Percentage Error
 - **MAE** — Mean Absolute Error
-
----
-
-### 5. Cannibalisation Analysis *(Beta)*
-
-Each widget offers an optional Enable Cannibalisation toggle. When enabled, a LightGBM model analyses the residuals from the Prophet forecast in an attempt to account for cannibalisation effects and improve forecast accuracy.
-
-> ⚠️ **This feature is currently in beta.** Results may not be fully reliable and should be interpreted with caution.
 
 </div>
 
