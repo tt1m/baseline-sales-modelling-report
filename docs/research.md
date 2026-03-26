@@ -18,7 +18,7 @@ This project has two core components:
 
 1. **Machine Learning Backend** — A time series model that decomposes historical weekly retail sales into         promotional uplift, seasonality, trend, and cannibalisation to estimate baseline demand, and produces sales forecasts.
 
-2. **Interactive Dashboard** — An application allowing stakeholders to
+2. **Interactive Dashboard** — An application allowing users to
    explore model outputs, forecasts, and validation metrics visually.
 
 ---
