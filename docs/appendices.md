@@ -29,7 +29,7 @@ This dashboard is an interactive forecasting tool designed to visualise and anal
 ### 2. Getting Started
 
 #### 2.1 Upload Dataset
-Before adding any widgets, upload your dataset using the Upload Dataset button. Your file must be a CSV / XLSX formatted to the Nielsen standard. Once uploaded, the dataset will be available for all widgets.
+Before adding any widgets, upload your dataset using the **Upload Dataset** button. Your file must be a CSV / XLSX formatted to the Nielsen standard. Once uploaded, the dataset will be available for all widgets.
 
   <img src="/images/upload-dataset.png" 
        class="fancy-image" 
@@ -37,7 +37,7 @@ Before adding any widgets, upload your dataset using the Upload Dataset button. 
        style="width: 97%; max-width: 100%;">
 
 
-Click Browse files and select your file. Once uploaded, your dataset will appear in the panel.
+Click **Browse files** and select your file. Once uploaded, your dataset will appear in the panel.
 
   <img src="/images/upload-dataset2.png" 
        class="fancy-image" 
@@ -46,7 +46,7 @@ Click Browse files and select your file. Once uploaded, your dataset will appear
 
 
 #### 2.2 Add Widget
-Click Add Widget to create a new widget on the dashboard. 
+Click **Add Widget** to create a new widget on the dashboard. 
 
   <img src="/images/add-widget.png" 
        class="fancy-image" 
@@ -60,7 +60,7 @@ Fill in the widget title, select your data source, and choose a display type fro
        alt="Add Widget 2" 
        style="width: 97%; max-width: 100%;">
 
-Once configured, click Save & Add to add the widget to the dashboard.
+Once configured, click **Save & Add** to add the widget to the dashboard.
 
   <img src="/images/add-widget3.png" 
        class="fancy-image" 
@@ -68,7 +68,7 @@ Once configured, click Save & Add to add the widget to the dashboard.
        style="width: 97%; max-width: 100%;">
 
 #### 2.3 Clear All
-Clicking Clear All resets the dashboard, removing all widgets and returning the layout to a blank state. This cannot be undone, so ensure you have exported your layout before clearing.
+Clicking **Clear All** resets the dashboard, removing all widgets and returning the layout to a blank state. This cannot be undone, so ensure you have exported your layout before clearing.
 
   <img src="/images/clear-all.png" 
        class="fancy-image" 
@@ -76,21 +76,21 @@ Clicking Clear All resets the dashboard, removing all widgets and returning the 
        style="width: 97%; max-width: 100%;">
 
 #### 2.4 Export Layout
-To save your current dashboard configuration, click Export Layout.
+Click **Export Layout** to save your current dashboard configuration.
 
   <img src="/images/export-layout.png" 
        class="fancy-image" 
        alt="Export Layout" 
        style="width: 97%; max-width: 100%;">
 
-Click Generate CSV to sync all widgets and prepare the layout file. 
+Click **Generate CSV** to sync all widgets and prepare the layout file. 
 
   <img src="/images/export-layout2.png" 
        class="fancy-image" 
        alt="Export Layout 2" 
        style="width: 97%; max-width: 100%;">
 
-Once generated, click Download CSV to save the file to your machine. This file can be used to restore your dashboard layout in a future session.
+Once generated, click **Download CSV** to save the file to your machine. This file can be used to restore your dashboard layout in a future session.
 
   <img src="/images/export-layout3.png" 
        class="fancy-image" 
@@ -98,21 +98,21 @@ Once generated, click Download CSV to save the file to your machine. This file c
        style="width: 97%; max-width: 100%;">
 
 #### 2.5 Import Layout
-To restore a previously saved layout, click Import Layout.
+Click **Import Layout** to restore a previously saved layout.
 
   <img src="/images/import-layout.png" 
        class="fancy-image" 
        alt="Import Layout" 
        style="width: 97%; max-width: 100%;">
 
-Click Browse Files and select your layout CSV file. Once uploaded, your file will appear in the panel.
+Click **Browse Files** and select your layout CSV file. Once uploaded, your file will appear in the panel.
 
   <img src="/images/import-layout2.png" 
        class="fancy-image" 
        alt="Import Layout 2" 
        style="width: 97%; max-width: 100%;">
 
-Click Confirm Import to restore your dashboard layout. Your widgets will be restored to their previous configuration.
+Click **Confirm Import** to restore your dashboard layout. Your widgets will be restored to their previous configuration.
 
   <img src="/images/import-layout3.png" 
        class="fancy-image" 
@@ -123,7 +123,7 @@ Click Confirm Import to restore your dashboard layout. Your widgets will be rest
 
 ### 3. Selecting a Product
 
-Each widget has its own product selection, allowing you to compare different products across widgets simultaneously. Click the Select Product button on any widget to open the selection panel. There are two modes: Concise and Verbose.
+Each widget has its own product selection, allowing you to compare different products across widgets simultaneously. Click the **Select Product** button on any widget to open the selection panel. There are two modes: Concise and Verbose.
 
   <img src="/images/select-product.png" 
        class="fancy-image" 
@@ -145,7 +145,7 @@ Once a SKU is selected, you can then filter by the customers who have purchased 
        alt="Select Product" 
        style="width: 97%; max-width: 100%;">
 
-Click Confirm Config to apply the selection to the widget.
+Click **Confirm Config** to apply the selection to the widget.
 
   <img src="/images/select-product4.png" 
        class="fancy-image" 
@@ -166,7 +166,7 @@ Verbose mode lets you filter down to a product step by step:
        alt="Select Product" 
        style="width: 97%; max-width: 100%;">
 
-Click Confirm Config to apply the selection to the widget.
+Click **Confirm Config** to apply the selection to the widget.
 
   <img src="/images/select-product6.png" 
        class="fancy-image" 
@@ -194,7 +194,7 @@ The KPI widget displays total sales over a selected date range, alongside a perc
        style="width:92%; max-width: 100%;">
 
 #### 4.2 Forecast
-The Forecast widget displays a chart projecting future sales from a selected start date. Use Forecast Config to adjust how far into the future the forecast extends, and Promotional Config to specify promotional periods within the forecast.
+The Forecast widget displays a chart projecting future sales from a selected date range. Use **Forecast Config** to adjust how far into the future the forecast extends, and **Promotional Config** to specify promotional periods within the forecast.
 
   <img src="/images/forecast.png" 
        class="fancy-image" 
@@ -233,7 +233,7 @@ The Backtest Performance widget evaluates model accuracy using Prophet's rolling
 
 ### 5. Cannibalisation Analysis *(Beta)*
 
-Each widget offers an optional Enable Cannibalisation toggle. When enabled, a LightGBM model is used in an attempt to account for cannibalisation effects and improve forecast accuracy.
+Each widget offers an optional **Enable Cannibalisation** toggle. When enabled, a LightGBM model is used in an attempt to account for cannibalisation effects and improve forecast accuracy.
 
 > ⚠️ **This feature is currently in beta.** Results may be inaccurate and should be interpreted with caution.
 
@@ -391,7 +391,7 @@ The Baseline Sales Dashboard processes proprietary sales data supplied by the us
 #### Data Handling
 
 - **Local Processing Only** — All uploaded data is processed entirely on the user's device. No data is sent to external servers or third-party services.
-- **No Persistent Storage** — Uploaded CSV files are loaded into memory for the duration of the session only. No data is written to disk or retained after the session ends.
+- **No Persistent Storage** — Uploaded CSV / XLSX files are loaded into memory for the duration of the session only. No data is written to disk or retained after the session ends.
 - **No Personal Data** — The application does not process any personally identifiable information (PII). As such, the application does not fall within the scope of GDPR data processing obligations.
 
 #### User Responsibilities
@@ -406,7 +406,7 @@ Users are responsible for ensuring they have the appropriate authorisation to up
 
 All external libraries used in the Baseline Sales Dashboard are open-source and available for commercial use.
 
-##### Backend Libraries
+#### Backend Libraries
 
 | Library | License | Commercial Use |
 |---|---|---|
@@ -416,8 +416,11 @@ All external libraries used in the Baseline Sales Dashboard are open-source and 
 | NumPy | BSD 3-Clause | ✅ Permitted |
 | Streamlit | Apache License 2.0 | ✅ Permitted |
 | matplotlib | PSF License | ✅ Permitted |
+| plotly | MIT License | ✅ Permitted |
+| scikit-learn | BSD 3-Clause | ✅ Permitted |
+| statsmodels | BSD 3-Clause | ✅ Permitted |
 
-##### Compliance Summary
+#### Compliance Summary
 
 - All external libraries used in this project are available for commercial use.
 - All libraries are licensed as open-source (MIT, BSD 3-Clause, Apache 2.0, PSF).
