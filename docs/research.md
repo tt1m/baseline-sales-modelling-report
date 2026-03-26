@@ -13,13 +13,12 @@ hide:
 ## Related Projects Review
 
 <div class="section" markdown="1">
+
 This project has two core components:
 
-1. **Machine Learning Backend** — The Prophet time series model decomposes weekly
-   retail sales into trend, seasonality, promotional uplift, and residual noise
-   to estimate baseline demand.
+1. **Machine Learning Backend** — A time series model that decomposes historical weekly retail sales into         promotional uplift, seasonality, trend, and cannibalisation to estimate baseline demand, and produces sales forecasts.
 
-2. **Interactive Dashboard** — A Streamlit application allows stakeholders to
+2. **Interactive Dashboard** — An application allowing stakeholders to
    explore model outputs, forecasts, and validation metrics visually.
 
 ---
@@ -170,80 +169,83 @@ scripting bridge to interpret pre-processed data.
 
 <div class="section" markdown="1">
 
-### Possible Solutions
 
-Two broad approaches were considered:
+### Project Review
 
-1. **Statistical time series modelling** — Classical models such as SARIMAX decompose
-   a time series into interpretable components but require manual parameter tuning
-   and assume stationary data.
+To inform what technologies we select, we must first review our project requirements.
 
-2. **Automated machine learning (AutoML)** — Platforms such as AutoGluon handle model
-   selection and tuning automatically but offer limited interpretability over how
-   forecasts are generated.
-
-Prophet was chosen as it sits between both. It is interpretable and decomposable, without
-requiring manual parameter specification.
+- **Sales Forecasting** — It is clear that our primary objective is to produce a sales forecasting model of high accuracy.
+- **Sales Decomposition** — Our next goal is to isolate this sales prediction to different categories like *promotion uplift*, *seasonality*, *trend*, and *cannibalisation*.
+- **Interactive BI Dashboard** — Finally, we need to deliver a data visualisation dashboard for the users to interact with.
 
 ---
 
-### Algorithm Comparison
+### Model Comparison
+As a starting point, our team evaluated several existing methods within the time series forecasting landscape.
+
+#### ARIMA / SARIMA
+Autoregressive Integrated Moving Average (ARIMA) was initially investigated but ruled out after visually identifying significant non-stationarity in the data. This was concretely confirmed through **Breusch-Pagan tests** for heteroscedasticity, which yielded p-values below the 0.05 threshold across all assessed categories: total Nielsen volume (9.09×10⁻⁸), the mean of the top 50 selling products (1.11×10⁻²), and the mean of the median 50 selling products (3.80×10⁻²). While techniques like log transformations could mitigate changing variance, they introduce unnecessary complexity. Furthermore, because our chosen model must account for promotional activity, neither ARIMA nor Seasonal ARIMA (SARIMA) is fit for the task.
+
+> 📘 **Note:** The bottom 50 products were excluded to avoid setting an arbitrary cutoff. Many of these product codes totalled fewer than 100 sales over three years, making them unsuitable for consistent testing.
 
 #### SARIMAX
-A classical statistical model that extends ARIMA with seasonal and exogenous
-variables. It was the first model trialled but was ultimately replaced due to
-insufficient forecast accuracy and the need for manual parameter tuning across
-every product SKU, making it difficult to scale.
+Finally, within the ARIMA family, we considered Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX). SARIMAX addresses the limitations of its predecessors by handling non-stationary data while incorporating **external covariates**, such as promotion indicators, into its forecasting. However, it still suffers from changing variance, requiring log transformations to stabilise the variance. Despite this, it remains a strong candidate.
 
-#### AutoGluon
-An AutoML framework developed by Amazon that automatically trains and ensembles
-multiple models. It was considered early in the project but rejected because its
-ensemble approach does not produce interpretable decomposed outputs, which is a core
-requirement for this client-facing tool.
+#### Prophet ✓ **(Chosen for decomposition)**
+Prophet, developed by Meta, is similar to SARIMAX, and can handle non-stationary data and include a dedicated parameter for holiday effects that can be repurposed to model promotional events.
 
-#### Prophet ✓ **(Chosen)**
-An open-source forecasting model developed by Meta that decomposes a time series
-into trend, seasonality, external regressors, and residual noise. It was chosen
-because it requires no manual parameter tuning, handles promotional indicators
-as regressors directly, and produces interpretable component outputs that can be
-displayed in the dashboard.
+Compared to SARIMAX, Prophet demonstrated a significant advantage in **computational speed**. While SARIMAX's latency is largely due to the `auto_arima` stepwise search for optimal parameters, bypassing this automated selection with fixed parameters would likely degrade accuracy across different products, making it a necessary but slow overhead. Furthermore, Prophet offers **native decomposition tools**, whereas SARIMAX requires manual parameter extraction and refitting via statsmodels, unnecessarily complicating the modelling pipeline.
+
+Beyond speed gains, Prophet delivers comparable, if not better, predictive performance. We evaluated **Mean Average Percentage Error (MAPE)** and **Root Mean Square Error (RMSE)** for the top 10 selling SKU product codes. While the MAPE for SKU 641420 initially appeared alarming (peaking over 2000%), an inspection of the sales data revealed frequent dips to zero or near-zero volumes, which artificially inflated MAPE. As shown in *Figure 3*, Prophet outperformed SARIMAX in RMSE across **all 10 products** and achieved a better MAPE in **5 out of 10** instances (with outliers excluded for visualization).
+
+<img src="/images/MAPE-RMSE-rollingmean.png" 
+    class="fancy-image" 
+    alt="Tableau 2" 
+    style="width: 97%; max-width: 100%;">
+*Figure 1: Rolling mean of MAPE and RMSE with a window of 4 weeks*
+
+<img src="/images/MAPE-RMSE-meanaggregatewithoutlier.png" 
+    class="fancy-image" 
+    alt="Tableau 2" 
+    style="width: 97%; max-width: 100%;">
+*Figure 2: Mean aggregate MAPE and RMSE with outlier*
+
+<img src="/images/MAPE-RMSE-meanaggregatewithoutoutlier.png" 
+    class="fancy-image" 
+    alt="Tableau 2" 
+    style="width: 97%; max-width: 100%;">
+*Figure 3: Mean aggregate MAPE and RMSE with outlier removed*
+
+#### LightGBM ✓ **(Chosen for cannibalisation)**
+While Prophet effectively models trends, seasonality, and promotional uplift, its **additive linear structure** is not well-suited for capturing the complex dynamics of cannibalisation. Because Prophet assigns fixed weights to each regressor, it cannot easily model non-linear dependencies between products. This 'if-then' relationship is more naturally captured by **gradient-boosted decision trees (GBDT)**. LightGBM was ultimately selected over XGBoost and CatBoost due to its superior **computational efficiency** and proven ability to map high-dimensional, non-linear interactions.
 
 ---
 
 ### Dashboard Framework Comparison
 
 #### Traditional Web Development
-A conventional web approach would involve a Python backend serving model outputs
-via a REST API with a separate front-end built in HTML, CSS, and JavaScript. While
-flexible, this would require significant front-end development effort outside the
-scope of the data science work.
+A conventional web approach would involve a Python backend serving model outputs via a **REST API** with a separate front-end built in HTML, CSS, and JavaScript. While flexible, this would require significant front-end development effort outside the scope of the data science work.
 
 #### Streamlit ✓ **(Chosen)**
-Streamlit converts Python scripts into interactive web applications with minimal
-code. It was chosen because it eliminated the need for any front-end development,
-allowing the team to focus entirely on the modelling work. Model outputs, charts,
-and validation metrics are rendered directly from Python with no additional
-engineering overhead.
+Traditional BI tools such as Tableau and Power BI, while visually powerful, are often difficult to integrate with custom, iterative machine learning pipelines. This highlighted the need for a framework that tightly couples the model backend with the visualisation frontend. **Streamlit** converts Python scripts into interactive web applications with minimal code, satisfying exactly this requirement. It was chosen because it eliminated the need for any front-end development, allowing the team to focus entirely on the modelling work. Model outputs, charts, and validation metrics are rendered directly from Python with no additional engineering overhead.
 
 ---
 
 ### Programming Language
-
-Python was chosen as it is the industry standard for data science and machine
-learning. It has a rich ecosystem of libraries covering every aspect of this
-project, from data manipulation and modelling to dashboard development, all
-within a single language.
+Python was chosen as it is the industry standard for data science and machine learning. It has a rich ecosystem of libraries covering every aspect of this project, from data manipulation and modelling to dashboard development, all within a single language.
 
 ### Libraries
-
 | Library | Purpose | Why Chosen |
 |---|---|---|
-| **Prophet** | Time series forecasting | Decomposable, interpretable, handles promotions as regressors |
-| **LightGBM** | Cannibalisation modelling | Fast and memory-efficient on tabular data |
-| **pandas** | Data manipulation | Industry standard for tabular data in Python |
-| **numpy** | Numerical computation | Core dependency for array operations |
-| **Streamlit** | Dashboard and visualisation | Renders ML outputs directly from Python, no front-end needed |
-| **matplotlib** | Exploratory plotting (notebooks only) | Quick visualisation during model experimentation |
+| `prophet` | Time series forecasting & decomposition | Handles non-stationarity, native decomposition tools, promotional regressors |
+| `lightgbm` | Cannibalisation modelling | Fast, memory-efficient, captures non-linear product interactions |
+| `pandas` | Data manipulation | Industry standard for tabular data in Python |
+| `numpy` | Numerical computation | Core dependency for array operations |
+| `streamlit` | Dashboard and visualisation | Renders ML outputs directly from Python, no front-end needed |
+| `matplotlib` | Exploratory plotting | Quick visualisation during model experimentation |
+| `plotly` | Interactive charts in dashboard | Native Streamlit integration, interactive out of the box |
+| `scikit-learn` | Preprocessing & evaluation utilities | Consistent API for scaling, splitting, and scoring |
+| `statsmodels` | Statistical testing | Used for Breusch-Pagan heteroscedasticity tests |
 
 </div>
 
@@ -255,11 +257,11 @@ within a single language.
 
 | Decision | Choice | Key Reason |
 |---|---|---|
-| Forecasting algorithm | Prophet | Interpretable, no manual tuning, handles promotional regressors |
-| Dashboard framework | Streamlit | No front-end development required |
-| Programming language | Python | Rich ML ecosystem, easy to use |
-| AutoML **rejected** | AutoGluon | Insufficient interpretability for client-facing outputs |
-| Statistical model **replaced** | SARIMAX | Poor forecast accuracy, difficult to scale |
+| Programming language | Python | Rich ML ecosystem, single language across all project components |
+| Forecasting model | Prophet | Interpretable, handles non-stationarity and promotional regressors natively |
+| Cannibalisation model | LightGBM | Captures non-linear product interactions, fast and memory-efficient |
+| Dashboard framework | Streamlit | No front-end development required, renders ML outputs directly from Python |
+| Statistical model **REJECTED** | SARIMAX | Slower, requires log transformations, harder to scale across products |
 </div>
 
 ---
