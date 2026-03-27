@@ -161,8 +161,8 @@ sequenceDiagram
             else No cache exists
                 Cannibalisation->>Cannibalisation: Trains LightGBM on residuals
                 Cannibalisation-->>DataTools: Returns and caches predicted residuals
+                DataTools->>DataTools: Adds predicted residuals to Prophet predictions
             end
-            DataTools->>DataTools: Adds predicted residuals to Prophet predictions
             DataTools-->>WidgetHelpers: Returns corrected predictions
         end
     else Display type is KPI
