@@ -6,11 +6,13 @@ hide:
 
 # System Design
 
-*This section outlines the technical architecture of the Baseline Sales Dashboard, covering the system components, data flow, sequence diagrams, design patterns, and data storage.*
+*This section outlines the technical architecture of the dashboard, covering the system components, data flow, sequence diagrams, design patterns, and data storage.*
 
 ---
 
 ## System Architecture
+
+<div class="section" markdown="1">
 
 The diagram below illustrates the end-to-end pipeline of the application, from user interaction through to results output.
 
@@ -26,7 +28,7 @@ The end user of the application. The system is designed to serve two distinct us
 
 **Streamlit Dashboard (`app.py`)**
 
-The entry point of the application. Handles the general app layout, renders widgets, manages import and export of widget layouts, and processes incoming data files.
+The entry point of the application. Handles the general app layout.
 
 **UI Utilities (`ui_tools.py`)**
 
@@ -38,19 +40,19 @@ Manages the logic for individual widgets, including new widget creation, filter 
 
 **Data Processing (`data_tools.py`)**
 
-Handles all data operations — loading data, cleaning, computing KPI values, generating forecast dataframes, and orchestrating calls to the Prophet and Cannibalisation models.
+Handles all data operations: loading data, cleaning, computing KPI values, and orchestrating calls to the Prophet and Cannibalisation models. It also handles edge cases.
 
 **Data Source**
 
 Nielsen sales data provided as CSV or XLSX files. Files are stored in the `data/` folder on the device running the application and loaded by filename.
 
-**Prophet Model (`prophet_model.py`)**
+**Prophet Model**
 
-The core forecasting model. Trains on the processed dataset with yearly seasonality and a promotional regressor. Used by Forecast, Decomposition, Predicted vs Observed, and Backtest Performance widgets. Results are cached via `@st.cache_resource` — the model only retrains when a new input dataframe is passed.
+The core forecasting model. Trains on the processed dataset with yearly seasonality and a promotional regressor. Used by Forecast, Decomposition, Predicted Vs. Observed, and Backtest Performance widgets. Results are cached via `@st.cache_resource`, and the model only retrains when a new input dataframe is passed.
 
-**Cannibalisation Model (`cannibal_model.py`)**
+**Cannibalisation Model**
 
-An optional LightGBM-based model that analyses cross-product market share deltas to predict what the Prophet residuals should be. The predicted residuals are added to Prophet's predictions to produce a cannibalisation-corrected output. Used by both **Predicted vs Observed** and **Decomposition** widgets when the cannibalisation toggle is enabled and a SKU is selected. The trained model is cached via `@st.cache_resource`.
+An optional model that does cross-product comparisons to predict what the Prophet residuals should be. Used by **Predicted vs Observed** and **Decomposition** widgets when the cannibalisation toggle is enabled and a SKU is selected. 
 
 **Results Output**
 
@@ -60,13 +62,22 @@ Aggregates the model outputs into the following display types: KPI metrics, Pred
 
 Renders the final results as interactive charts, dynamic KPIs, and configurable widgets. Layouts can be exported for future sessions.
 
+</div>
+
 ---
 
 ## Sequence Diagrams
 
+
+Many features share similar underlying flows, so documenting each individually would introduce unnecessary repetition. Therefore, the sequence diagrams presented here are representative of the broader application, chosen to provide clarity without exhausting every possible interaction.
+
+---
+
 ### 1. Uploading a Dataset
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '18px', 'nodePadding': 20, 'spacing': 50}}}%%
+
 sequenceDiagram
     actor User
     participant Dashboard as Streamlit Dashboard (app.py)
@@ -91,6 +102,8 @@ sequenceDiagram
 ### 2. Adding and Configuring a Widget
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '18px', 'nodePadding': 20, 'spacing': 50}}}%%
+
 sequenceDiagram
     actor User
     participant Dashboard as Streamlit Dashboard (app.py)
@@ -167,6 +180,8 @@ sequenceDiagram
 ### 3. Forecast / Promotion Config for Forecast Widget
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '18px', 'nodePadding': 20, 'spacing': 50}}}%%
+
 sequenceDiagram
     actor User
     participant Dashboard as Streamlit Dashboard (app.py)
@@ -206,6 +221,8 @@ sequenceDiagram
 ### 4. Exporting a Layout
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '18px', 'nodePadding': 20, 'spacing': 50}}}%%
+
 sequenceDiagram
     actor User
     participant Dashboard as Streamlit Dashboard (app.py)
@@ -222,30 +239,28 @@ sequenceDiagram
 
 ## Design Patterns
 
-### Modular Architecture
-Each module has a clearly defined responsibility with minimal overlap. `data_tools.py` handles all data loading, cleaning, and model orchestration. `widget_helpers.py` handles widget rendering and display logic. `ui_tools.py` handles layout management. `app.py` handles the top-level application structure. Changes to one module do not require changes to others.
+<div class="section" markdown="1">
 
-### Pipeline Pattern
-The application is split into distinct, reusable modules rather than a single monolithic script. This makes the codebase easier to navigate, test, and extend. For example, adding a new widget display type only requires changes to `widget_helpers.py` and `ui_tools.py`, without touching the data or model layer.
+### Separation of Concerns
+Each module has a clearly defined responsibility with minimal overlap. `data_tools.py` handles all data loading, cleaning, and model orchestration. `widget_helpers.py` handles widget rendering and display logic. `ui_tools.py` handles layout management. `app.py` handles the top-level application structure. In most cases, changes to one module do not require changes to others 
 
-### Strategy Pattern
-Complex operations are broken down into smaller, single-purpose functions. For example, `get_forecast_df` coordinates data loading, Prophet training, and future date generation, but delegates each step to a dedicated function. This keeps individual functions focused and easier to debug.
+### Modular Design
+Rather than one large script, the application is split into distinct modules that are easier to navigate, test, and extend. For example, adding a new widget display type would only require adding a render function to `widget_helpers.py`, a new case in `ui_tools.py`'s `match_and_render`, and a new entry in `global_const.py`. The data and model layers are untouched.
+
+### Functional Decomposition
+Complex operations are broken down into smaller, single-purpose functions that can be reasoned about and tested independently. For example, `get_forecast_df` delegates to `get_total_matches`, `process_data`, and `run_prophet_model` rather than handling everything itself. This also means those sub-functions can be reused elsewhere.
 
 ### Caching
-The application makes extensive use of Streamlit's `@st.cache_data` and `@st.cache_resource` decorators to avoid redundant computation. Results are keyed to function inputs — the cache is automatically invalidated when inputs change, such as when a different product or filename is selected.
+Expensive operations are cached using Streamlit's `@st.cache_data` and `@st.cache_resource` decorators. `@st.cache_data` is used for functions returning dataframes, such as `load_data` and `get_performance_metrics`. While `@st.cache_resource` is used for trained model objects, such as those returned by `run_prophet_model` and `run_cannibal_model`. This prevents redundant computation when the same data or model is needed across multiple widgets.
 
-| Function | Decorator | What is Cached |
-|---|---|---|
-| `load_data` | `@st.cache_data` | Loaded and cleaned dataset, keyed by filename |
-| `run_prophet_model` | `@st.cache_resource` | Trained Prophet model, keyed by input dataframe |
-| `get_performance_metrics` | `@st.cache_data` | Backtest cross-validation results |
-| `get_cannibalisation_model` | `@st.cache_data` | Predicted residuals from the cannibalisation model |
-| `run_cannibal_model` | `@st.cache_resource` | Trained LightGBM model |
-| `add_categories` | `@st.cache_data` | Dataframe with product category columns added |
-| `process_categories` | `@st.cache_data` | Processed cross-product features for a given SKU |
+</div>
 
 ---
 
 ## Data Storage
 
+<div class="section" markdown="1">
+
 The application does not use a database. Nielsen sales data files are stored persistently in a `data/` folder on the device running the application, and are loaded by filename. Widget layout configurations can be exported and saved as CSV files by the user, and re-imported in future sessions. No data is transmitted to external servers.
+
+</div>
