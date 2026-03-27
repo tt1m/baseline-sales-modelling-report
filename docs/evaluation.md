@@ -84,7 +84,7 @@ While not strictly a bug, the dashboard can experience noticeable performance la
 | UI Design and Implementation | 5% | 90% | 5% |
 | Coding | 15% | 85% | 0% |
 | Testing | 90% | 10% | 0% |
-| Overall Contribution | ?% | ?% | ?% |
+| **Overall Contribution** | **50%** | **45%** | **5%** |
 
 ### Individual Contribution for Website & Report
 | Work | Gwen | Daniel | Timothy |
@@ -99,11 +99,11 @@ While not strictly a bug, the dashboard can experience noticeable performance la
 | System Design | 10% | 10% | 80% |
 | Implementation | 0% | 100% | 0% |
 | Testing | 100% | 0% | 0% |
-| Evaluation | 75% | ?% | ?% |
+| Evaluation | 100% | 0% | 0% |
 | User and Deployment Manuals | 0% | 0% | 100% |
 | Legal Issues | 0% | 0% | 100% |
 | Blog and Monthly Video | 50% | 0% | 50% |
-| Overall Contribution | ?% | ?% | ?% |
+| **Overall Contribution** | **43%** | **12%** | **45%** |
 
 <h2>Critical Evaluation</h2>
 
