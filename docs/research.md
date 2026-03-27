@@ -28,12 +28,12 @@ This project has two core components:
 #### 1. NielsenIQ Byzzer
 
 <div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
-  <img src="/images/nielsenbyzzer.png" 
+  <img src="/assets/images/nielsenbyzzer.png" 
        class="fancy-image" 
        alt="NielsenIQ" 
        style="width: 370px; max-width: 100%;">
        
-  <img src="/images/nielsenbyzzer2.png" 
+  <img src="/assets/images/nielsenbyzzer2.png" 
        class="fancy-image" 
        alt="NielsenIQ 2" 
        style="width: 370px; max-width: 100%;">
@@ -62,7 +62,7 @@ demand drivers to estimate what sales would have been without promotions.
 
 #### 2. o9 Solutions 
 
-  <img src="/images/o91.png" 
+  <img src="/assets/images/o91.png" 
        class="fancy-image" 
        alt="NielsenIQ" 
        style="width: 600px; max-width: 100%;">
@@ -79,7 +79,7 @@ optimisation.
 
 **What can be learned:**
 
-  <img src="/images/o92.png" 
+  <img src="/assets/images/o92.png" 
        class="fancy-image" 
        alt="NielsenIQ 2" 
        style="width: 700px; max-width: 100%;">
@@ -97,10 +97,9 @@ modelling decision, which an enterprise platform cannot offer.
 
 #### 3. Microsoft Power BI 
 
-  <img src="/images/microsoftpowerBI.jpeg" 
-       class="fancy-image" 
-       alt="MicrosoftPowerBI" 
-       style="width: 600px; max-width: 100%;">
+<img src="/assets/images/microsoftbi.png" 
+     alt="Microsoft BI" 
+     style="float: right; width: 200px; max-width: 40%; margin: 0 0 1rem 1rem; border-radius: 8px;">
 
 One of the most widely adopted BI (Business Intelligence) platforms globally, commonly deployed in FMCG
 for consolidating sales, pricing, and promotional data into interactive dashboards.
@@ -125,17 +124,9 @@ performance metrics, directly from Python, with no intermediate transformation l
 
 #### 4. Tableau 
 
-<div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
-  <img src="/images/tableau.png" 
-       class="fancy-image" 
-       alt="Tableau 1" 
-       style="width: 370px; max-width: 100%;">
-       
-  <img src="/images/tableau2.png" 
-       class="fancy-image" 
-       alt="Tableau 2" 
-       style="width: 370px; max-width: 100%;">
-</div>
+<img src="/assets/images/tableau.png" 
+     alt="Microsoft BI" 
+     style="float: right; width: 200px; max-width: 40%; margin: 0 0 1rem 1rem; border-radius: 8px;">
 
 An industry-leading visualisation platform widely used across retail and FMCG.
 A notable deployment is Ocado Retail's supplier analytics platform, where Tableau
@@ -232,7 +223,11 @@ Traditional BI tools such as Tableau and Power BI, while visually powerful, are 
 ---
 
 ### Programming Language
-Python was chosen as it is the industry standard for data science and machine learning. It has a rich ecosystem of libraries covering every aspect of this project, from data manipulation and modelling to dashboard development, all within a single language.
+
+Python was chosen as it is the industry standard for data science and machine
+learning. It has a rich ecosystem of libraries covering every aspect of this
+project, from data manipulation and modelling to dashboard development, all
+within a single language.
 
 ### Libraries
 | Library | Purpose | Why Chosen |
@@ -251,7 +246,6 @@ Python was chosen as it is the industry standard for data science and machine le
 
 ## Summary of Technical Decisions
 
-<div class="section" markdown="1">
 
 | Decision | Choice | Key Reason |
 |---|---|---|
@@ -259,7 +253,8 @@ Python was chosen as it is the industry standard for data science and machine le
 | Forecasting model | Prophet | Interpretable, handles non-stationarity and promotional regressors natively |
 | Cannibalisation model | LightGBM | Captures non-linear product interactions, fast and memory-efficient |
 | Dashboard framework | Streamlit | No front-end development required, renders ML outputs directly from Python |
-| Statistical model **REJECTED** | SARIMAX | Slower, requires log transformations, harder to scale across products |
+| AutoML **rejected** | AutoGluon | Insufficient interpretability for client-facing outputs |
+| Statistical model **replaced** | SARIMAX | Slower, requires log transformations, harder to scale across products |
 </div>
 
 ---
