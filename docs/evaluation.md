@@ -10,11 +10,9 @@ hide:
 
 ---
 
-## Summary of Achievements
+## Summary of MoSCoW Achievements
 
-### MoSCoW Requirements Achievement
-
-#### Functional Requirements Achievement
+### Functional Requirements Achievement
 
 | Requirement | Priority | Status | Evidence / Notes |
 |:---|:---|:---|:---|
@@ -34,9 +32,8 @@ hide:
 | **Automated Insight Generation** | Could Have | ❌ Not Achieved | No automated natural-language insight generation implemented. |
 | **Real-Time Data Integration** | Won’t Have | 🚫 Out of Scope | Explicitly excluded due to infrastructure constraints. |
 
----
 
-#### Non-Functional Requirements Achievement
+### Non-Functional Requirements Achievement
 
 | Requirement | Priority | Status | Evidence / Notes |
 |:---|:---|:---|:---|
@@ -55,42 +52,153 @@ hide:
 | **Availability** | Could Have | ✅ Achieved | Always-on system through Microsoft Azure. |
 | **Real-Time Fault Tolerance** | Won’t Have | 🚫 Out of Scope | Not required due to prototype nature of system. |
 
+---
 
-### Known Bugs and Limitations
+## Known Bugs and Limitations
+
+<div class="section" markdown="1">
+
 *   **Edge Case Forecasts:** For products with extremely sparse sales data, the SARIMAX model can occasionally produce slightly negative values during non-promotional periods.
 *   **Portfolio Rendering:** When the "Portfolio Optimization" view is selected with >100 SKUs, the browser rendering time increases significantly due to the volume of chart objects.
 
-### Individual Contribution Distribution
-| Team Member | Core Focus | Effort Distribution |
-|:---|:---|:---|
-| Member A | Backend (SARIMAX/LightGBM) | 33% |
-| Member B | Dashboard UI/UX & Interactivity | 34% |
-| Member C | Data Cleaning & Feature Engineering | 33% |
+</div>
 
 ---
 
-## Critical Evaluation
+## Individual Contribution Distribution Tables
 
-### User Interface / User Experience
-The decision to use Streamlit provided a high-quality, intuitive interface. By fulfilling the "Must Have" requirement for an interactive dashboard, we successfully reduced cognitive load for stakeholders, moving them away from static spreadsheets.
+### Individual Contribution for System Artifact
+| Work | Gwen | Daniel | Timothy |
+|:---|:---:|:---:|:---:|
+| Project Partner Liaison | 100% | 0% | 0% |
+| Research and Experiment | 40% | 40% | 20% |
+| UI Design and Implementation | 5% | 90% | 5% |
+| Coding | 15% | 85% | 0% |
+| Testing | 90% | 10% | 0% |
+| Overall Contribution | ?% | ?% | ?% |
 
-### Functionality
-All "Must Have" requirements, including the critical Baseline Forecasting and Cannibalisation models, were successfully delivered. The system provides a robust foundation for separating commercial noise from core demand.
+### Individual Contribution for Website & Report
+| Work | Gwen | Daniel | Timothy |
+|:---|:---:|:---:|:---:|
+| Setup and Template | 0% | 0% | 100% |
+| Home Page | 90% | 0% | 10% |
+| Video | 100% | 0% | 0% |
+| Requirements | 100% | 0% | 0% |
+| Research & Analysis | 15% | 0% | 85% |
+| Algorithms | 30% | 60% | 10% |
+| UI Design | 5% | 5% | 90% |
+| System Design | 10% | 10% | 80% |
+| Implementation | 0% | 100% | 0% |
+| Testing | 100% | 0% | 0% |
+| Evaluation | 75% | ?% | ?% |
+| User and Deployment Manuals | 0% | 0% | 100% |
+| Legal Issues | 0% | 0% | 100% |
+| Blog and Monthly Video | 50% | 0% | 50% |
+| Overall Contribution | ?% | ?% | ?% |
 
-### Stability
-The system is stable for individual and portfolio-level analysis. Exception handling is implemented to ensure that the "Data Cleaning Pipeline" effectively manages missing or null inputs without crashing the engine.
+<h2>Critical Evaluation</h2>
 
-### Efficiency
-By utilizing `st.cache_data`, we achieved a 70% reduction in load times for repeated dashboard queries, ensuring the tool remains responsive during live business presentations.
+<div class="grid-2-cards">
 
-### Compatibility
-The web-based architecture ensures cross-platform compatibility, functioning reliably across modern browsers without requiring local installations.
+<!-- Card 1: User Interface / User Experience -->
+<div class="abstract-card">
+<h3 class="card-title">User Interface & User Experience</h3>
+<p>
+<strong>Grade: Excellent</strong><br>
+The choice to use <strong>Streamlit</strong> provided an <strong>intuitive, interactive, and visually clean interface</strong>, which greatly reduced cognitive load for stakeholders. Widgets and filters were logically grouped, and visual cues highlighted key insights. <strong>Introspection:</strong> While the interface is effective, some charts could benefit from more dynamic tooltips and contextual explanations to support first-time users in understanding metrics without additional guidance.
+</p>
+</div>
 
-### Maintainability
-The project follows a clean, modular file structure, making it simple for future developers to maintain the "Must Have" algorithms or add new data sources.
+<!-- Card 2: Functionality -->
+<div class="abstract-card">
+<h3 class="card-title">Functionality</h3>
+<p>
+<strong>Grade: Very Good</strong><br>
+All <strong>"Must Have" requirements</strong> were successfully implemented, including <strong>baseline forecasting, uplift, and cannibalisation models</strong>. The system reliably decouples commercial noise from core demand. <strong>Introspection:</strong> Some features, such as scenario simulation and predictive analytics, could be expanded in the future to offer deeper decision-support capabilities. Initial model selection also took longer than planned, which slightly affected early development timelines.
+</p>
+</div>
 
-### Project Management
-Utilizing a GitHub-first workflow allowed for continuous integration and version control, ensuring we achieved 100% of our "Must Have" requirements within the project timeline.
+<!-- Card 3: Stability -->
+<div class="abstract-card">
+<h3 class="card-title">Stability</h3>
+<p>
+<strong>Grade: Excellent</strong><br>
+The dashboard and backend are robust, handling both individual SKUs and portfolio-level analyses without crashes. <strong>Data Cleaning Pipelines</strong> effectively manage missing or null inputs. <strong>Introspection:</strong> Exception handling is solid, but additional automated testing for edge-case datasets could further strengthen reliability under unexpected conditions.
+</p>
+</div>
+
+<!-- Card 4: Efficiency -->
+<div class="abstract-card">
+<h3 class="card-title">Efficiency</h3>
+<p>
+<strong>Grade: Very Good</strong><br>
+Using <strong>Streamlit caching</strong>, repeated queries are significantly faster (~70% reduction in load times). This allows smooth exploration of multiple scenarios. <strong>Introspection:</strong> Processing very large datasets (>5 years) still introduces minor delays; further optimization with asynchronous loading or database indexing could improve performance.
+</p>
+</div>
+
+<!-- Card 5: Compatibility -->
+<div class="abstract-card">
+<h3 class="card-title">Compatibility</h3>
+<p>
+<strong>Grade: Excellent</strong><br>
+The web-based architecture ensures <strong>cross-browser and cross-platform compatibility</strong> on modern systems without installation. The interface is responsive for desktops and tablets. <strong>Introspection:</strong> Extremely small mobile screens may still require horizontal scrolling, which could be improved with adaptive mobile layouts.
+</p>
+</div>
+
+<!-- Card 6: Maintainability -->
+<div class="abstract-card">
+<h3 class="card-title">Maintainability</h3>
+<p>
+<strong>Grade: Very Good</strong><br>
+The project uses a <strong>modular structure</strong> that separates data processing, modelling, and frontend components. Code readability and inline documentation make future updates easier. <strong>Introspection:</strong> Some scripts have tightly coupled dependencies; refactoring these into independent modules would improve scalability and onboarding for new developers.
+</p>
+</div>
+
+<!-- Card 7: Project Management -->
+<div class="abstract-card">
+<h3 class="card-title">Project Management</h3>
+<p>
+<strong>Grade: Excellent</strong><br>
+A <strong>GitHub-first workflow</strong> with clear version control, milestone tracking, and collaborative code reviews ensured all "Must Have" requirements were met on time. <strong>Introspection:</strong> Initial planning underestimated some model experimentation time; future projects could benefit from more detailed upfront estimation for complex modelling tasks.
+</p>
+</div>
+
+</div>
+
+<style>
+.grid-2-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.abstract-card {
+    background: #fff;
+    border-left: 5px solid #E41E26; /* Coca-Cola red accent */
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.abstract-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.card-title {
+    color: #E41E26;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.abstract-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+</style>
 
 ---
 

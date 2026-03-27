@@ -74,34 +74,31 @@ pytest -v tests/
 
 ## Compatibility Testing
 
-- **Objective:** Verify that the dashboard operates correctly across supported platforms.
-- **Methodology:**  
-  - Tested on Chrome, Edge, and Firefox (latest versions).
-  - Verified that the dashboard renders correctly on Windows and macOS.
-- **Analysis & Conclusion:**  
-  No major issues were found. Minor UI alignment issues on macOS were adjusted with responsive styling.
+<div class="section" markdown="1">
+
+Compatibility testing was conducted to ensure the dashboard operates reliably across different platforms and environments. The system was tested on **Google Chrome, Microsoft Edge, and Mozilla Firefox (latest versions)**, as well as on both **Windows and macOS operating systems**. Overall, the dashboard rendered consistently with **no major functional issues**, although minor UI alignment discrepancies were observed on macOS and subsequently resolved through **responsive styling adjustments**.
+
+</div>
 
 ---
 
 ## Responsive Design Testing
 
-- **Objective:** Ensure that the dashboard is usable on different screen sizes.
-- **Methodology:**  
-  - Browser developer tools used to simulate various screen widths (desktop, tablet, mobile).
-  - Verified charts, tables, and inte ractive controls remain readable and functional.
-- **Analysis & Conclusion:**  
-  The dashboard remains functional at different screen widths, though very small mobile screens may require horizontal scrolling.
+<div class="section" markdown="1">
+
+Responsive design testing was performed to evaluate the dashboard’s usability across a range of screen sizes. Using **browser developer tools**, the interface was tested on **desktop, tablet, and mobile viewports**, ensuring that charts, tables, and interactive controls remained accessible and readable. The dashboard maintained **functional integrity across all sizes**, though **very small mobile screens may require horizontal scrolling** to preserve clarity of visualisations.
+
+</div>
 
 ---
 
 ## Performance and Stress Testing
 
-- **Objective:** Assess how the dashboard performs under large datasets and high-frequency usage.
-- **Methodology:**  
-  - Simulated loading of multiple years of Nielsen sales data.
-  - Measured processing time for baseline and uplift computations.
-- **Analysis & Conclusion:**  
-  Performance remains acceptable for datasets up to 5 years. For larger datasets, optimizations such as batching and caching were implemented.
+<div class="section" markdown="1">
+
+Performance and stress testing assessed the system’s ability to handle larger datasets and sustained usage. This involved simulating the loading of **multi-year Nielsen sales data** and measuring the processing time for **baseline modelling and uplift calculations**. The dashboard demonstrated **stable and efficient performance for datasets up to five years**, while for larger datasets, improvements such as **data batching and caching mechanisms** were implemented to maintain responsiveness.
+
+</div>
 
 ---
 
@@ -113,32 +110,19 @@ Not applicable for this project, as the dashboard does not accept external natur
 
 ## User Acceptance Testing (UAT)
 
-### Simulated Testers
+<div class="section" markdown="1">
 
-- Internal team members acted as simulated users to test dashboard usability, clarity, and correctness.
+User Acceptance Testing (UAT) was conducted to evaluate the *usability, clarity, and practical effectiveness* of the dashboard from an end-user perspective. Internal team members acted as **simulated users**, interacting with the system in realistic scenarios to assess whether the dashboard meets the needs of non-technical stakeholders.
 
-### Test Cases
+Testing focused on key user workflows, including comparing baseline and actual sales visualisations, validating the correctness of uplift and cannibalisation calculations, and ensuring that interactive features such as filters and controls functioned as intended. These tests confirmed that users were **able to navigate the dashboard intuitively** and **extract meaningful insights** without requiring technical expertise.
 
-- Compare baseline vs. actual sales visualization.
-- Validate uplift and cannibalisation calculations.
-- Ensure filtering and interactive controls work as expected.
+Feedback was gathered from multiple stakeholders to refine both the modelling approach and the user experience. Guidance from the teaching assistant, George Searle, highlighted the importance of improving model robustness, leading to the exploration of techniques such as **resampling** and the eventual adoption of **gradient-boosted models (LightGBM)** for more accurate cross-product analysis. 
 
-### Feedback from Testers and Project Partners
+Client feedback from Mr Muhammad at Coca-Cola Europacific Partners emphasized the need for clear comparison between forecasting approaches and the importance of presenting baseline estimates in a way that **distinctly separates genuine demand from promotional effects**. Additionally, feedback from the wider IXN network suggested potential future enhancements, including the **use of large language models (LLMs)** to convert qualitative promotional descriptions into structured inputs for modelling, as well as the introduction of scenario simulation capabilities.
 
-- **TA Feedback:**  
-  - Suggested using **oversampling and undersampling** when initial model accuracy was low.  
-  - Recommended pivoting from initial model to **gradient-boosted trees (LightGBM)** for better cross-product uplift prediction.  
-  - Encouraged additional feature engineering and cross-validation for robust model results.
-  
-- **Client Feedback (Mr Muhammad, Coca-Cola Europacific Partners):**  
-  - Emphasized the importance of comparing baseline outputs against multiple forecasting models.  
-  - Suggested enhancements to clearly separate genuine baseline from promotional effects.  
-  - Recommended ensuring the dashboard communicates actionable insights for marketing teams.
+Overall, UAT validated that the system delivers clear, actionable insights while remaining accessible to business users, and provided valuable direction for both technical improvements and future development.
 
-- **Other IXN Network Feedback:**  
-  - Suggested exploring **LLMs** to convert marketer-provided promotional descriptions into **quantitative measures**, which can be fed into the uplift prediction model.  
-  - Proposed future extensions, such as scenario simulation for different promotional strategies.
-
+</div>
 ---
 
 ## Summary Table of Tests
