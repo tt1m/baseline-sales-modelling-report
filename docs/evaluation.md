@@ -12,17 +12,49 @@ hide:
 
 ## Summary of Achievements
 
-### MoSCoW Requirements Achievement Table
-| ID | Requirement | Category | Status | Primary Contributor(s) |
-|:---|:---|:---|:---|:---|
-| 1 | Baseline Forecasting | Must Have | Completed | Team 29 |
-| 2 | Interactive Dashboard | Must Have | Completed | Team 29 |
-| 3 | Data Cleaning Pipeline | Must Have | Completed | Team 29 |
-| 4 | Promotional Uplift Quantification | Must Have | Completed | Team 29 |
-| 5 | Cannibalisation Model | Must Have | Completed | Team 29 |
-| 6 | Seasonal Decomposition | Must Have | Completed | Team 29 |
-| 7 | Automated Reporting | Could Have | Deferred | N/A |
-| 8 | Real-Time DB Sync | Won't Have | N/A | N/A |
+### MoSCoW Requirements Achievement
+
+#### Functional Requirements Achievement
+
+| Requirement | Priority | Status | Evidence / Notes |
+|:---|:---|:---|:---|
+| **Baseline Demand Estimation** | Must Have | ✅ Achieved | Prophet model implemented to estimate counterfactual baseline sales excluding promotions. |
+| **Sales vs Baseline Visualisation** | Must Have | ✅ Achieved | Interactive time-series charts built in Streamlit comparing actual vs baseline sales. |
+| **Promotional Uplift Calculation** | Must Have | ✅ Achieved | Uplift calculated as difference between actual and baseline over selected periods. |
+| **Seasonality and Trend Decomposition** | Must Have | ✅ Achieved | Model outputs decomposed into trend, seasonality, and residual components. |
+| **Interactive SKU Selection** | Must Have | ✅ Achieved | Streamlit widgets allow dynamic SKU/category filtering. |
+| **Data Preprocessing Pipeline** | Must Have | ✅ Achieved | Pipeline handles missing values, alignment, and SKU-level structuring. |
+| **Cannibalisation Analysis** | Must Have | ⚠️ Partially Achieved | LightGBM model used to analyse cross-product promotional effects, but only works on small enough datasets. |
+| **Cross-Validation Metrics Display** | Must Have | ✅ Achieved | RMSE/MAE displayed in dashboard for model evaluation. |
+| **Interactive Dashboard Interface** | Must Have | ✅ Achieved | Fully implemented using Streamlit with filters, selectors, and sliders. |
+| **Forecasting Capability** | Should Have | ✅ Achieved | Forward forecasts generated using trained Prophet models. |
+| **Export Functionality** | Should Have | ✅ Achieved | Some data export (e.g., CSV) implemented; full PDF/report export limited. |
+| **Widget-Based Custom Layout** | Should Have | ✅ Achieved | Modular widget structure implemented, but no full drag-and-drop layout customisation. |
+| **Multi-SKU Comparison** | Could Have | ⚠️ Partially Achieved | Comparison via filtering available; limited side-by-side comparison features. |
+| **Automated Insight Generation** | Could Have | ❌ Not Achieved | No automated natural-language insight generation implemented. |
+| **Real-Time Data Integration** | Won’t Have | 🚫 Out of Scope | Explicitly excluded due to infrastructure constraints. |
+
+---
+
+#### Non-Functional Requirements Achievement
+
+| Requirement | Priority | Status | Evidence / Notes |
+|:---|:---|:---|:---|
+| **Performance** | Must Have | ✅ Achieved | Dashboard loads within a few seconds for SKU-level queries. |
+| **Usability** | Must Have | ✅ Achieved | Intuitive UI with clear visualisations and minimal technical barrier. |
+| **Scalability** | Must Have | ⚠️ Partially Achieved | Handles multiple SKUs but may slow with very large datasets. |
+| **Reliability** | Must Have | ✅ Achieved | Consistent outputs from deterministic preprocessing and modelling pipeline. |
+| **Maintainability** | Must Have | ✅ Achieved | Modular code structure supports updates and debugging. |
+| **Transparency** | Must Have | ✅ Achieved | Model components and metrics clearly exposed in dashboard. |
+| **Portability** | Must Have | ✅ Achieved | Deployable locally and on Azure VM with minimal changes. |
+| **Compatibility** | Should Have | ✅ Achieved | Accessible via modern web browsers through Streamlit. |
+| **Security** | Should Have | ⚠️ Partially Achieved | Basic environment-level security present; no advanced authentication implemented. |
+| **Extensibility** | Should Have | ✅ Achieved | System design allows integration of additional models in future. |
+| **Documentation Quality** | Should Have | ✅ Achieved | Documentation achieved for all users. |
+| **Aesthetic Design** | Could Have | ✅ Achieved | Clean and professional dashboard design. |
+| **Availability** | Could Have | ✅ Achieved | Always-on system through Microsoft Azure. |
+| **Real-Time Fault Tolerance** | Won’t Have | 🚫 Out of Scope | Not required due to prototype nature of system. |
+
 
 ### Known Bugs and Limitations
 *   **Edge Case Forecasts:** For products with extremely sparse sales data, the SARIMAX model can occasionally produce slightly negative values during non-promotional periods.

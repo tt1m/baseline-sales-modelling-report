@@ -78,7 +78,7 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    background: linear-gradient(135deg, #ffe5e5, #ffe0b2);
     transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
@@ -109,6 +109,12 @@
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+.markdown table tbody tr:hover {
+    background-color: #ffe5e5;
+    /* soft pink */
+    transition: background-color 0.2s ease;
 }
 
 
@@ -542,4 +548,167 @@ summary {
     margin-right: 1rem;
     border: 4px solid #0A66C2;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Kill ALL blockquote icons completely */
+
+.md-typeset blockquote::before,
+.md-typeset blockquote::after {
+    content: none !important;
+    display: none !important;
+}
+
+
+/* Also remove any SVG icons injected inside */
+
+.md-typeset blockquote svg {
+    display: none !important;
+}
+
+
+/* Reset blockquote layout so nothing weird remains */
+
+.md-typeset blockquote {
+    background: transparent !important;
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+blockquote::before,
+blockquote::after {
+    content: none !important;
+    display: none !important;
+}
+
+blockquote svg {
+    display: none !important;
+}
+
+
+/* Remove ALL admonition/callout icons */
+
+.md-typeset .admonition::before,
+.md-typeset .admonition::after,
+.md-typeset .admonition-title::before {
+    content: none !important;
+    display: none !important;
+}
+
+
+/* Remove any SVG icons inside */
+
+.md-typeset .admonition svg {
+    display: none !important;
+}
+
+
+/* Remove spacing reserved for icons */
+
+.md-typeset .admonition {
+    padding-left: 1rem !important;
+}
+
+
+/* Optional: make it look like normal text */
+
+.md-typeset .admonition,
+.md-typeset .admonition-title {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* -------------------------------
+   Remove animations / transitions
+   ------------------------------- */
+
+
+/* Tables */
+
+.markdown table {
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+
+/* Metric cards */
+
+.metric-content,
+.metric-toggle,
+.metric-arrow,
+.metric-toggle input:checked+.metric-title+.metric-content {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+
+/* Cards */
+
+.card,
+.card.visible {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+
+/* Section cards */
+
+.section-card,
+.section-card.visible,
+.section-card:hover {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+
+/* Fancy images */
+
+.fancy-image,
+.fancy-image:hover {
+    transform: none !important;
+    transition: none !important;
+}
+
+
+/* Abstract / zigzag cards */
+
+.abstract-card,
+.abstract-card:hover,
+.zigzag-image img,
+.zigzag-image img:hover {
+    transform: none !important;
+    transition: none !important;
+}
+
+
+/* Mini cards / hover effects */
+
+.mini-card,
+.mini-card:hover {
+    transform: none !important;
+    transition: none !important;
+}
+
+
+/* Remove table row hover delay */
+
+.markdown table tbody tr:hover {
+    transition: none !important;
+}
+
+
+/* Remove arrow rotation */
+
+.metric-arrow,
+.metric-toggle input:checked+.metric-title .metric-arrow {
+    transition: none !important;
+    transform: none !important;
 }

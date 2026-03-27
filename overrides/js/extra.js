@@ -50,26 +50,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".card");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible"); // trigger CSS animation
-                observer.unobserve(entry.target); // animate only once
-            }
-        });
-    }, { threshold: 0.1 }); // trigger when 10% visible
-
-    cards.forEach(card => observer.observe(card));
-});
-
-document$.subscribe(function() {
-    const cards = document.querySelectorAll('.section-card');
-
-    cards.forEach(card => {
-        card.classList.add('visible');
-    });
-});
