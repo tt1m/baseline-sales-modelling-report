@@ -58,8 +58,17 @@ hide:
 
 <div class="section" markdown="1">
 
-*   **Edge Case Forecasts:** For products with extremely sparse sales data, the SARIMAX model can occasionally produce slightly negative values during non-promotional periods.
-*   **Portfolio Rendering:** When the "Portfolio Optimization" view is selected with >100 SKUs, the browser rendering time increases significantly due to the volume of chart objects.
+### Bug 1: CSV Input Format
+
+The dashboard relies on input CSV files matching the exact column structure of the Nielsen dataset. If a CSV with missing, extra, or differently named columns is uploaded, the system fails to process the data and may produce errors. This dependency limits flexibility for alternative data sources and requires strict adherence to the expected format.
+
+### Bug 2: KPI Widget Percentage Calculation
+
+In the KPI section, selecting the full date range of the dataset can result in abnormally large percentage increases. This occurs because the widget calculates change relative to the previous period; for the first period, no prior data exists, causing the system to divide by zero and generate exaggerated values. Users should be aware of this behaviour when interpreting KPI outputs.
+
+### Limitation 3: Performance Lag
+
+While not strictly a bug, the dashboard can experience noticeable performance lag when handling large datasets. Streamlit’s caching provides partial improvement, but loading and rendering new data remains slow. This represents a practical limitation of the system, particularly for users working with extensive or high-frequency data.
 
 </div>
 
@@ -204,13 +213,20 @@ A <strong>GitHub-first workflow</strong> with clear version control, milestone t
 
 ## Future Work
 
+<div class="section" markdown="1">
+
 ### Feature Extensions
-*   **Trade-Off Optimiser:** Build a "What-If" scenario tool to allow the Commercial team to slide bars for price changes and promotional discounts to see real-time simulated impacts.
-*   **Automated Reporting:** Address the "Could Have" requirement by implementing one-click exports for PDF summaries of performance to satisfy offline reporting needs.
+
+* **Trade-Off Optimiser:** Develop an interactive "What-If" scenario tool that enables the Commercial team to dynamically adjust price points, promotional discounts, and other variables using slider controls. The tool would provide real-time simulation of forecasted sales and revenue impacts, helping stakeholders explore trade-offs between different strategies and make data-driven decisions.
+
+* **Automated Reporting:** Implement a one-click export feature for PDF summaries of key performance metrics and visualisations, fulfilling the "Could Have" requirement for offline reporting. This would streamline stakeholder communication and allow automated generation of standardised reports for recurring reviews or presentations.
 
 ### Technical Improvements
-*   **Advanced Cannibalisation Features:** Incorporate external market factors, such as competitor pricing, to further increase the accuracy of the LightGBM models.
-*   **Deployment:** Transition from the current local prototype to a containerized cloud environment (e.g., Docker) for enterprise-wide access.
+
+* **Advanced Cannibalisation Features:** Enhance the LightGBM forecasting models by incorporating external market factors such as competitor pricing, seasonal promotions, and category-level trends. This would improve model accuracy in estimating both baseline sales and cannibalisation effects across SKUs, allowing the Commercial team to make more informed operational decisions.
+* **Deployment Improvements:** Transition the current local prototype into a containerized cloud environment, using Docker or similar technologies. This would facilitate scalable, enterprise-wide access, simplify system updates, and ensure consistent performance across different user environments.
 
 ### User Experience Improvements
-*   **Advanced Filtering:** Add "Multi-Brand" grouping, allowing users to toggle between entire categories (e.g., Energy Drinks vs. Soft Drinks) instead of selecting individual SKUs.
+* **Advanced Filtering and Grouping:** Introduce multi-brand and category-level filtering, allowing users to analyse trends across entire product categories (e.g., Energy Drinks vs. Soft Drinks) rather than individual SKUs. Additional interface enhancements, such as saved filter presets and dynamic search capabilities, would further improve the usability and efficiency of the dashboard for end users.
+
+</div>

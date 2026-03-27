@@ -117,10 +117,12 @@ hide:
 
 <div style="display:flex; justify-content: center; align-items: center; margin-bottom: 2rem;">
 
-    <video width="100%" controls>
-        <source src="movie.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
+<iframe width="100%" height="500"
+src="https://www.youtube.com/embed/UhRdnMxGM7o"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
 </div>
 
 
@@ -141,12 +143,12 @@ hide:
                     <a href="https://github.com/gw3nnipi3"><i class="fa-brands fa-github"></i></a>
                     <a href="https://linkedin.com/in/gwendolyntan343/"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <p>Client Liaison, Programmer, Report Editor, Tester</p>
+                <p>Client Liaison, Programmer, Report Editor, Researcher, Tester</p>
             </div>
         </div>
 
         <div class="card">
-            <img src="assets/images/daniel.png" alt="Avatar">
+            <img src="assets/images/daniel.jpeg" class="circle-image">
             <div class="container">
                 <h4><b>Daniel Htet</b></h4>
                 <div class="social-icons">
