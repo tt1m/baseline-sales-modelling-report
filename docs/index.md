@@ -224,7 +224,7 @@ hide:
   <div class="gantt-row">
     <div>Research Similar Tools &amp; Models</div>
     <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p90 span-5"></div>
+    <div class="p100 span-5"></div>
     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
   </div>
 
@@ -265,7 +265,7 @@ hide:
   <div class="gantt-row">
     <div>Prophet Implementation</div>
     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p90 span-4"></div><div></div><div></div>
+    <div class="p100 span-4"></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
@@ -290,7 +290,7 @@ hide:
   <div class="gantt-row">
     <div>Interface Design</div>
     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p90 span-6"></div>
+    <div class="p100 span-6"></div>
     <div></div><div></div><div></div>
   </div>
 
@@ -343,7 +343,7 @@ hide:
   <div class="gantt-row">
     <div>Report Writing</div>
     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p90 span-4"></div>
+    <div class="p100 span-4"></div>
   </div>
 
   <div class="gantt-row last">
