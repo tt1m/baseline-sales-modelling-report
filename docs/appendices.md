@@ -233,7 +233,7 @@ The Backtest Performance widget evaluates model accuracy using Prophet's rolling
 
 ### 5. Cannibalisation Analysis *(Beta)*
 
-Each widget offers an optional **Enable Cannibalisation** toggle. When enabled, a LightGBM model is used in an attempt to account for cannibalisation effects and improve forecast accuracy.
+The Predicted Vs. Observed widget offers an optional **Enable Cannibalisation** toggle. When enabled, a LightGBM model is used in an attempt to account for cannibalisation effects and improve forecast accuracy.
 
 > ⚠️ **This feature is currently in beta.** Results may be inaccurate and should be interpreted with caution.
 
@@ -386,12 +386,12 @@ streamlit run dashboard/app.py --server.port 8502
 
 #### Overview
 
-The Baseline Sales Dashboard processes proprietary sales data supplied by the user. This data is commercially sensitive and confidential in nature. The application does not collect, transmit, or store any data externally — all processing is performed locally on the user's machine.
+The Baseline Sales Dashboard processes proprietary sales data supplied by the user. This data is commercially sensitive and confidential in nature. The application does not collect, transmit, or store any data externally — all processing is performed locally on the device running the application.
 
 #### Data Handling
 
-- **Local Processing Only** — All uploaded data is processed entirely on the user's device. No data is sent to external servers or third-party services.
-- **No Persistent Storage** — Uploaded CSV / XLSX files are loaded into memory for the duration of the session only. No data is written to disk or retained after the session ends.
+- **Local Processing Only** — All uploaded data is processed entirely on the device running the application. No data is sent to external servers or third-party services.
+- **Local Storage Only** — Uploaded CSV / XLSX files are stored in the `data/` folder on the device running the application. No data is transmitted to external servers or third-party services.
 - **No Personal Data** — The application does not process any personally identifiable information (PII). As such, the application does not fall within the scope of GDPR data processing obligations.
 
 #### User Responsibilities
