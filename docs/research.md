@@ -64,7 +64,7 @@ demand drivers to estimate what sales would have been without promotions.
 
   <img src="/assets/images/o91.png" 
        class="fancy-image" 
-       alt="NielsenIQ" 
+       alt="o9 1" 
        style="width: 600px; max-width: 100%;">
 
 An enterprise AI platform used by global FMCG companies including Nestlé, Walmart,
@@ -81,7 +81,7 @@ optimisation.
 
   <img src="/assets/images/o92.png" 
        class="fancy-image" 
-       alt="NielsenIQ 2" 
+       alt="o9 2" 
        style="width: 700px; max-width: 100%;">
 
 o9 is a closed SaaS platform that does not expose its underlying model architecture
