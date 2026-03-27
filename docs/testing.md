@@ -6,7 +6,7 @@ hide:
 
 # Testing
 
-*This section details the testing framework implemented to ensure the reliability, accuracy, and usability of the Coca-Cola Demand Intelligence tool. Our approach ensures that the statistical models are robust, the code pipeline is stable, and the final dashboard meets the strategic needs of business stakeholders.*
+*This section details the testing framework implemented to ensure the reliability, accuracy, and usability of the baseline sales dashboard. Our approach ensures that the statistical models are robust, the code pipeline is stable, and the final dashboard meets the strategic needs of business stakeholders.*
 
 
 ---
