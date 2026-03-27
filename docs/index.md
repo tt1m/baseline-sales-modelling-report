@@ -15,10 +15,10 @@ hide:
 <section>
     <div style="text-align: center; padding: 2rem 1rem; background-color: transparent; margin: 0;">
         <h1 class="static-title">
-            <img src="assets/images/cocacolalogo.png" alt="Coca-Cola Logo" style="height: 100px; vertical-align: middle; margin-right: 0.5rem;">
+            <img src="/assets/images/cocacolalogo.png" alt="Coca-Cola Logo" style="height: 100px; vertical-align: middle; margin-right: 0.5rem;">
            Baseline Sales Modelling
         </h1>
-        <img src="/images/dashboard.png" alt="Image of dashboard" class="dashboard-image">
+        <img src="/assets/images/dashboard.png" alt="Image of dashboard" class="dashboard-image">
         <p style="
             font-size: 1rem; 
             color: var(--md-default-fg-color--light); 
