@@ -165,7 +165,7 @@ hide:
                     <a href="https://github.com/tt1m"><i class="fa-brands fa-github"></i></a>
                     <a href="https://linkedin.com/in/timothyliu-dev/"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <p>Programmer, Tester</p>
+                <p>Programmer, Researcher, Report Editor</p>
             </div>
         </div>
     </div>
