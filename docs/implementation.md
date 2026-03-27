@@ -6,7 +6,7 @@ hide:
 
 # Implementation
 
-This section documents the technical implementation of the dashboard, outlining the core libraries, data pipelines, and modelling logic used to transform raw Nielsen sales data into actionable business intelligence.
+**This section documents the technical implementation of the dashboard, outlining the core libraries, data pipelines, and modelling logic used to transform raw Nielsen sales data into actionable business intelligence.**
 
 ---
 
