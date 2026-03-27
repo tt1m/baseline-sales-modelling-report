@@ -12,8 +12,6 @@ hide:
 
 ## Requirements Gathering
 
-<div class="section" markdown="1">
-
 A semi-structured interview with our main client, Mr Muhammad, surfaced several UI-relevant requirements that directly informed the design of the dashboard. 
 
 ### UI Design Implications
@@ -25,7 +23,6 @@ A semi-structured interview with our main client, Mr Muhammad, surfaced several 
 | Communication gap between teams | Widget-based layout allows each user to configure their own view without affecting others |
 | Weekly usage before performance reviews | **Export / Import Layout** allows users to save and restore their dashboard between sessions |
 
-</div>
 
 ---
 

@@ -6,7 +6,7 @@ hide:
 
 # Implementation
 
-**This section documents the technical implementation of the dashboard, outlining the core libraries, data pipelines, and modelling logic used to transform raw Nielsen sales data into actionable business intelligence.**
+*This section documents the technical implementation of the dashboard, outlining the core libraries, data pipelines, and modelling logic used to transform raw Nielsen sales data into actionable business intelligence.*
 
 ---
 
@@ -671,6 +671,8 @@ def importLayout(csvLayout):
 
 ## The Logic Layer (`widget_helper.py`)
 
+<div class="section" markdown="1">
+
 While `ui_tools` manages the layout, the inner logic of the widgets is delegated to `widget_helper.py`. The separation of concerns allows the specific mechanics of the interface, like dynamic filtering, to be isolated from the visual code. This also follows the system's philosophy of modularity, allowing developers to modify how a widget behaves without touching the presentation layer.
 
 This layer is responsible for three primary functional domains:
@@ -680,3 +682,5 @@ This layer is responsible for three primary functional domains:
 - **Targeted Model Execution:** The layer serves as the execution engine for specific analytical outputs. Through functions like `createKPI`, `createForecast`, and `createDecomposition`, the system bridges the gap between raw data and visual insight.
 
 - **Inference Orchestration:** Each "create" function is responsible for invoking the appropriate machine learning pipeline (Prophet or LightGBM), processing the model's response, and rendering the final visualisation. This modular design allows developers to refine individual model behaviours or add new display types without impacting the broader dashboard architecture.
+
+</div>
