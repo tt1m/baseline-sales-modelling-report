@@ -164,7 +164,7 @@ The final dashboard is a single-page, widget-based interface built in Streamlit.
 
 <span>For a full walkthrough of the dashboard's features and screenshots of each component, refer to the <a href="../appendices/#user-manual">User Manual</a>.</span>
 
-### Deviation from Prototype
+### Deviation from Wireframe
 
 No separate interactive prototype was produced and development proceeded directly from the Balsamiq wireframes to implementation in Streamlit. While Streamlit supports visual customisation such as colours, fonts, and backgrounds, its overall page structure and component layout is fixed, and the general flow cannot be freely repositioned. As the primary focus of the project was on functionality and clarity rather than visual design, no additional styling customisation was applied beyond Streamlit's defaults.
 
