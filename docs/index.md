@@ -310,15 +310,15 @@ hide:
   <div class="gantt-row">
     <div>Widget Filters</div>
     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p100 span-3"></div>
+    <div class="p100 span-4"></div>
     <div></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
     <div>Import / Export Layout</div>
     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p100 span-3"></div>
-    <div></div><div></div><div></div><div></div>
+    <div class="p100 span-2"></div>
+    <div></div><div></div><div></div><div></div><div></div>
   </div>
 
 
