@@ -158,7 +158,7 @@ hide:
         </div>
 
         <div class="card">
-            <img src="assets/images/timothy.png" alt="Avatar">
+            <img src="assets/images/timothy.jpeg" alt="Avatar" class="circle-image">
             <div class="container">
                 <h4><b>Timothy Liu</b></h4>
                 <div class="social-icons">
