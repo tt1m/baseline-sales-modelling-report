@@ -180,11 +180,18 @@ hide:
 
   <!-- Header -->
   <div class="gantt-header">
+    <div></div>
+    <div class="span-4">October</div>
+    <div class="span-4">November</div>
+    <div class="span-4">December</div>
+    <div class="span-4">January</div>
+    <div class="span-4">February</div>
+    <div class="span-4">March</div>
+  </div>
+
+  <div class="gantt-header">
     <div>Task</div>
-    <div>W1</div><div>W2</div><div>W3</div><div>W4</div><div>W5</div><div>W6</div>
-    <div>W7</div><div>W8</div><div>W9</div><div>W10</div><div>W11</div><div>W12</div>
-    <div>W13</div><div>W14</div><div>W15</div><div>W16</div><div>W17</div><div>W18</div>
-    <div>W19</div><div>W20</div><div>W21</div><div>W22</div><div>W23</div><div>W24</div>
+    <div>W1</div><div>W2</div><div>W3</div><div>W4</div><div>W5</div><div>W6</div><div>W7</div><div>W8</div><div>W9</div><div>W10</div><div>W11</div><div>W12</div><div>W13</div><div>W14</div><div>W15</div><div>W16</div><div>W17</div><div>W18</div><div>W19</div><div>W20</div><div>W21</div><div>W22</div><div>W23</div><div>W24</div>
   </div>
 
   <!-- ===================== -->
@@ -196,25 +203,36 @@ hide:
   <div class="gantt-row">
     <div>Gathering Requirements</div>
     <div></div>
-    <div class="p100 span-3"></div>
-  </div>
-
-  <div class="gantt-row">
-    <div>Research Existing Models/Apps</div>
-    <div></div>
     <div class="p100 span-4"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
-    <div>UI Design</div>
+    <div>Wireframes &amp; Prototype</div>
     <div></div><div></div>
-    <div class="p100 span-4"></div>
+    <div class="p100 span-3"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="gantt-row">
+    <div>Requirements Review &amp; Proposal</div>
+    <div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-6"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="gantt-row">
+    <div>Research Similar Tools &amp; Models</div>
+    <div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p90 span-5"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
     <div>Model Selection</div>
-    <div></div><div></div><div></div>
-    <div class="p100 span-3"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-4"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
   </div>
 
   <!-- ===================== -->
@@ -224,88 +242,85 @@ hide:
   <div class="section-title">Backend Development</div>
 
   <div class="gantt-row">
-    <div>Data Loading & Preprocessing</div>
-    <div></div><div></div><div></div><div></div>
+    <div>Data Loading &amp; Preprocessing</div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     <div class="p100 span-6"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
     <div>Model Experimentation</div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-6"></div>
     <div></div><div></div><div></div><div></div><div></div>
-    <div class="p66 span-6"></div>
   </div>
 
   <div class="gantt-row">
-    <div>SARIMAX Modelling</div>
+    <div>SARIMAX Implementation</div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-5"></div>
     <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p100 span-4"></div>
   </div>
 
   <div class="gantt-row">
-    <div>Prophet Modelling (Final)</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div>
-    <div class="p90 span-5"></div>
+    <div>Prophet Implementation</div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p90 span-4"></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
     <div>Accuracy Metrics (RMSE, MAPE)</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div><div></div>
-    <div class="p66 span-4"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-3"></div><div></div><div></div><div></div>
   </div>
 
   <!-- ===================== -->
   <!-- FRONTEND -->
   <!-- ===================== -->
 
-  <div class="section-title">Frontend Development</div>
+  <div class="section-title">Frontend Development (Dashboard)</div>
 
   <div class="gantt-row">
     <div>Streamlit Setup</div>
-    <div></div><div></div><div></div><div></div><div></div>
-    <div class="p100 span-3"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-2"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
     <div>Interface Design</div>
-    <div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     <div class="p90 span-6"></div>
+    <div></div><div></div><div></div>
+  </div>
+
+  <div class="gantt-row">
+    <div>Import Data</div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-2"></div><div></div><div></div><div></div><div></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
     <div>Widget Rendering</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p90 span-5"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-5"></div>
+    <div></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
     <div>Widget Filters</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div>
-    <div class="p66 span-5"></div>
-  </div>
-
-  <div class="gantt-row">
-    <div>Importing Data</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div><div></div>
-    <div class="p66 span-4"></div>
-  </div>
-
-  <div class="gantt-row">
-    <div>Layout Export / Import</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-3"></div>
     <div></div><div></div><div></div>
-    <div class="p66 span-4"></div>
   </div>
 
   <div class="gantt-row">
-    <div>Forecast Options</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
+    <div>Import / Export Layout</div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-3"></div>
     <div></div><div></div><div></div><div></div>
-    <div class="p66 span-4"></div>
   </div>
+
 
   <!-- ===================== -->
   <!-- FINAL -->
@@ -314,44 +329,26 @@ hide:
   <div class="section-title">Final Stages</div>
 
   <div class="gantt-row">
-    <div>Unit Testing</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div><div></div><div></div><div></div><div></div>
-    <div class="p90 span-4"></div>
-  </div>
-
-  <div class="gantt-row">
     <div>Demos</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p100 span-3"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-4"></div><div></div><div></div>
   </div>
 
   <div class="gantt-row">
-    <div>Project Showcase</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div class="p90 span-3"></div>
+    <div>Testing</div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p100 span-3"></div><div></div>
   </div>
 
   <div class="gantt-row">
     <div>Report Writing</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div><div></div><div></div>
-    <div class="p90 span-6"></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="p90 span-4"></div>
   </div>
 
-  <div class="gantt-row">
-    <div>Report Website</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div><div></div><div></div><div></div>
-    <div class="p90 span-5"></div>
-  </div>
-
-  <div class="gantt-row">
+  <div class="gantt-row last">
     <div>Deployment</div>
-    <div></div><div></div><div></div><div></div><div></div><div></div>
-    <div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     <div class="p100 span-2"></div>
   </div>
 
@@ -365,12 +362,10 @@ hide:
     border-radius: 10px;
     overflow-x: auto;
     font-size: 12px;
-
     background-image: linear-gradient(to right, #c8c8c8 1px, transparent 1px);
     background-size: calc((100% - 200px)/24) 100%;
 }
 
-/* Header */
 .gantt-header {
     display: grid;
     grid-template-columns: 200px repeat(24, 1fr);
@@ -380,7 +375,11 @@ hide:
     text-align: center;
 }
 
-/* Rows */
+.gantt-header div {
+    padding: 6px 4px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
 .gantt-row {
     display: grid;
     grid-template-columns: 200px repeat(24, 1fr);
@@ -393,29 +392,26 @@ hide:
     padding: 4px 8px;
 }
 
-/* Section titles */
 .section-title {
     background: #ffe5e5;
     font-weight: bold;
     padding: 0.5rem;
+    grid-column: 1 / -1;
 }
 
+.last {
+    border-bottom: 3px solid #e5e5e5;
+}
 
-/* Progress colours */
 .p33 { background: #ffb3c1; }
 .p66 { background: #ff4d6d; }
 .p90, .p100 { background: #E41E26; }
 
-/* Span helpers */
-[class*="span-"] {
-    grid-column: span var(--span);
-}
 .span-2 { grid-column: span 2; }
 .span-3 { grid-column: span 3; }
 .span-4 { grid-column: span 4; }
 .span-5 { grid-column: span 5; }
 .span-6 { grid-column: span 6; }
-
 </style>
 
 <style>
