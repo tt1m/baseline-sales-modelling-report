@@ -27,7 +27,7 @@ To keep tests efficient and independent, mocking was used for external dependenc
 
 Integration between components was also tested by simulating realistic workflows, such as the data pipeline **(data loading → processing → forecasting)** and UI rendering logic. These tests ensured that modules interact correctly and that the correct functions are triggered based on widget configurations.
 
-  <img src="/images/tests.png" 
+  <img src="/assets/images/tests.png" 
        class="fancy-image" 
        alt="Tests" 
        style="width: 800px; max-width: 100%;"
@@ -88,7 +88,7 @@ pytest -v tests/
 - **Objective:** Ensure that the dashboard is usable on different screen sizes.
 - **Methodology:**  
   - Browser developer tools used to simulate various screen widths (desktop, tablet, mobile).
-  - Verified charts, tables, and interactive controls remain readable and functional.
+  - Verified charts, tables, and inte ractive controls remain readable and functional.
 - **Analysis & Conclusion:**  
   The dashboard remains functional at different screen widths, though very small mobile screens may require horizontal scrolling.
 

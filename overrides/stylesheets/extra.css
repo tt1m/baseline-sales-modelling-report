@@ -619,3 +619,96 @@ blockquote svg {
     border: none !important;
     box-shadow: none !important;
 }
+
+
+/* -------------------------------
+   Remove animations / transitions
+   ------------------------------- */
+
+
+/* Tables */
+
+.markdown table {
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+
+/* Metric cards */
+
+.metric-content,
+.metric-toggle,
+.metric-arrow,
+.metric-toggle input:checked+.metric-title+.metric-content {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+
+/* Cards */
+
+.card,
+.card.visible {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+
+/* Section cards */
+
+.section-card,
+.section-card.visible,
+.section-card:hover {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+
+/* Fancy images */
+
+.fancy-image,
+.fancy-image:hover {
+    transform: none !important;
+    transition: none !important;
+}
+
+
+/* Abstract / zigzag cards */
+
+.abstract-card,
+.abstract-card:hover,
+.zigzag-image img,
+.zigzag-image img:hover {
+    transform: none !important;
+    transition: none !important;
+}
+
+
+/* Mini cards / hover effects */
+
+.mini-card,
+.mini-card:hover {
+    transform: none !important;
+    transition: none !important;
+}
+
+
+/* Remove table row hover delay */
+
+.markdown table tbody tr:hover {
+    transition: none !important;
+}
+
+
+/* Remove arrow rotation */
+
+.metric-arrow,
+.metric-toggle input:checked+.metric-title .metric-arrow {
+    transition: none !important;
+    transform: none !important;
+}

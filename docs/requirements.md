@@ -12,31 +12,48 @@ hide:
 
 ## Project Background
 
-<div class="section" markdown="1">
 Retail sales data for Fast-Moving Consumer Goods (FMCG) is inherently noisy. Historical sales figures are frequently distorted by tactical commercial interventions—such as temporary price reductions, multi-buy promotions, and seasonal marketing campaigns. This noise makes it difficult for decision-makers to discern "true demand." Without a clear baseline, Coca-Cola faces challenges in measuring the genuine return on investment (ROI) of marketing activities and understanding organic portfolio growth.
-</div>
 
 ---
+
+<img src="/assets/images/cokelogo.png" 
+     alt="Coke" 
+     style="float: right; width: 200px; max-width: 40%; margin: 0 0 1rem 1rem; border-radius: 8px;">
 
 ## Client Introduction
 
 <div class="section" markdown="1">
-This project was conducted in collaboration with Coca-Cola, a global leader in the Fast-Moving Consumer Goods (FMCG) industry. The partner provided access to real-world retail sales data and defined the core business problem addressed in this project.
 
-In the FMCG sector, sales data is inherently complex and noisy due to the frequent use of promotions, pricing strategies, and seasonal campaigns. These factors distort observed sales, making it difficult to identify the true underlying consumer demand, commonly referred to as baseline sales. As a result, organisations face challenges in accurately evaluating the effectiveness of promotional activities and making informed strategic decisions.
+This project was conducted in collaboration with **Coca-Cola Europacific Partners**, a leading global beverage company. They provided access to real-world retail sales data and strategic guidance, enabling the development of a dashboard tailored to their commercial and marketing decision-making needs. The system is designed to deliver actionable insights directly relevant to Coca-Cola's product portfolio and promotional planning.
 
-The objective of this project is to develop a system capable of estimating baseline demand by separating it from promotional effects, and to present these insights through an interactive and accessible dashboard for stakeholders.
 </div>
+---
+
+## Project Approach
+
+
+To address the challenges of noisy sales data and promotional effects, our team developed an interactive dashboard that combines time-series forecasting with machine learning. The system estimates baseline demand, quantifies promotional uplift, and identifies cross-product cannibalisation, providing actionable insights for marketing and commercial teams.
+
 
 ---
 
 ## Project Goals
 
-*   **Recover the Sales Baseline:** Accurately estimate consumer demand in the absence of promotional interventions.
-*   **Decouple Variables:** Isolate the impact of seasonality, pricing, and promotions.
-*   **Enable Data-Driven Decisions:** Provide a modular, interactive interface that translates complex time-series models into actionable commercial insights.
-*   **Scale for Portfolio Management:** Build a system capable of handling cross-product interactions, specifically identifying cannibalisation effects.
+<div class="section" markdown="1">
 
+### Technical Goals
+
+* **Recover the Sales Baseline:** Accurately estimate consumer demand in the absence of promotional interventions.
+* **Decouple Variables:** Isolate the impact of seasonality, pricing, and promotions.
+* **Scale for Portfolio Management:** Build a system capable of handling cross-product interactions, specifically identifying cannibalisation effects.
+
+### Non-Technical Goals
+
+* **Enable Data-Driven Decisions:** Provide a modular, interactive interface that translates complex model outputs into actionable insights for stakeholders.
+* **Improve Decision Efficiency:** Reduce manual analysis time for marketing and commercial teams by delivering clear, visualised metrics.
+* **Support Stakeholder Communication:** Facilitate cross-department collaboration by presenting insights in an intuitive, accessible format.
+
+</div>
 
 ---
 
@@ -119,7 +136,7 @@ Requirements were collected through direct stakeholder engagement and iterative 
   <!-- First row: image left, text right -->
   <div class="zigzag-row">
     <div class="zigzag-image">
-      <img src="/images/persona1.png" alt="Description Image">
+      <img src="/assets/images/persona1.png" alt="Description Image">
     </div>
     <div class="zigzag-text">
       <h3>Marketing Team Lead</h3>
@@ -130,7 +147,7 @@ Requirements were collected through direct stakeholder engagement and iterative 
   <!-- Second row: image right, text left -->
   <div class="zigzag-row reverse">
     <div class="zigzag-image">
-      <img src="/images/persona2.png" alt="Description Image">
+      <img src="/assets/images/persona2.png" alt="Description Image">
     </div>
     <div class="zigzag-text">
       <h3>Data Analyst</h3>
@@ -143,10 +160,30 @@ Requirements were collected through direct stakeholder engagement and iterative 
 ---
 
 ## Use Cases
-*   **UC1: Baseline Recovery:** User selects an SKU; the system calculates the counterfactual baseline and visualizes it against actual sales to reveal the "hidden" demand.
-*   **UC2: Promotion Assessment:** User selects a promotional period; the system calculates the uplift (Actual Sales minus Baseline) to determine campaign ROI.
-*   **UC3: Cross-Product Impact:** User investigates a price drop on a key product (e.g., Coke Zero) to see if it causes a decline in a sister product (e.g., Diet Coke), quantifying cannibalisation.
-*   **UC4: Dynamic Portfolio Analysis:** User toggles between SKUs to compare performance metrics across different product lines.
+
+**UC1: Upload Dataset**  
+Data Scientists upload raw sales and promotion datasets to the system.  
+Handles preprocessing and prepares data for modeling.
+
+**UC2: Run Baseline Model**  
+Data Scientists execute the time-series forecasting model (e.g., SARIMAX/Prophet) to estimate baseline sales.  
+Automatically separates promotional effects, seasonality, and trends.
+
+**UC3: View Baseline Sales**  
+Marketing Analysts view actual sales vs. estimated baseline in interactive charts.  
+Helps identify “hidden demand” not influenced by promotions.
+
+**UC4: Analyse Promotion Impact**  
+Analysts select specific promotional periods.  
+System calculates uplift (Actual Sales − Baseline Sales) to determine ROI.
+
+**UC5: Detect Cannibalisation**  
+Analysts examine cross-product interactions.  
+Identifies if promotions on one SKU reduce sales of another (e.g., Diet Coke vs. Coke Zero).
+
+**UC6: Generate Strategic Report**  
+Category Managers create summary reports based on model outputs.  
+Supports strategic decision-making and presentation-ready insights.
 
 <div class="diagram">
 

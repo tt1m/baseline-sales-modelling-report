@@ -29,12 +29,12 @@ This project has two core components:
 #### 1. NielsenIQ Byzzer
 
 <div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
-  <img src="/images/nielsenbyzzer.png" 
+  <img src="/assets/images/nielsenbyzzer.png" 
        class="fancy-image" 
        alt="NielsenIQ" 
        style="width: 370px; max-width: 100%;">
        
-  <img src="/images/nielsenbyzzer2.png" 
+  <img src="/assets/images/nielsenbyzzer2.png" 
        class="fancy-image" 
        alt="NielsenIQ 2" 
        style="width: 370px; max-width: 100%;">
@@ -63,7 +63,7 @@ demand drivers to estimate what sales would have been without promotions.
 
 #### 2. o9 Solutions 
 
-  <img src="/images/o91.png" 
+  <img src="/assets/images/o91.png" 
        class="fancy-image" 
        alt="NielsenIQ" 
        style="width: 600px; max-width: 100%;">
@@ -80,7 +80,7 @@ optimisation.
 
 **What can be learned:**
 
-  <img src="/images/o92.png" 
+  <img src="/assets/images/o92.png" 
        class="fancy-image" 
        alt="NielsenIQ 2" 
        style="width: 700px; max-width: 100%;">
@@ -97,6 +97,10 @@ modelling decision, which an enterprise platform cannot offer.
 ### Dashboard / Visualisation
 
 #### 3. Microsoft Power BI 
+
+<img src="/assets/images/microsoftbi.png" 
+     alt="Microsoft BI" 
+     style="float: right; width: 200px; max-width: 40%; margin: 0 0 1rem 1rem; border-radius: 8px;">
 
 One of the most widely adopted BI (Business Intelligence) platforms globally, commonly deployed in FMCG
 for consolidating sales, pricing, and promotional data into interactive dashboards.
@@ -120,6 +124,10 @@ from Python, with no intermediate data transformation layer required.
 
 #### 4. Tableau 
 
+<img src="/assets/images/tableau.png" 
+     alt="Microsoft BI" 
+     style="float: right; width: 200px; max-width: 40%; margin: 0 0 1rem 1rem; border-radius: 8px;">
+
 An industry-leading visualisation platform widely used across retail and FMCG.
 A notable deployment is Ocado Retail's supplier analytics platform, where Tableau
 gives FMCG suppliers real-time visibility into product performance, promotions,
@@ -135,7 +143,7 @@ and customer shopping behaviour.
 
 **What can be learned:**
 
-Tableau is a standalone visualisation layer — it cannot execute or host a
+Tableau is a standalone visualisation layer, it cannot execute or host a
 forecasting model. This project integrates the Prophet model and dashboard into
 a single Streamlit application, meaning all visualisations are directly coupled
 to live model outputs including forecast components, cross-validation metrics,
@@ -208,7 +216,7 @@ engineering overhead.
 
 ### Programming Language
 
-Python was chosen as it is the industry standard for data science and machine
+*Python* was chosen as it is the industry standard for data science and machine
 learning. It has a rich ecosystem of libraries covering every aspect of this
 project, from data manipulation and modelling to dashboard development, all
 within a single language.
@@ -230,7 +238,6 @@ within a single language.
 
 ## Summary of Technical Decisions
 
-<div class="section" markdown="1">
 
 | Decision | Choice | Key Reason |
 |---|---|---|
@@ -239,7 +246,7 @@ within a single language.
 | Programming language | Python | Rich ML ecosystem, easy to use |
 | AutoML **rejected** | AutoGluon | Insufficient interpretability for client-facing outputs |
 | Statistical model **replaced** | SARIMAX | Poor forecast accuracy, difficult to scale |
-</div>
+
 
 ---
 
