@@ -18,45 +18,168 @@ hide:
 
 This dashboard is an interactive forecasting tool designed to visualise and analyse product sales data. Users can build a custom layout of widgets, each displaying a different model output for a selected product. The underlying forecasting model is built with Prophet, a decomposable time series model that accounts for trend, seasonality, and promotional effects.
 
+  <img src="/images/dashboard-overview.png" 
+       class="fancy-image" 
+       alt="Dashboard Overview" 
+       style="width: 100%; max-width: 100%;">
+
+
 ---
 
 ### 2. Getting Started
 
 #### 2.1 Upload Dataset
-Before adding any widgets, upload your dataset using the Upload Dataset button. Your file must be a CSV formatted to the Nielsen standard. Once uploaded, the dataset will be available for all widgets.
+Before adding any widgets, upload your dataset using the **Upload Dataset** button. Your file must be a CSV / XLSX formatted to the Nielsen standard. Once uploaded, the dataset will be available for all widgets.
+
+  <img src="/images/upload-dataset.png" 
+       class="fancy-image" 
+       alt="Upload Dataset 1" 
+       style="width: 100%; max-width: 100%;">
+
+
+Click **Browse files** and select your file. Once uploaded, your dataset will appear in the panel.
+
+  <img src="/images/upload-dataset2.png" 
+       class="fancy-image" 
+       alt="Upload Dataset 2" 
+       style="width: 100%; max-width: 100%;">
+
 
 #### 2.2 Add Widget
-Click Add Widget to create a new panel on the dashboard. You will be prompted to enter a widget title, select your data source (your uploaded CSV), and choose a display type: KPI, Forecast, Decomposition, Predicted vs Observed, or Backtest Performance.
+Click **Add Widget** to create a new widget on the dashboard. 
+
+  <img src="/images/add-widget.png" 
+       class="fancy-image" 
+       alt="Add Widget" 
+       style="width: 100%; max-width: 100%;">
+
+Fill in the widget title, select your data source, and choose a display type from KPI, Forecast, Decomposition, Predicted Vs. Observed, or Backtest Performance.
+
+  <img src="/images/add-widget2.png" 
+       class="fancy-image" 
+       alt="Add Widget 2" 
+       style="width: 100%; max-width: 100%;">
+
+Once configured, click **Save & Add** to add the widget to the dashboard.
+
+  <img src="/images/add-widget3.png" 
+       class="fancy-image" 
+       alt="Add Widget 3" 
+       style="width: 100%; max-width: 100%;">
 
 #### 2.3 Clear All
-Clicking Clear All resets the dashboard, removing all widgets and returning the layout to a blank state. This cannot be undone, so ensure you have exported your layout before clearing.
+Clicking **Clear All** resets the dashboard, removing all widgets and returning the layout to a blank state. This cannot be undone, so ensure you have exported your layout before clearing.
+
+  <img src="/images/clear-all.png" 
+       class="fancy-image" 
+       alt="Clear All" 
+       style="width: 100%; max-width: 100%;">
 
 #### 2.4 Export Layout
-Your current dashboard layout can be saved by clicking Export Layout. This downloads a CSV file that captures your widget configuration, allowing you to restore it in a future session.
+Click **Export Layout** to save your current dashboard configuration.
+
+  <img src="/images/export-layout.png" 
+       class="fancy-image" 
+       alt="Export Layout" 
+       style="width: 100%; max-width: 100%;">
+
+Click **Generate CSV** to sync all widgets and prepare the layout file. 
+
+  <img src="/images/export-layout2.png" 
+       class="fancy-image" 
+       alt="Export Layout 2" 
+       style="width: 100%; max-width: 100%;">
+
+Once generated, click **Download CSV** to save the file to your machine. This file can be used to restore your dashboard layout in a future session.
+
+  <img src="/images/export-layout3.png" 
+       class="fancy-image" 
+       alt="Export Layout 3" 
+       style="width: 100%; max-width: 100%;">
 
 #### 2.5 Import Layout
-To restore a previously saved layout, click Import Layout and select your exported CSV file. All widgets will be restored to their previous configuration.
+Click **Import Layout** to restore a previously saved layout.
+
+  <img src="/images/import-layout.png" 
+       class="fancy-image" 
+       alt="Import Layout" 
+       style="width: 100%; max-width: 100%;">
+
+Click **Browse Files** and select your layout CSV file. Once uploaded, your file will appear in the panel.
+
+  <img src="/images/import-layout2.png" 
+       class="fancy-image" 
+       alt="Import Layout 2" 
+       style="width: 100%; max-width: 100%;">
+
+Click **Confirm Import** to restore your dashboard layout. Your widgets will be restored to their previous configuration.
+
+  <img src="/images/import-layout3.png" 
+       class="fancy-image" 
+       alt="Import Layout 3" 
+       style="width: 100%; max-width: 100%;">
 
 ---
 
 ### 3. Selecting a Product
 
-Each widget has its own product selection, allowing you to compare different products across widgets simultaneously. There are two ways to select a product: Concise and Verbose.
+Each widget has its own product selection, allowing you to compare different products across widgets simultaneously. Click the **Select Product** button on any widget to open the selection panel. There are two modes: Concise and Verbose.
+
+  <img src="/images/select-product.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 100%; max-width: 100%;">
 
 #### 3.1 Concise Mode
-Concise mode allows you to select a product directly by its SKU code. Once a SKU is selected, you can then filter by the customers who have purchased that product.
+Concise mode allows you to select a product directly by its SKU code. 
+
+  <img src="/images/select-product2.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 100%; max-width: 100%;">
+
+Once a SKU is selected, you can then filter by the customers who have purchased that product.
+
+  <img src="/images/select-product3.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 100%; max-width: 100%;">
+
+Click **Confirm Config** to apply the selection to the widget.
+
+  <img src="/images/select-product4.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 100%; max-width: 100%;">
 
 #### 3.2 Verbose Mode
 Verbose mode lets you filter down to a product step by step:
 
-- **Top Brand** — e.g. Coca-Cola, Dr Pepper
+- **Top Brand** — e.g. Coca-Cola, Dr Pepper, Fanta
 - **Flavour**
 - **Pack Type** — e.g. PET, Can
-- **Pack Size**
-- **Units per Package** — e.g. 8 or 12 units
+- **Pack Size** — e.g. 330mL, 500mL, 1250mL
+- **Units per Package** — e.g. x8, x12
+
+  <img src="/images/select-product5.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 100%; max-width: 100%;">
+
+Click **Confirm Config** to apply the selection to the widget.
+
+  <img src="/images/select-product6.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 100%; max-width: 100%;">
 
 #### 3.3 Date Range
-Both modes allow you to set a start date, which controls the date range used by the widget.
+Both modes allow you to set the date range used by the widget.
+
+  <img src="/images/select-product7.png" 
+       class="fancy-image" 
+       alt="Select Product" 
+       style="width: 100%; max-width: 100%;">
 
 ---
 
@@ -65,14 +188,34 @@ Both modes allow you to set a start date, which controls the date range used by 
 #### 4.1 KPI
 The KPI widget displays total sales over a selected date range, alongside a percentage change compared to the equivalent preceding period. For example, selecting a 30-day range will show total sales for that period versus the 30 days prior.
 
+  <img src="/images/kpi.png" 
+       class="fancy-image" 
+       alt="KPI" 
+       style="width:92%; max-width: 100%;">
+
 #### 4.2 Forecast
-The Forecast widget displays a chart projecting future sales from a selected start date. The model generates a forecast for the coming months based on historical patterns in the data.
+The Forecast widget displays a chart projecting future sales from a selected date range. Use **Forecast Config** to adjust how far into the future the forecast extends, and **Promotional Config** to specify promotional periods within the forecast.
+
+  <img src="/images/forecast.png" 
+       class="fancy-image" 
+       alt="Forecast" 
+       style="width:62%; max-width: 100%;">
 
 #### 4.3 Decomposition
 The Decomposition widget breaks the sales data down into four components across separate charts: trend, seasonality, promotional uplift, and residuals. You can select a date range to focus on a specific portion of the data.
 
+  <img src="/images/decomposition.png" 
+       class="fancy-image" 
+       alt="Decomposition" 
+       style="width:100%; max-width: 100%;">
+
 #### 4.4 Predicted vs Observed
 This widget overlays the model's predictions against actual recorded sales on a single chart, allowing you to visually assess how well the model fits historical data. A date range selector is available to zoom into a specific period.
+
+  <img src="/images/predicted-vs-observed.png" 
+       class="fancy-image" 
+       alt="Predicted Vs. Observed" 
+       style="width:65%; max-width: 100%;">
 
 #### 4.5 Backtest Performance
 The Backtest Performance widget evaluates model accuracy using Prophet's rolling cross-validation method, which trains the model on progressively larger historical windows and tests its forecasts against actual observations. This simulates real-world forecasting conditions and produces three error metrics:
@@ -80,14 +223,24 @@ The Backtest Performance widget evaluates model accuracy using Prophet's rolling
 - **RMSE** — Root Mean Square Error
 - **MAPE** — Mean Absolute Percentage Error
 - **MAE** — Mean Absolute Error
+  
+  <img src="/images/backtest-performance.png" 
+       class="fancy-image" 
+       alt="Backtest Performance" 
+       style="width:70%; max-width: 100%;">
 
 ---
 
 ### 5. Cannibalisation Analysis *(Beta)*
 
-Each widget offers an optional Enable Cannibalisation toggle. When enabled, a LightGBM model analyses the residuals from the Prophet forecast in an attempt to account for cannibalisation effects and improve forecast accuracy.
+The Predicted Vs. Observed widget offers an optional **Enable Cannibalisation** toggle. When enabled, a LightGBM model is used in an attempt to account for cannibalisation effects and improve forecast accuracy.
 
-> ⚠️ **This feature is currently in beta.** Results may not be fully reliable and should be interpreted with caution.
+> ⚠️ **This feature is currently in beta.** Results may be inaccurate and should be interpreted with caution.
+
+<img src="/images/enable-cannibalisation.png" 
+     class="fancy-image" 
+     alt="Enable Cannibalisation" 
+     style="width:40%; max-width: 100%;">
 
 </div>
 
@@ -233,12 +386,12 @@ streamlit run dashboard/app.py --server.port 8502
 
 #### Overview
 
-The Baseline Sales Dashboard processes proprietary sales data supplied by the user. This data is commercially sensitive and confidential in nature. The application does not collect, transmit, or store any data externally — all processing is performed locally on the user's machine.
+The Baseline Sales Dashboard processes proprietary sales data supplied by the user. This data is commercially sensitive and confidential in nature. The application does not collect, transmit, or store any data externally — all processing is performed locally on the device running the application.
 
 #### Data Handling
 
-- **Local Processing Only** — All uploaded data is processed entirely on the user's device. No data is sent to external servers or third-party services.
-- **No Persistent Storage** — Uploaded CSV files are loaded into memory for the duration of the session only. No data is written to disk or retained after the session ends.
+- **Local Processing Only** — All uploaded data is processed entirely on the device running the application. No data is sent to external servers or third-party services.
+- **Local Storage Only** — Uploaded CSV / XLSX files are stored in the `data/` folder on the device running the application. No data is transmitted to external servers or third-party services.
 - **No Personal Data** — The application does not process any personally identifiable information (PII). As such, the application does not fall within the scope of GDPR data processing obligations.
 
 #### User Responsibilities
@@ -253,7 +406,7 @@ Users are responsible for ensuring they have the appropriate authorisation to up
 
 All external libraries used in the Baseline Sales Dashboard are open-source and available for commercial use.
 
-##### Backend Libraries
+#### Backend Libraries
 
 | Library | License | Commercial Use |
 |---|---|---|
@@ -263,8 +416,9 @@ All external libraries used in the Baseline Sales Dashboard are open-source and 
 | NumPy | BSD 3-Clause | ✅ Permitted |
 | Streamlit | Apache License 2.0 | ✅ Permitted |
 | matplotlib | PSF License | ✅ Permitted |
+| plotly | MIT License | ✅ Permitted |
 
-##### Compliance Summary
+#### Compliance Summary
 
 - All external libraries used in this project are available for commercial use.
 - All libraries are licensed as open-source (MIT, BSD 3-Clause, Apache 2.0, PSF).
@@ -275,19 +429,6 @@ All external libraries used in the Baseline Sales Dashboard are open-source and 
 
 The Baseline Sales Dashboard is a closed-source application developed under University College London. While the application is available for use, its source code, model configurations, and internal processing logic are not publicly accessible.
 
-</div>
-
----
-
-## Development Blog
-
-<div class="section" markdown="1">
-
-*   **Weeks 1-3:** Problem identification and stakeholder interviews. Defined "Baseline Recovery" as the primary objective.
-*   **Weeks 4-6:** Data cleaning and exploratory data analysis (EDA). Identified seasonal non-stationarity.
-*   **Weeks 7-9:** Model development (SARIMAX for baselines, LightGBM for cannibalisation). Iterative tuning using MAPE metrics.
-*   **Weeks 10-12:** Frontend development (Streamlit). Implemented modular tabs for different user personas.
-*   **Weeks 13-14:** Final User Acceptance Testing (UAT) and documentation assembly.
 </div>
 
 ---
