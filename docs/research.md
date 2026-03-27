@@ -40,8 +40,8 @@ This project has two core components:
 </div>
 
 A subscription analytics platform built on Nielsen retail measurement data, which is the
-same underlying data source used in this project. It is widely used by CPG brands
-and FMCG manufacturers to monitor market performance and promotional effectiveness.
+same underlying data source used in this project. It is widely used by Consumer Packaged Goods (CPG) brands
+and Fast-Moving Consumer Goods (FMCG) manufacturers to monitor market performance and promotional effectiveness.
 
 **Main Features:**
 
@@ -73,7 +73,7 @@ optimisation.
 
 **Main Features:**
 
-- Trade promotion planning, evaluation, and P&L simulation in a unified platform
+- Trade promotion planning, evaluation, and Profit and Loss (P&L) simulation in a unified platform
 - ML-driven demand forecasting incorporating sales history, seasonality, and promotions
 - Scenario planning tools for assessing the impact of pricing and promotional decisions
 
@@ -86,7 +86,7 @@ optimisation.
 
 o9 is a closed SaaS platform that does not expose its underlying model architecture
 or allow clients to inspect or modify the forecasting logic directly. This project provides Coca-Cola
-with full documentation of the entire methodology, including how the Prophet model
+with full documentation of the entire methodology, including how the Prophet and LightGBM model
 is structured, how promotional regressors are encoded, and how performance is
 validated. This transparency allows the client to understand and challenge every
 modelling decision, which an enterprise platform cannot offer.
@@ -242,9 +242,7 @@ Python was chosen as it is the industry standard for data science and machine le
 | `pandas` | Data manipulation | Industry standard for tabular data in Python |
 | `numpy` | Numerical computation | Core dependency for array operations |
 | `streamlit` | Dashboard and visualisation | Renders ML outputs directly from Python, no front-end needed |
-| `matplotlib` | Exploratory plotting | Quick visualisation during model experimentation |
-| `plotly` | Interactive charts in dashboard | Native Streamlit integration, interactive out of the box |
-| `scikit-learn` | Preprocessing & evaluation utilities | Consistent API for scaling, splitting, and scoring |
+| `matplotlib` | Exploratory plotting & Graphs in dashboard | Quick visualisation during model experimentation and used to plot graphs for dashbaord widgets |
 | `statsmodels` | Statistical testing | Used for Breusch-Pagan heteroscedasticity tests |
 
 </div>
