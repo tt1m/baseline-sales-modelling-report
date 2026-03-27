@@ -16,7 +16,7 @@ Retail sales data for Fast-Moving Consumer Goods (FMCG) is inherently noisy. His
 
 ---
 
-<img src="/assets/images/cokelogo.png" 
+<img src="../assets/images/cokelogo.png" 
      alt="Coke" 
      style="float: right; width: 200px; max-width: 40%; margin: 0 0 1rem 1rem; border-radius: 8px;">
 
@@ -136,7 +136,7 @@ Requirements were collected through direct stakeholder engagement and iterative 
   <!-- First row: image left, text right -->
   <div class="zigzag-row">
     <div class="zigzag-image">
-      <img src="/assets/images/persona1.png" alt="Description Image">
+      <img src="../assets/images/persona1.png" alt="Description Image">
     </div>
     <div class="zigzag-text">
       <h3>Marketing Team Lead</h3>
@@ -147,7 +147,7 @@ Requirements were collected through direct stakeholder engagement and iterative 
   <!-- Second row: image right, text left -->
   <div class="zigzag-row reverse">
     <div class="zigzag-image">
-      <img src="/assets/images/persona2.png" alt="Description Image">
+      <img src="../assets/images/persona2.png" alt="Description Image">
     </div>
     <div class="zigzag-text">
       <h3>Data Analyst</h3>

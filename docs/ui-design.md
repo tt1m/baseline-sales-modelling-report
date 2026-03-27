@@ -102,8 +102,8 @@ Two initial concept sketches were produced to explore different approaches to th
   </tr>
 </table>
 
-!!! success "Client Selection"
-    After reviewing both concepts, the client selected **Sketch 2** as the preferred design. This layout best aligns with their goals of creating a **flexible**, **data-driven**, and **user-centric** dashboard. Its customisable structure allows users of varying experience, such as marketing leads and data analysts, to tailor the interface to their specific needs, ensuring the most relevant metrics and visuals are always in focus. The clean, professional design supports **clarity** and **ease of interpretation**, making it well-suited for both quick decision-making and deeper analytical review.
+### Client Selection
+After reviewing both concepts, the client selected **Sketch 2** as the preferred design. This layout best aligns with their goals of creating a **flexible**, **data-driven**, and **user-centric** dashboard. Its customisable structure allows users of varying experience, such as marketing leads and data analysts, to tailor the interface to their specific needs, ensuring the most relevant metrics and visuals are always in focus. The clean, professional design supports **clarity** and **ease of interpretation**, making it well-suited for both quick decision-making and deeper analytical review.
 
 </div>
 
@@ -177,7 +177,8 @@ The table below summarises how each identified issue was addressed in the final 
 | 3 | Add tooltips and help icons | The dashboard's interface is sufficiently intuitive that users can navigate features without additional guidance. | ✅ Addressed |
 | 4 | Add a "Last updated" timestamp | Not applicable — the dashboard uses an upload-based data model rather than a live data connection, making a timestamp unnecessary. | N/A |
 
-!!! warning "Future Improvements"
-    Issues 1 and 2 remain partially addressed and not addressed respectively in the current version. Full undo functionality and custom error messaging are identified as areas for future development.
+#### Future Improvements
+
+Issues 1 and 2 remain partially addressed and not addressed respectively in the current version. Full undo functionality and custom error messaging are identified as areas for future development.
 
 </div>

@@ -28,12 +28,12 @@ This project has two core components:
 #### 1. NielsenIQ Byzzer
 
 <div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
-  <img src="/assets/images/nielsenbyzzer.png" 
+  <img src="../assets/images/nielsenbyzzer.png" 
        class="fancy-image" 
        alt="NielsenIQ" 
        style="width: 370px; max-width: 100%;">
        
-  <img src="/assets/images/nielsenbyzzer2.png" 
+  <img src="../assets/images/nielsenbyzzer2.png" 
        class="fancy-image" 
        alt="NielsenIQ 2" 
        style="width: 370px; max-width: 100%;">
@@ -62,7 +62,7 @@ demand drivers to estimate what sales would have been without promotions.
 
 #### 2. o9 Solutions 
 
-  <img src="/assets/images/o91.png" 
+  <img src="../assets/images/o91.png" 
        class="fancy-image" 
        alt="o9 1" 
        style="width: 600px; max-width: 100%;">
@@ -79,7 +79,7 @@ optimisation.
 
 **What can be learned:**
 
-  <img src="/assets/images/o92.png" 
+  <img src="../assets/images/o92.png" 
        class="fancy-image" 
        alt="o9 2" 
        style="width: 700px; max-width: 100%;">
@@ -97,7 +97,7 @@ modelling decision, which an enterprise platform cannot offer.
 
 #### 3. Microsoft Power BI 
 
-<img src="/assets/images/microsoftbi.png" 
+<img src="../assets/images/microsoftbi.png" 
      alt="Microsoft BI" 
      style="float: right; width: 200px; max-width: 40%; margin: 0 0 1rem 1rem; border-radius: 8px;">
 
@@ -124,7 +124,7 @@ performance metrics, directly from Python, with no intermediate transformation l
 
 #### 4. Tableau 
 
-<img src="/assets/images/tableau.png" 
+<img src="../assets/images/tableau.png" 
      alt="Microsoft BI" 
      style="float: right; width: 200px; max-width: 40%; margin: 0 0 1rem 1rem; border-radius: 8px;">
 
@@ -189,19 +189,19 @@ Compared to SARIMAX, Prophet demonstrated a significant advantage in **computati
 
 Beyond speed gains, Prophet delivers comparable, if not better, predictive performance. We evaluated **Mean Average Percentage Error (MAPE)** and **Root Mean Square Error (RMSE)** for the top 10 selling SKU product codes. While the MAPE for SKU 641420 initially appeared alarming (peaking over 2000%), an inspection of the sales data revealed frequent dips to zero or near-zero volumes, which artificially inflated MAPE. As shown in *Figure 3*, Prophet outperformed SARIMAX in RMSE across **all 10 products** and achieved a better MAPE in **5 out of 10** instances (with outliers excluded for visualization).
 
-<img src="/assets/images/MAPE-RMSE-rollingmean.png" 
+<img src="../assets/images/MAPE-RMSE-rollingmean.png" 
     class="fancy-image" 
     alt="Tableau 2" 
     style="width: 97%; max-width: 100%;">
 *Figure 1: Rolling mean of MAPE and RMSE with a window of 4 weeks*
 
-<img src="/assets/images/MAPE-RMSE-meanaggregatewithoutlier.png" 
+<img src="../assets/images/MAPE-RMSE-meanaggregatewithoutlier.png" 
     class="fancy-image" 
     alt="Tableau 2" 
     style="width: 97%; max-width: 100%;">
 *Figure 2: Mean aggregate MAPE and RMSE with outlier*
 
-<img src="/assets/images/MAPE-RMSE-meanaggregatewithoutoutlier.png" 
+<img src="../assets/images/MAPE-RMSE-meanaggregatewithoutoutlier.png" 
     class="fancy-image" 
     alt="Tableau 2" 
     style="width: 97%; max-width: 100%;">
