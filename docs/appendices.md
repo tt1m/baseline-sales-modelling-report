@@ -433,19 +433,6 @@ The Baseline Sales Dashboard is a closed-source application developed under Univ
 
 ---
 
-## Development Blog
-
-<div class="section" markdown="1">
-
-*   **Weeks 1-3:** Problem identification and stakeholder interviews. Defined "Baseline Recovery" as the primary objective.
-*   **Weeks 4-6:** Data cleaning and exploratory data analysis (EDA). Identified seasonal non-stationarity.
-*   **Weeks 7-9:** Model development (SARIMAX for baselines, LightGBM for cannibalisation). Iterative tuning using MAPE metrics.
-*   **Weeks 10-12:** Frontend development (Streamlit). Implemented modular tabs for different user personas.
-*   **Weeks 13-14:** Final User Acceptance Testing (UAT) and documentation assembly.
-</div>
-
----
-
 ## Monthly Video
 
 <div class="section" markdown="1">
