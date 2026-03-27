@@ -21,7 +21,7 @@ This dashboard is an interactive forecasting tool designed to visualise and anal
   <img src="/images/dashboard-overview.png" 
        class="fancy-image" 
        alt="Dashboard Overview" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 
 ---
@@ -34,7 +34,7 @@ Before adding any widgets, upload your dataset using the **Upload Dataset** butt
   <img src="/images/upload-dataset.png" 
        class="fancy-image" 
        alt="Upload Dataset 1" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 
 Click **Browse files** and select your file. Once uploaded, your dataset will appear in the panel.
@@ -42,7 +42,7 @@ Click **Browse files** and select your file. Once uploaded, your dataset will ap
   <img src="/images/upload-dataset2.png" 
        class="fancy-image" 
        alt="Upload Dataset 2" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 
 #### 2.2 Add Widget
@@ -51,21 +51,21 @@ Click **Add Widget** to create a new widget on the dashboard.
   <img src="/images/add-widget.png" 
        class="fancy-image" 
        alt="Add Widget" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 Fill in the widget title, select your data source, and choose a display type from KPI, Forecast, Decomposition, Predicted Vs. Observed, or Backtest Performance.
 
   <img src="/images/add-widget2.png" 
        class="fancy-image" 
        alt="Add Widget 2" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 Once configured, click **Save & Add** to add the widget to the dashboard.
 
   <img src="/images/add-widget3.png" 
        class="fancy-image" 
        alt="Add Widget 3" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 #### 2.3 Clear All
 Clicking **Clear All** resets the dashboard, removing all widgets and returning the layout to a blank state. This cannot be undone, so ensure you have exported your layout before clearing.
@@ -73,7 +73,7 @@ Clicking **Clear All** resets the dashboard, removing all widgets and returning 
   <img src="/images/clear-all.png" 
        class="fancy-image" 
        alt="Clear All" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 #### 2.4 Export Layout
 Click **Export Layout** to save your current dashboard configuration.
@@ -81,21 +81,21 @@ Click **Export Layout** to save your current dashboard configuration.
   <img src="/images/export-layout.png" 
        class="fancy-image" 
        alt="Export Layout" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 Click **Generate CSV** to sync all widgets and prepare the layout file. 
 
   <img src="/images/export-layout2.png" 
        class="fancy-image" 
        alt="Export Layout 2" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 Once generated, click **Download CSV** to save the file to your machine. This file can be used to restore your dashboard layout in a future session.
 
   <img src="/images/export-layout3.png" 
        class="fancy-image" 
        alt="Export Layout 3" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 #### 2.5 Import Layout
 Click **Import Layout** to restore a previously saved layout.
@@ -103,21 +103,21 @@ Click **Import Layout** to restore a previously saved layout.
   <img src="/images/import-layout.png" 
        class="fancy-image" 
        alt="Import Layout" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 Click **Browse Files** and select your layout CSV file. Once uploaded, your file will appear in the panel.
 
   <img src="/images/import-layout2.png" 
        class="fancy-image" 
        alt="Import Layout 2" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 Click **Confirm Import** to restore your dashboard layout. Your widgets will be restored to their previous configuration.
 
   <img src="/images/import-layout3.png" 
        class="fancy-image" 
        alt="Import Layout 3" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 ---
 
@@ -128,7 +128,7 @@ Each widget has its own product selection, allowing you to compare different pro
   <img src="/images/select-product.png" 
        class="fancy-image" 
        alt="Select Product" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 #### 3.1 Concise Mode
 Concise mode allows you to select a product directly by its SKU code. 
@@ -136,21 +136,21 @@ Concise mode allows you to select a product directly by its SKU code.
   <img src="/images/select-product2.png" 
        class="fancy-image" 
        alt="Select Product" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 Once a SKU is selected, you can then filter by the customers who have purchased that product.
 
   <img src="/images/select-product3.png" 
        class="fancy-image" 
        alt="Select Product" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 Click **Confirm Config** to apply the selection to the widget.
 
   <img src="/images/select-product4.png" 
        class="fancy-image" 
        alt="Select Product" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 #### 3.2 Verbose Mode
 Verbose mode lets you filter down to a product step by step:
@@ -164,14 +164,14 @@ Verbose mode lets you filter down to a product step by step:
   <img src="/images/select-product5.png" 
        class="fancy-image" 
        alt="Select Product" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 Click **Confirm Config** to apply the selection to the widget.
 
   <img src="/images/select-product6.png" 
        class="fancy-image" 
        alt="Select Product" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 #### 3.3 Date Range
 Both modes allow you to set the date range used by the widget.
@@ -179,7 +179,7 @@ Both modes allow you to set the date range used by the widget.
   <img src="/images/select-product7.png" 
        class="fancy-image" 
        alt="Select Product" 
-       style="width: 97%; max-width: 100%;">
+       style="width: 100%; max-width: 100%;">
 
 ---
 
@@ -207,7 +207,7 @@ The Decomposition widget breaks the sales data down into four components across 
   <img src="/images/decomposition.png" 
        class="fancy-image" 
        alt="Decomposition" 
-       style="width:97%; max-width: 100%;">
+       style="width:100%; max-width: 100%;">
 
 #### 4.4 Predicted vs Observed
 This widget overlays the model's predictions against actual recorded sales on a single chart, allowing you to visually assess how well the model fits historical data. A date range selector is available to zoom into a specific period.
