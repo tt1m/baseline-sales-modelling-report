@@ -18,7 +18,7 @@ hide:
             <img src="assets/images/cocacolalogo.png" alt="Coca-Cola Logo" style="height: 100px; vertical-align: middle; margin-right: 0.5rem;">
            Baseline Sales Modelling
         </h1>
-        <img src="assets/images/dashboard.png" alt="Image of dashboard" class="dashboard-image">
+        <img src="/images/dashboard.png" alt="Image of dashboard" class="dashboard-image">
         <p style="
             font-size: 1rem; 
             color: var(--md-default-fg-color--light); 
