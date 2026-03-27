@@ -59,27 +59,57 @@ hide:
 <div class="grid-3-cards">
 
     <div class="abstract-card">
-        <h3 class="card-title">The Challenge</h3>
+        <h3 class="card-title">Project Background & Motivation</h3>
         <p>
-        In the Fast-Moving Consumer Goods (FMCG) sector, retail sales data is inherently noisy. Historical sales are skewed by promotions, pricing, and seasonality, making it difficult to establish a “normal” sales baseline and measure true demand.
+        Retail sales in the FMCG sector are heavily influenced by promotions, pricing strategies, and seasonal trends, making it difficult to accurately measure true baseline demand. This project with Coca-Cola Europacific Partners was designed to provide a clear understanding of underlying consumer demand, separate from commercial noise, to support better marketing, inventory, and operational decisions. The motivation was to create a scalable, data-driven solution that could be applied across multiple product lines and regions.
         </p>
     </div>
 
     <div class="abstract-card">
         <h3 class="card-title">Our Approach</h3>
         <p>
-        Working with Coca-Cola, we used SARIMAX forecasting to isolate baseline demand and gradient-boosted models (LightGBM/XGBoost) to analyze cross-product cannibalisation. All outputs are visualized in an interactive Streamlit dashboard.
+        The workflow combined advanced forecasting and machine learning techniques. Prophet was used to model baseline demand, accounting for trends and seasonality, while gradient-boosted models analyzed cross-product interactions and promotional effects. Data preprocessing, feature engineering, and model evaluation using metrics like RMSE and MAPE ensured robust predictions. All results were integrated into an interactive Streamlit dashboard, allowing stakeholders to filter, visualize, and explore the data dynamically.
         </p>
     </div>
 
     <div class="abstract-card">
-        <h3 class="card-title">Impact</h3>
+        <h3 class="card-title">Impact & Insights</h3>
         <p>
-        The project decouples core consumer demand from commercial noise, providing tailored insights for analysts, marketing, and commercial teams. The dashboard unifies cross-functional decision-making and offers a scalable foundation for future portfolio optimisation.
+        The resulting dashboard empowers analysts and commercial teams to explore baseline demand, promotional uplift, and cannibalization in real time. It enhances decision-making by providing actionable insights, supports campaign optimization, and establishes a flexible foundation for future product portfolio analysis. By combining accurate forecasting with an intuitive interface, the project bridges the gap between complex data analysis and practical business applications.
         </p>
     </div>
 
 </div>
+
+<style>
+.grid-3-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.abstract-card {
+    background: #fff;
+    border-left: 5px solid #752023; /* Coca-Cola red accent */
+    border-radius: 12px;
+    padding: 1.5rem;
+    padding-top: 0rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.card-title {
+    color: #ff3c3c !important;
+    font-size: 0.9rem; /* slightly smaller than before */
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.abstract-card p {
+    font-size: 0.8rem; /* smaller, more readable text */
+    line-height: 1.6;
+}
+</style>
 
 <hr>
 
@@ -335,6 +365,9 @@ hide:
     border-radius: 10px;
     overflow-x: auto;
     font-size: 12px;
+
+    background-image: linear-gradient(to right, #c8c8c8 1px, transparent 1px);
+    background-size: calc((100% - 200px)/24) 100%;
 }
 
 /* Header */
@@ -366,6 +399,7 @@ hide:
     font-weight: bold;
     padding: 0.5rem;
 }
+
 
 /* Progress colours */
 .p33 { background: #ffb3c1; }
